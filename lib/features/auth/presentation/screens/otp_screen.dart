@@ -71,7 +71,7 @@ class _OtpViewState extends State<_OtpView> {
       listenWhen: (a, b) => a.status != b.status,
       listener: (context, state) {
         if (state.status == AppStatus.success) {
-          context.goNamed(AppRoutes.home.name);
+          context.goNamed(AppRoutes.locationPermission.name);
         }
       },
       builder: (context, state) {

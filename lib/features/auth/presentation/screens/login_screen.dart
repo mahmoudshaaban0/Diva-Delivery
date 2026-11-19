@@ -101,7 +101,7 @@ class _LoginViewState extends State<_LoginView> {
           ),
         );
       case LoginMethod.email:
-        context.goNamed(AppRoutes.home.name);
+        context.goNamed(AppRoutes.locationPermission.name);
     }
   }
 

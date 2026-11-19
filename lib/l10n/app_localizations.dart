@@ -373,6 +373,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Retry'**
   String get retry;
+
+  /// No description provided for @stepOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {current} of {total}'**
+  String stepOf(int current, int total);
+
+  /// No description provided for @locationPermissionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on location access'**
+  String get locationPermissionTitle;
+
+  /// No description provided for @locationPermissionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We need your location to start the day and guide you to customers accurately'**
+  String get locationPermissionSubtitle;
+
+  /// No description provided for @locationBenefitWarehouseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start the day at the warehouse'**
+  String get locationBenefitWarehouseTitle;
+
+  /// No description provided for @locationBenefitWarehouseSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We check you\'re inside the warehouse zone when you start'**
+  String get locationBenefitWarehouseSubtitle;
+
+  /// No description provided for @locationBenefitRouteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Best delivery route'**
+  String get locationBenefitRouteTitle;
+
+  /// No description provided for @locationBenefitRouteSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders sorted by the nearest customer'**
+  String get locationBenefitRouteSubtitle;
+
+  /// No description provided for @locationBenefitTrackingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Live trip tracking'**
+  String get locationBenefitTrackingTitle;
+
+  /// No description provided for @locationBenefitTrackingSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Order status updates automatically for the operations team'**
+  String get locationBenefitTrackingSubtitle;
+
+  /// No description provided for @locationAlwaysNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Next we\'ll ask for “Allow all the time” to track the trip while the screen is locked'**
+  String get locationAlwaysNote;
+
+  /// No description provided for @allowLocationAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow location access'**
+  String get allowLocationAccess;
+
+  /// No description provided for @locationDeniedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location is required to start work'**
+  String get locationDeniedTitle;
+
+  /// No description provided for @locationDeniedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Without location access you can\'t start your day or get directions to customers'**
+  String get locationDeniedSubtitle;
+
+  /// No description provided for @locationDeniedStepSettingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Open device settings'**
+  String get locationDeniedStepSettingsTitle;
+
+  /// No description provided for @locationDeniedStepSettingsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Using the “Open settings” button below'**
+  String get locationDeniedStepSettingsSubtitle;
+
+  /// No description provided for @locationDeniedStepAppTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location → Diva Courier'**
+  String get locationDeniedStepAppTitle;
+
+  /// No description provided for @locationDeniedStepAppSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the app from the apps list'**
+  String get locationDeniedStepAppSubtitle;
+
+  /// No description provided for @locationDeniedStepAlwaysTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose “Always”'**
+  String get locationDeniedStepAlwaysTitle;
+
+  /// No description provided for @locationDeniedStepAlwaysSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'To track the trip while the screen is locked'**
+  String get locationDeniedStepAlwaysSubtitle;
+
+  /// No description provided for @locationPrivacyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'We only use your location during working hours and never share it with customers'**
+  String get locationPrivacyNote;
+
+  /// No description provided for @openSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open settings'**
+  String get openSettings;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get tryAgain;
+
+  /// No description provided for @cameraPermissionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera & photos'**
+  String get cameraPermissionTitle;
+
+  /// No description provided for @cameraPermissionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'To document deliveries quickly without leaving the app'**
+  String get cameraPermissionSubtitle;
+
+  /// No description provided for @cameraBenefitProofTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Proof-of-delivery photo'**
+  String get cameraBenefitProofTitle;
+
+  /// No description provided for @cameraBenefitProofSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a photo of the order at the customer\'s door'**
+  String get cameraBenefitProofSubtitle;
+
+  /// No description provided for @cameraBenefitCallLogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Call log screenshot'**
+  String get cameraBenefitCallLogTitle;
+
+  /// No description provided for @cameraBenefitCallLogSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload a screenshot when you can\'t reach the customer'**
+  String get cameraBenefitCallLogSubtitle;
+
+  /// No description provided for @allowAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow access'**
+  String get allowAccess;
+
+  /// No description provided for @later.
+  ///
+  /// In en, this message translates to:
+  /// **'Later'**
+  String get later;
 }
 
 class _AppLocalizationsDelegate

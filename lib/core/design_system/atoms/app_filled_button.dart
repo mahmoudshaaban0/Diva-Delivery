@@ -4,7 +4,15 @@ import 'package:limitless_code_template/core/design_system/tokens/app_colors.dar
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
-enum AppFilledVariant { primary, neutral, red, yellow }
+enum AppFilledVariant {
+  primary,
+
+  /// Primary soft: light fill with dark label (Figma Button/Secondary).
+  primarySoft,
+  neutral,
+  red,
+  yellow,
+}
 
 class AppFilledButton extends StatelessWidget {
   const AppFilledButton({
@@ -28,6 +36,15 @@ class AppFilledButton extends StatelessWidget {
 
   AppButtonColors _colorsFor(AppColors colors) => switch (variant) {
     AppFilledVariant.primary => colors.buttonPrimary,
+    AppFilledVariant.primarySoft => AppButtonColors(
+      fill: colors.buttonPrimary.soft,
+      fillPressed: colors.buttonPrimary.softPressed,
+      label: colors.buttonPrimary.onSoft,
+      soft: colors.buttonPrimary.soft,
+      softPressed: colors.buttonPrimary.softPressed,
+      onSoft: colors.buttonPrimary.onSoft,
+      outline: colors.buttonPrimary.outline,
+    ),
     AppFilledVariant.neutral => colors.buttonNeutral,
     AppFilledVariant.red => colors.buttonRed,
     AppFilledVariant.yellow => colors.buttonYellow,

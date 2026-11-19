@@ -26,12 +26,17 @@ import '../../../features/auth/presentation/bloc/forgot_password_cubit.dart'
 import '../../../features/auth/presentation/bloc/login_cubit.dart' as _i618;
 import '../../../features/auth/presentation/bloc/otp_cubit.dart' as _i989;
 import '../../../features/home/presentation/cubit/home_cubit.dart' as _i893;
+import '../../../features/permissions/presentation/bloc/camera_permission_cubit.dart'
+    as _i240;
+import '../../../features/permissions/presentation/bloc/location_permission_cubit.dart'
+    as _i552;
 import '../../cubit/locale_cubit.dart' as _i148;
 import '../../cubit/theme_cubit.dart' as _i1053;
 import '../../networking/api_consumer.dart' as _i685;
 import '../../networking/app_intercepters.dart' as _i301;
 import '../../networking/dio_consumer.dart' as _i1031;
 import '../../networking/network_info.dart' as _i421;
+import '../../services/permission_service.dart' as _i496;
 import '../../storage/key_value_storage.dart' as _i291;
 import 'register_module.dart' as _i292;
 
@@ -63,6 +68,13 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i421.NetworkInfo>(
       () => coreInjectableModule.networkInfo(),
+    );
+    gh.lazySingleton<_i496.PermissionService>(() => _i496.PermissionService());
+    gh.factory<_i240.CameraPermissionCubit>(
+      () => _i240.CameraPermissionCubit(gh<_i496.PermissionService>()),
+    );
+    gh.factory<_i552.LocationPermissionCubit>(
+      () => _i552.LocationPermissionCubit(gh<_i496.PermissionService>()),
     );
     gh.singleton<_i361.Dio>(
       () => coreInjectableModule.dio(

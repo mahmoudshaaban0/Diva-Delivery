@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Diva Courier uses your location to start your day at the warehouse and guide you to customers.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Diva Courier uses your location while the screen is locked to keep your delivery trip updated for the operations team.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Diva Courier uses the camera to take proof-of-delivery photos.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Diva Courier uses your photos to upload call-log screenshots when a customer can't be reached.</string>
     <key>CADisableMinimumFrameDurationOnPhone</key>
     <true/>
     <key>CFBundleDevelopmentRegion</key>

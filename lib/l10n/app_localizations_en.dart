@@ -166,4 +166,109 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get retry => 'Retry';
+
+  @override
+  String stepOf(int current, int total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String get locationPermissionTitle => 'Turn on location access';
+
+  @override
+  String get locationPermissionSubtitle =>
+      'We need your location to start the day and guide you to customers accurately';
+
+  @override
+  String get locationBenefitWarehouseTitle => 'Start the day at the warehouse';
+
+  @override
+  String get locationBenefitWarehouseSubtitle =>
+      'We check you\'re inside the warehouse zone when you start';
+
+  @override
+  String get locationBenefitRouteTitle => 'Best delivery route';
+
+  @override
+  String get locationBenefitRouteSubtitle =>
+      'Orders sorted by the nearest customer';
+
+  @override
+  String get locationBenefitTrackingTitle => 'Live trip tracking';
+
+  @override
+  String get locationBenefitTrackingSubtitle =>
+      'Order status updates automatically for the operations team';
+
+  @override
+  String get locationAlwaysNote =>
+      'Next we\'ll ask for “Allow all the time” to track the trip while the screen is locked';
+
+  @override
+  String get allowLocationAccess => 'Allow location access';
+
+  @override
+  String get locationDeniedTitle => 'Location is required to start work';
+
+  @override
+  String get locationDeniedSubtitle =>
+      'Without location access you can\'t start your day or get directions to customers';
+
+  @override
+  String get locationDeniedStepSettingsTitle => 'Open device settings';
+
+  @override
+  String get locationDeniedStepSettingsSubtitle =>
+      'Using the “Open settings” button below';
+
+  @override
+  String get locationDeniedStepAppTitle => 'Location → Diva Courier';
+
+  @override
+  String get locationDeniedStepAppSubtitle =>
+      'Choose the app from the apps list';
+
+  @override
+  String get locationDeniedStepAlwaysTitle => 'Choose “Always”';
+
+  @override
+  String get locationDeniedStepAlwaysSubtitle =>
+      'To track the trip while the screen is locked';
+
+  @override
+  String get locationPrivacyNote =>
+      'We only use your location during working hours and never share it with customers';
+
+  @override
+  String get openSettings => 'Open settings';
+
+  @override
+  String get tryAgain => 'Try again';
+
+  @override
+  String get cameraPermissionTitle => 'Camera & photos';
+
+  @override
+  String get cameraPermissionSubtitle =>
+      'To document deliveries quickly without leaving the app';
+
+  @override
+  String get cameraBenefitProofTitle => 'Proof-of-delivery photo';
+
+  @override
+  String get cameraBenefitProofSubtitle =>
+      'Take a photo of the order at the customer\'s door';
+
+  @override
+  String get cameraBenefitCallLogTitle => 'Call log screenshot';
+
+  @override
+  String get cameraBenefitCallLogSubtitle =>
+      'Upload a screenshot when you can\'t reach the customer';
+
+  @override
+  String get allowAccess => 'Allow access';
+
+  @override
+  String get later => 'Later';
 }

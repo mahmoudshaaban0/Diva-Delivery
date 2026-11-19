@@ -5,7 +5,9 @@ enum AppRoutes {
   splash('/splash', 'splash'),
   login('/login', 'login'),
   otp('/otp', 'otp'),
-  forgotPassword('/forgot-password', 'forgotPassword');
+  forgotPassword('/forgot-password', 'forgotPassword'),
+  locationPermission('/permissions/location', 'locationPermission'),
+  cameraPermission('/permissions/camera', 'cameraPermission');
 
   AppRoutes(this.path, this.name);
   final String path;

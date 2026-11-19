@@ -4,6 +4,8 @@ import 'package:limitless_code_template/features/auth/presentation/screens/forgo
 import 'package:limitless_code_template/features/auth/presentation/screens/login_screen.dart';
 import 'package:limitless_code_template/features/auth/presentation/screens/otp_screen.dart';
 import 'package:limitless_code_template/features/home/presentation/screens/home_screen.dart';
+import 'package:limitless_code_template/features/permissions/presentation/screens/camera_permission_screen.dart';
+import 'package:limitless_code_template/features/permissions/presentation/screens/location_permission_screen.dart';
 import 'package:limitless_code_template/features/splash/presentation/screens/splash_screen.dart';
 
 /// app router
@@ -45,6 +47,16 @@ class AppRouter {
         builder: (context, state) => ForgotPasswordScreen(
           initialEmail: state.uri.queryParameters['email'] ?? '',
         ),
+      ),
+      GoRoute(
+        name: AppRoutes.locationPermission.name,
+        path: AppRoutes.locationPermission.path,
+        builder: (context, state) => const LocationPermissionScreen(),
+      ),
+      GoRoute(
+        name: AppRoutes.cameraPermission.name,
+        path: AppRoutes.cameraPermission.path,
+        builder: (context, state) => const CameraPermissionScreen(),
       ),
     ],
   );

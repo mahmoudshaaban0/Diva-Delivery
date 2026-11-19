@@ -86,5 +86,45 @@
   "linkNotReceived": "Didn't get the link?",
   "resendLink": "Resend link",
   "noInternetConnection": "No internet connection",
-  "retry": "Retry"
+  "retry": "Retry",
+  "stepOf": "Step {current} of {total}",
+  "@stepOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "locationPermissionTitle": "Turn on location access",
+  "locationPermissionSubtitle": "We need your location to start the day and guide you to customers accurately",
+  "locationBenefitWarehouseTitle": "Start the day at the warehouse",
+  "locationBenefitWarehouseSubtitle": "We check you're inside the warehouse zone when you start",
+  "locationBenefitRouteTitle": "Best delivery route",
+  "locationBenefitRouteSubtitle": "Orders sorted by the nearest customer",
+  "locationBenefitTrackingTitle": "Live trip tracking",
+  "locationBenefitTrackingSubtitle": "Order status updates automatically for the operations team",
+  "locationAlwaysNote": "Next we'll ask for “Allow all the time” to track the trip while the screen is locked",
+  "allowLocationAccess": "Allow location access",
+  "locationDeniedTitle": "Location is required to start work",
+  "locationDeniedSubtitle": "Without location access you can't start your day or get directions to customers",
+  "locationDeniedStepSettingsTitle": "Open device settings",
+  "locationDeniedStepSettingsSubtitle": "Using the “Open settings” button below",
+  "locationDeniedStepAppTitle": "Location → Diva Courier",
+  "locationDeniedStepAppSubtitle": "Choose the app from the apps list",
+  "locationDeniedStepAlwaysTitle": "Choose “Always”",
+  "locationDeniedStepAlwaysSubtitle": "To track the trip while the screen is locked",
+  "locationPrivacyNote": "We only use your location during working hours and never share it with customers",
+  "openSettings": "Open settings",
+  "tryAgain": "Try again",
+  "cameraPermissionTitle": "Camera & photos",
+  "cameraPermissionSubtitle": "To document deliveries quickly without leaving the app",
+  "cameraBenefitProofTitle": "Proof-of-delivery photo",
+  "cameraBenefitProofSubtitle": "Take a photo of the order at the customer's door",
+  "cameraBenefitCallLogTitle": "Call log screenshot",
+  "cameraBenefitCallLogSubtitle": "Upload a screenshot when you can't reach the customer",
+  "allowAccess": "Allow access",
+  "later": "Later"
 }

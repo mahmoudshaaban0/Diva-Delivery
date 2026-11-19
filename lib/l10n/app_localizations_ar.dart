@@ -166,4 +166,106 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get retry => 'إعادة المحاولة';
+
+  @override
+  String stepOf(int current, int total) {
+    return 'الخطوة $current من $total';
+  }
+
+  @override
+  String get locationPermissionTitle => 'فعّل الوصول إلى موقعك';
+
+  @override
+  String get locationPermissionSubtitle =>
+      'نحتاج موقعك لبدء اليوم وتوجيهك للعملاء بدقة';
+
+  @override
+  String get locationBenefitWarehouseTitle => 'بدء اليوم من المستودع';
+
+  @override
+  String get locationBenefitWarehouseSubtitle =>
+      'نتحقق أنك داخل نطاق المستودع عند البدء';
+
+  @override
+  String get locationBenefitRouteTitle => 'أفضل مسار للتوصيل';
+
+  @override
+  String get locationBenefitRouteSubtitle => 'ترتيب الطلبات حسب أقرب عميل';
+
+  @override
+  String get locationBenefitTrackingTitle => 'متابعة لحظية للرحلة';
+
+  @override
+  String get locationBenefitTrackingSubtitle =>
+      'تُحدَّث حالة الطلب تلقائيًا لفريق العمليات';
+
+  @override
+  String get locationAlwaysNote =>
+      'سنطلب بعدها «السماح دائمًا» لمتابعة الرحلة أثناء قفل الشاشة';
+
+  @override
+  String get allowLocationAccess => 'السماح بالوصول للموقع';
+
+  @override
+  String get locationDeniedTitle => 'الموقع مطلوب لبدء العمل';
+
+  @override
+  String get locationDeniedSubtitle =>
+      'بدون إذن الموقع لا يمكن تسجيل بدء يومك أو توجيهك للعملاء';
+
+  @override
+  String get locationDeniedStepSettingsTitle => 'افتح إعدادات الجهاز';
+
+  @override
+  String get locationDeniedStepSettingsSubtitle =>
+      'من زر «فتح الإعدادات» بالأسفل';
+
+  @override
+  String get locationDeniedStepAppTitle => 'الموقع ← Diva Courier';
+
+  @override
+  String get locationDeniedStepAppSubtitle => 'اختر التطبيق من قائمة التطبيقات';
+
+  @override
+  String get locationDeniedStepAlwaysTitle => 'اختر «دائمًا»';
+
+  @override
+  String get locationDeniedStepAlwaysSubtitle =>
+      'لمتابعة الرحلة أثناء قفل الشاشة';
+
+  @override
+  String get locationPrivacyNote =>
+      'نستخدم موقعك أثناء ساعات العمل فقط، ولا نشاركه مع العملاء';
+
+  @override
+  String get openSettings => 'فتح الإعدادات';
+
+  @override
+  String get tryAgain => 'حاول مرة أخرى';
+
+  @override
+  String get cameraPermissionTitle => 'الكاميرا والصور';
+
+  @override
+  String get cameraPermissionSubtitle =>
+      'لتوثيق التسليم بسرعة دون مغادرة التطبيق';
+
+  @override
+  String get cameraBenefitProofTitle => 'صورة إثبات التسليم';
+
+  @override
+  String get cameraBenefitProofSubtitle => 'التقط صورة الطلب عند باب العميل';
+
+  @override
+  String get cameraBenefitCallLogTitle => 'لقطة سجل المكالمات';
+
+  @override
+  String get cameraBenefitCallLogSubtitle =>
+      'ارفع لقطة شاشة عند تعذّر الوصول للعميل';
+
+  @override
+  String get allowAccess => 'السماح بالوصول';
+
+  @override
+  String get later => 'لاحقًا';
 }
