@@ -1,0 +1,70 @@
+{
+  "@@locale": "en",
+  "appTitle": "Limitless Code",
+  "@appTitle": {
+    "description": "The application title"
+  },
+  "hello": "Hello",
+  "welcomeUser": "Welcome, {name}!",
+  "@welcomeUser": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "arabic": "arabic",
+  "splashTagline": "Every delivery in its right place",
+  "splashFooter": "Expert Partners · Version {version}",
+  "@splashFooter": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "contactSupport": "Contact support",
+  "loginWelcome": "Welcome, Captain",
+  "loginSubtitle": "Sign in to start your delivery day",
+  "mobileNumber": "Mobile number",
+  "email": "Email",
+  "password": "Password",
+  "phoneHint": "5X XXX XXXX",
+  "emailHint": "name@company.com",
+  "passwordHint": "Enter your password",
+  "forgotPassword": "Forgot password?",
+  "showPassword": "Show password",
+  "hidePassword": "Hide password",
+  "phoneInvalid": "Enter a valid mobile number starting with 5",
+  "emailInvalid": "Enter a valid email address",
+  "passwordRequired": "Enter your password",
+  "secureConnection": "Secure, encrypted connection · Your data is protected",
+  "sendOtp": "Send verification code",
+  "signIn": "Sign in",
+  "termsNotice": "By continuing you agree to the Terms and Privacy Policy",
+  "otpTitle": "Verify mobile",
+  "otpHeading": "Enter verification code",
+  "otpHeadingError": "Incorrect code",
+  "otpSentTo": "We sent a {length}-digit code to",
+  "@otpSentTo": {
+    "placeholders": {
+      "length": {
+        "type": "int"
+      }
+    }
+  },
+  "otpResendIn": "Resend in",
+  "otpNotReceived": "Didn't get the code?",
+  "otpResend": "Resend code",
+  "otpVerify": "Verify and continue",
+  "otpVerifyAgain": "Verify again",
+  "otpInvalidAttempts": "The code expired or was entered incorrectly — {count, plural, =0{no attempts left} =1{1 attempt left} other{{count} attempts left}}",
+  "@otpInvalidAttempts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "otpInvalid": "The code expired or was entered incorrectly"
+}

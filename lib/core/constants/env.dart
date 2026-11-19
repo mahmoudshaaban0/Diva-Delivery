@@ -1,0 +1,16 @@
+/// Compile-time config injected with `--dart-define-from-file=env/<flavor>.json`.
+/// Every key must exist in `env/example.json`.
+final class Env {
+  Env._();
+
+  static const String baseUrl = String.fromEnvironment('BASE_URL');
+
+  // Auth endpoints (relative to [baseUrl]).
+  static const String sendOtpEndpoint = String.fromEnvironment(
+    'SEND_OTP_ENDPOINT',
+  );
+  static const String verifyOtpEndpoint = String.fromEnvironment(
+    'VERIFY_OTP_ENDPOINT',
+  );
+  static const String loginEndpoint = String.fromEnvironment('LOGIN_ENDPOINT');
+}

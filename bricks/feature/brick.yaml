@@ -1,0 +1,12 @@
+name: feature
+description: Creates a feature (data, repository, model, cubit, state, screen) following the limitless_code_template structure (BaseState, Result, ApiConsumer).
+version: 0.1.0+2
+
+environment:
+  mason: ">=0.1.0 <0.2.0"
+
+vars:
+  name:
+    type: string
+    description: Feature name (e.g. cart, user profile)
+    prompt: What is the feature name?

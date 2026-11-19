@@ -1,0 +1,22 @@
+flavorizr:
+  ide: "vscode"
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+
+  flavors:
+    dev:
+      app:
+        name: "App Template Dev"
+      android:
+        applicationId: "com.example.app_template.dev"
+      ios:
+        bundleId: "com.example.appTemplate.dev"
+
+    prod:
+      app:
+        name: "App Template"
+      android:
+        applicationId: "com.example.app_template"
+      ios:
+        bundleId: "com.example.appTemplate"

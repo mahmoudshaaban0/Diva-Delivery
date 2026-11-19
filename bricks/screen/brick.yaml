@@ -1,0 +1,21 @@
+name: screen
+description: Adds a screen to an existing feature and registers its route in AppRoutes + AppRouter.
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0 <0.2.0"
+
+vars:
+  feature:
+    type: string
+    description: Existing feature to add the screen to (e.g. settings)
+    prompt: Which feature is this screen for?
+  name:
+    type: string
+    description: Screen name without the "Screen" suffix (e.g. language)
+    prompt: What is the screen name?
+  path:
+    type: string
+    description: Route path (e.g. /settings/language). Leave empty to use /<name>
+    default: ""
+    prompt: Route path (empty = /<name>)?

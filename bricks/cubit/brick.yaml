@@ -1,0 +1,21 @@
+name: cubit
+description: Adds a cubit (+ state) to an existing feature, without creating a new feature folder.
+version: 0.1.0+2
+
+environment:
+  mason: ">=0.1.0 <0.2.0"
+
+vars:
+  feature:
+    type: string
+    description: Existing feature to add it to (e.g. settings)
+    prompt: Which feature is this for?
+  name:
+    type: string
+    description: Name of the new cubit (e.g. language)
+    prompt: What is the cubit name?
+  folder:
+    type: string
+    description: Folder under presentation/ to place it in
+    default: bloc
+    prompt: Which folder under presentation?
