@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:limitless_code_template/core/constants/app_constants.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_logo.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
 import 'package:limitless_code_template/core/routing/app_routes.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
@@ -55,7 +56,12 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 24, 20, 16),
+                  padding: AppInsets.only(
+                    start: 20,
+                    end: 20,
+                    top: 24,
+                    bottom: 16,
+                  ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -76,7 +82,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
+                padding: AppInsets.only(start: 20, end: 20, top: 12, bottom: 8),
                 child: AppText(
                   context.localizations.splashFooter(AppConstants.appVersion),
                   style: context.typography.bodyXS,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_svg_icon.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
@@ -37,13 +39,13 @@ class AppSegmentedControl<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(4),
+      padding: AppInsets.all(4),
       decoration: BoxDecoration(
         color: context.colors.brandPrimaryTint,
         borderRadius: AppRadius.rfull,
       ),
       child: Row(
-        spacing: 4,
+        spacing: 4.w,
         children: [
           for (final segment in segments)
             Expanded(
@@ -94,7 +96,7 @@ class _SegmentItem<T> extends StatelessWidget {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            spacing: 8,
+            spacing: 8.w,
             children: [
               AppSvgIcon(segment.iconAsset, size: 18, color: foreground),
               Flexible(

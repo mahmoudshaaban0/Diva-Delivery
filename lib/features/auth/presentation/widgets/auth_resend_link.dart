@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
 /// "Didn't get the code? Resend code" (Figma "Resend"), shared by the OTP
@@ -20,7 +21,7 @@ class AuthResendLink extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
-      spacing: 4,
+      spacing: 4.w,
       children: [
         AppText(
           question,

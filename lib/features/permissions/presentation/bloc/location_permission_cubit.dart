@@ -12,8 +12,8 @@ class LocationPermissionCubit extends Cubit<LocationPermissionState> {
 
   final PermissionService _permissionService;
 
-  /// Skips the screen when already granted. Also called when the app comes
-  /// back from the system settings.
+  /// Called when the app comes back from the system settings. (Skipping the
+  /// screen when already granted is done by the route's `redirect`.)
   Future<void> checkStatus() async {
     if (state.status == AppStatus.loading) return;
     if (await _permissionService.isLocationGranted()) {

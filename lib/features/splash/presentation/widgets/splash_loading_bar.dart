@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 
 /// Indeterminate 96×4 pill with a 40-wide value sliding across it
@@ -32,7 +33,7 @@ class SplashLoadingBarState extends State<SplashLoadingBar>
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: _width,
+      width: _width.w,
       height: 4,
       decoration: BoxDecoration(
         color: widget.track,
@@ -49,7 +50,7 @@ class SplashLoadingBarState extends State<SplashLoadingBar>
           );
         },
         child: Container(
-          width: _valueWidth,
+          width: _valueWidth.w,
           height: 4,
           decoration: BoxDecoration(
             color: widget.value,

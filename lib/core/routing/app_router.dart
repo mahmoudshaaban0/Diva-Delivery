@@ -1,5 +1,7 @@
 import 'package:go_router/go_router.dart';
+import 'package:limitless_code_template/core/config/di/injectable.dart';
 import 'package:limitless_code_template/core/routing/app_routes.dart';
+import 'package:limitless_code_template/core/services/permission_service.dart';
 import 'package:limitless_code_template/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:limitless_code_template/features/auth/presentation/screens/login_screen.dart';
 import 'package:limitless_code_template/features/auth/presentation/screens/otp_screen.dart';
@@ -51,11 +53,22 @@ class AppRouter {
       GoRoute(
         name: AppRoutes.locationPermission.name,
         path: AppRoutes.locationPermission.path,
+        // Checked before the screen is built, so an already-granted
+        // permission never flashes its screen: go_router waits on the
+        // previous screen, then lands on the right one.
+        redirect: (context, state) async =>
+            await getIt<PermissionService>().isLocationGranted()
+            ? AppRoutes.cameraPermission.path
+            : null,
         builder: (context, state) => const LocationPermissionScreen(),
       ),
       GoRoute(
         name: AppRoutes.cameraPermission.name,
         path: AppRoutes.cameraPermission.path,
+        redirect: (context, state) async =>
+            await getIt<PermissionService>().isCameraAndPhotosGranted()
+            ? AppRoutes.home.path
+            : null,
         builder: (context, state) => const CameraPermissionScreen(),
       ),
     ],

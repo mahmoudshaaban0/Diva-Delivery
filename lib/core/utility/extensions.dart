@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_colors.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_typography.dart';
 import 'package:limitless_code_template/l10n/app_localizations.dart';
@@ -23,5 +24,8 @@ extension ThemeExt on BuildContext {
   bool get isDarkMode => theme.brightness == Brightness.dark;
   bool get isLightMode => theme.brightness == Brightness.light;
   AppColors get colors => theme.extension<AppColors>()!;
-  AppTypography get typography => theme.extension<AppTypography>()!;
+
+  /// Text styles scaled with `.sp` (see `AppTypography.scaled`).
+  AppTypography get typography =>
+      theme.extension<AppTypography>()!.scaled(SizeConfig.font(1));
 }

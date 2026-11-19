@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_filled_button.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
@@ -24,7 +25,7 @@ class LoginFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
+      padding: AppInsets.only(start: 20, end: 20, top: 12, bottom: 8),
       child: Column(
         children: [
           AppFilledButton(

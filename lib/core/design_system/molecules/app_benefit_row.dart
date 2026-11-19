@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_svg_icon.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
@@ -22,11 +23,11 @@ class AppBenefitRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      spacing: 12,
+      spacing: 12.w,
       children: [
         Container(
-          width: 40,
-          height: 40,
+          width: 40.r,
+          height: 40.r,
           alignment: Alignment.center,
           decoration: BoxDecoration(
             color: context.colors.brandPrimaryTint,
@@ -41,7 +42,7 @@ class AppBenefitRow extends StatelessWidget {
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 2,
+            spacing: 2.h,
             children: [
               AppText(title, style: context.typography.subtitleS),
               AppText(

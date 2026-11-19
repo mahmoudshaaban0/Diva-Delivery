@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/constants/assets.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_svg_icon.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
@@ -17,14 +19,14 @@ class AuthResendTimer extends StatelessWidget {
     final seconds = (secondsLeft % 60).toString().padLeft(2, '0');
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+      padding: AppInsets.symmetric(horizontal: 14, vertical: 8),
       decoration: BoxDecoration(
         color: context.colors.brandPrimaryTint,
         borderRadius: AppRadius.rfull,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        spacing: 8,
+        spacing: 8.w,
         children: [
           AppSvgIcon(
             Assets.vectorsIcClock16,

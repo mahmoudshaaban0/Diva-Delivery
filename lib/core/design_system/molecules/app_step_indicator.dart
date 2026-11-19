@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
@@ -34,12 +35,12 @@ class AppStepIndicator extends StatelessWidget {
         Directionality(
           textDirection: TextDirection.ltr,
           child: Row(
-            spacing: 8,
+            spacing: 8.w,
             children: [
               for (var step = 1; step <= total; step++)
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 250),
-                  width: 28,
+                  width: 28.w,
                   height: 6,
                   decoration: BoxDecoration(
                     color: step <= current

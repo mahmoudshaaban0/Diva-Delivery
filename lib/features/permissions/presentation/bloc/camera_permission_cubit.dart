@@ -13,13 +13,6 @@ class CameraPermissionCubit extends Cubit<CameraPermissionState> {
 
   final PermissionService _permissionService;
 
-  /// Skips the screen when already granted.
-  Future<void> checkStatus() async {
-    if (await _permissionService.isCameraAndPhotosGranted()) {
-      emit(state.copyWith(status: AppStatus.success));
-    }
-  }
-
   Future<void> request() async {
     if (state.status == AppStatus.loading) return;
     emit(state.copyWith(status: AppStatus.loading));

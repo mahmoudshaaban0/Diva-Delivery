@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_vertical_divider.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/formatters/phone_formatter.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
@@ -14,7 +15,7 @@ class LoginCountryCode extends StatelessWidget {
       textDirection: TextDirection.ltr,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        spacing: 12,
+        spacing: 12.w,
         children: [
           Text(
             PhoneFormatter.countryCode,

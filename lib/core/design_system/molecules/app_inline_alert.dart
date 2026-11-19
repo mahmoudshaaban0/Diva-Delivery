@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/constants/assets.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_svg_icon.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
@@ -17,14 +19,14 @@ class AppInlineAlert extends StatelessWidget {
       liveRegion: true,
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: AppInsets.symmetric(horizontal: 16, vertical: 12),
         decoration: BoxDecoration(
           color: context.colors.systemRedBg,
           borderRadius: AppRadius.r16,
           border: Border.all(color: context.colors.systemRedStroke),
         ),
         child: Row(
-          spacing: 8,
+          spacing: 8.w,
           children: [
             AppSvgIcon(
               Assets.vectorsIcInformationCircle18,

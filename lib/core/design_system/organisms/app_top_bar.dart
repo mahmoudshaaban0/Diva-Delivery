@@ -3,6 +3,7 @@ import 'package:limitless_code_template/core/constants/assets.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_circle_icon_button.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_svg_icon.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
 /// Flat top bar with a round back button at the start and a centered title
@@ -28,7 +29,8 @@ class AppTopBar extends StatelessWidget implements PreferredSizeWidget {
       child: SizedBox(
         height: _height,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+          // Vertical 6 centers the fixed 44 button in the fixed 56 bar.
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6),
           child: Row(
             children: [
               AppCircleIconButton(

@@ -94,6 +94,51 @@ class AppTypography extends ThemeExtension<AppTypography> {
   final TextStyle body2XS;
   final TextStyle body3XS;
 
+  /// The same styles with every font size multiplied by [factor], the
+  /// `.sp` scale (`SizeConfig.font(1)`). `context.typography` calls this, so
+  /// all text follows the screen size; don't apply `.sp` again on top.
+  ///
+  /// Cached per instance and factor: it runs on every `context.typography`
+  /// read, and the theme only changes on theme/locale switches.
+  AppTypography scaled(double factor) {
+    if (factor == 1) return this;
+    final cached = _scaledCache[this];
+    if (cached != null && cached.$1 == factor) return cached.$2;
+
+    TextStyle s(TextStyle style) =>
+        style.copyWith(fontSize: (style.fontSize ?? 14) * factor);
+
+    final result = AppTypography(
+      titleHero: s(titleHero),
+      titleXL: s(titleXL),
+      titleL: s(titleL),
+      titleM: s(titleM),
+      titleS: s(titleS),
+      titleXS: s(titleXS),
+      title2XS: s(title2XS),
+      title3XS: s(title3XS),
+      title4XS: s(title4XS),
+      title5XS: s(title5XS),
+      subtitleXL: s(subtitleXL),
+      subtitleL: s(subtitleL),
+      subtitleM: s(subtitleM),
+      subtitleS: s(subtitleS),
+      subtitleXS: s(subtitleXS),
+      subtitle2XS: s(subtitle2XS),
+      bodyXL: s(bodyXL),
+      bodyL: s(bodyL),
+      bodyM: s(bodyM),
+      bodyS: s(bodyS),
+      bodyXS: s(bodyXS),
+      body2XS: s(body2XS),
+      body3XS: s(body3XS),
+    );
+    _scaledCache[this] = (factor, result);
+    return result;
+  }
+
+  static final _scaledCache = Expando<(double, AppTypography)>();
+
   @override
   AppTypography copyWith({
     TextStyle? titleHero,

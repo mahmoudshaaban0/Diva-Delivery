@@ -8,6 +8,7 @@ import 'package:limitless_code_template/core/constants/assets.dart';
 import 'package:limitless_code_template/core/cubit/base_state.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_icon_badge.dart';
 import 'package:limitless_code_template/core/design_system/molecules/app_step_indicator.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
 import 'package:limitless_code_template/core/routing/app_routes.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
@@ -24,11 +25,7 @@ class CameraPermissionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) {
-        final cubit = getIt<CameraPermissionCubit>();
-        unawaited(cubit.checkStatus());
-        return cubit;
-      },
+      create: (_) => getIt<CameraPermissionCubit>(),
       child: BlocConsumer<CameraPermissionCubit, CameraPermissionState>(
         listenWhen: (a, b) => a.status != b.status,
         listener: (context, state) {
@@ -45,7 +42,12 @@ class CameraPermissionScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
+                    padding: AppInsets.only(
+                      start: 20,
+                      end: 20,
+                      top: 12,
+                      bottom: 8,
+                    ),
                     child: AppStepIndicator(
                       current: 2,
                       total: 2,
@@ -54,7 +56,12 @@ class CameraPermissionScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: SingleChildScrollView(
-                      padding: const EdgeInsets.fromLTRB(20, 24, 20, 16),
+                      padding: AppInsets.only(
+                        start: 20,
+                        end: 20,
+                        top: 24,
+                        bottom: 16,
+                      ),
                       child: Column(
                         children: [
                           const AppIconBadge(

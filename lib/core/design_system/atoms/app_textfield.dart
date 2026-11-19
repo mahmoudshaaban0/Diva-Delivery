@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
@@ -132,26 +134,21 @@ class AppTextField extends StatelessWidget {
                   ? context.colors.systemRedBg
                   : context.colors.surfaceCard,
             ),
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 24,
+            // Vertical stays fixed so the field keeps its 48 height.
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 24.w,
               vertical: 12,
             ),
             prefixIcon: prefixIcon == null
                 ? null
                 : Padding(
-                    padding: const EdgeInsetsDirectional.only(
-                      start: 24,
-                      end: 12,
-                    ),
+                    padding: AppInsets.only(start: 24, end: 12),
                     child: prefixIcon,
                   ),
             suffixIcon: suffixIcon == null
                 ? null
                 : Padding(
-                    padding: const EdgeInsetsDirectional.only(
-                      start: 12,
-                      end: 24,
-                    ),
+                    padding: AppInsets.only(start: 12, end: 24),
                     child: suffixIcon,
                   ),
             prefixIconConstraints: const BoxConstraints(),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_svg_icon.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_shadows.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
@@ -34,7 +36,7 @@ class AppToast extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      padding: AppInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
         // Figma binds this to Brand/Deep, which turns light in the derived
         // dark palette; the scrim token stays dark in both themes so the
@@ -44,7 +46,7 @@ class AppToast extends StatelessWidget {
         boxShadow: AppShadow.toast,
       ),
       child: Row(
-        spacing: 10,
+        spacing: 10.w,
         children: [
           if (iconAsset != null)
             AppSvgIcon(
@@ -100,9 +102,9 @@ extension AppToastContext on BuildContext {
         // Floating snackbars measure from the screen edge, so add the bottom
         // safe area (home indicator) to line up with SafeArea'd footers.
         margin: EdgeInsets.fromLTRB(
-          20,
+          20.w,
           0,
-          20,
+          20.w,
           bottomMargin + MediaQuery.paddingOf(this).bottom,
         ),
         duration: duration,

@@ -8,6 +8,7 @@ import 'package:limitless_code_template/core/constants/assets.dart';
 import 'package:limitless_code_template/core/cubit/base_state.dart';
 import 'package:limitless_code_template/core/design_system/molecules/app_inline_alert.dart';
 import 'package:limitless_code_template/core/design_system/organisms/app_toast.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
 import 'package:limitless_code_template/core/routing/app_routes.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
@@ -121,7 +122,12 @@ class _LoginViewState extends State<_LoginView> {
               children: [
                 Expanded(
                   child: SingleChildScrollView(
-                    padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
+                    padding: AppInsets.only(
+                      start: 20,
+                      end: 20,
+                      top: 8,
+                      bottom: 16,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/constants/assets.dart';
 import 'package:limitless_code_template/core/design_system/molecules/app_segmented_control.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 import 'package:limitless_code_template/features/auth/presentation/bloc/login_state.dart';
@@ -26,7 +28,7 @@ class LoginCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(20, 20, 20, 24),
+      padding: AppInsets.only(start: 20, end: 20, top: 20, bottom: 24),
       decoration: BoxDecoration(
         color: context.colors.surfaceCard,
         borderRadius: AppRadius.r24,
@@ -41,7 +43,7 @@ class LoginCard extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              spacing: 16,
+              spacing: 16.h,
               children: [
                 AppSegmentedControl<LoginMethod>(
                   selected: method,
