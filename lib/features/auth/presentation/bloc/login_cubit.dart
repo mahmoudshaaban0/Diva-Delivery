@@ -19,7 +19,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   /// [phone] is the 9-digit national number (5XXXXXXXX).
   Future<void> sendOtp(String phone) async {
-    emit(state.copyWith(status: AppStatus.loading));
+    emit(state.copyWith(status: AppStatus.loading, isOffline: false));
     final result = await _authRepository.sendOtp(phone: phone);
     switch (result) {
       case Success(:final data):
@@ -34,6 +34,7 @@ class LoginCubit extends Cubit<LoginState> {
         emit(
           state.copyWith(
             status: AppStatus.failure,
+            isOffline: exception is NoInternetConnectionException,
             errorMessage: exception is ServerException
                 ? exception.message
                 : exception.toString(),
@@ -46,7 +47,7 @@ class LoginCubit extends Cubit<LoginState> {
     required String email,
     required String password,
   }) async {
-    emit(state.copyWith(status: AppStatus.loading));
+    emit(state.copyWith(status: AppStatus.loading, isOffline: false));
     final result = await _authRepository.loginWithEmail(
       email: email,
       password: password,
@@ -59,6 +60,7 @@ class LoginCubit extends Cubit<LoginState> {
         emit(
           state.copyWith(
             status: AppStatus.failure,
+            isOffline: exception is NoInternetConnectionException,
             errorMessage: exception is ServerException
                 ? exception.message
                 : exception.toString(),

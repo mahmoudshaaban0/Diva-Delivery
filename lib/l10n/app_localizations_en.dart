@@ -105,7 +105,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get otpResendIn => 'Resend in';
+  String get resendIn => 'Resend in';
 
   @override
   String get otpNotReceived => 'Didn\'t get the code?';
@@ -133,4 +133,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get otpInvalid => 'The code expired or was entered incorrectly';
+
+  @override
+  String get forgotPasswordTitle => 'Reset password';
+
+  @override
+  String get forgotPasswordSubtitle =>
+      'Enter your registered email and we\'ll send you a link to set a new password.';
+
+  @override
+  String get sendLink => 'Send link';
+
+  @override
+  String get checkYourEmail => 'Check your email';
+
+  @override
+  String resetLinkSentTo(String email, int minutes) {
+    return 'We sent a reset link to $email. The link is valid for $minutes minutes.';
+  }
+
+  @override
+  String get backToSignIn => 'Back to sign in';
+
+  @override
+  String get linkNotReceived => 'Didn\'t get the link?';
+
+  @override
+  String get resendLink => 'Resend link';
+
+  @override
+  String get noInternetConnection => 'No internet connection';
+
+  @override
+  String get retry => 'Retry';
 }

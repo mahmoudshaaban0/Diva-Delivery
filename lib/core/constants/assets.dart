@@ -74,6 +74,10 @@ class Assets {
   /// assets/vectors/ic_mail_20.svg
   static const String vectorsIcMail20 = "assets/vectors/ic_mail_20.svg";
 
+  /// Assets for vectorsIcMail28
+  /// assets/vectors/ic_mail_28.svg
+  static const String vectorsIcMail28 = "assets/vectors/ic_mail_28.svg";
+
   /// Assets for vectorsIcShield16
   /// assets/vectors/ic_shield_16.svg
   static const String vectorsIcShield16 = "assets/vectors/ic_shield_16.svg";
@@ -96,4 +100,8 @@ class Assets {
   /// Assets for vectorsIcViewOff20
   /// assets/vectors/ic_view_off_20.svg
   static const String vectorsIcViewOff20 = "assets/vectors/ic_view_off_20.svg";
+
+  /// Assets for vectorsIcWifiOff20
+  /// assets/vectors/ic_wifi_off_20.svg
+  static const String vectorsIcWifiOff20 = "assets/vectors/ic_wifi_off_20.svg";
 }

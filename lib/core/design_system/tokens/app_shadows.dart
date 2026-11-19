@@ -18,6 +18,11 @@ class AppShadow {
     BoxShadow(color: Color(0x19101828), blurRadius: 3, offset: Offset(0, 1)),
   ];
 
+  /// Floating toast (Figma `Courier/Toast`: 0 8 12, rgba(8,64,46,.18)).
+  static const toast = [
+    BoxShadow(color: Color(0x2E08402E), offset: Offset(0, 8), blurRadius: 12),
+  ];
+
   static const lg = [
     BoxShadow(color: Color(0x0D101828), offset: Offset(0, -6), blurRadius: 24),
   ];

@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:limitless_code_template/core/routing/app_routes.dart';
+import 'package:limitless_code_template/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:limitless_code_template/features/auth/presentation/screens/login_screen.dart';
 import 'package:limitless_code_template/features/auth/presentation/screens/otp_screen.dart';
 import 'package:limitless_code_template/features/home/presentation/screens/home_screen.dart';
@@ -37,6 +38,13 @@ class AppRouter {
             resendAfterSeconds: int.tryParse(query['resendAfter'] ?? ''),
           );
         },
+      ),
+      GoRoute(
+        name: AppRoutes.forgotPassword.name,
+        path: AppRoutes.forgotPassword.path,
+        builder: (context, state) => ForgotPasswordScreen(
+          initialEmail: state.uri.queryParameters['email'] ?? '',
+        ),
       ),
     ],
   );

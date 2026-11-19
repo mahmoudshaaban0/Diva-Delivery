@@ -272,11 +272,11 @@ abstract class AppLocalizations {
   /// **'We sent a {length}-digit code to'**
   String otpSentTo(int length);
 
-  /// No description provided for @otpResendIn.
+  /// No description provided for @resendIn.
   ///
   /// In en, this message translates to:
   /// **'Resend in'**
-  String get otpResendIn;
+  String get resendIn;
 
   /// No description provided for @otpNotReceived.
   ///
@@ -313,6 +313,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The code expired or was entered incorrectly'**
   String get otpInvalid;
+
+  /// No description provided for @forgotPasswordTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset password'**
+  String get forgotPasswordTitle;
+
+  /// No description provided for @forgotPasswordSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your registered email and we\'ll send you a link to set a new password.'**
+  String get forgotPasswordSubtitle;
+
+  /// No description provided for @sendLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Send link'**
+  String get sendLink;
+
+  /// No description provided for @checkYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your email'**
+  String get checkYourEmail;
+
+  /// No description provided for @resetLinkSentTo.
+  ///
+  /// In en, this message translates to:
+  /// **'We sent a reset link to {email}. The link is valid for {minutes} minutes.'**
+  String resetLinkSentTo(String email, int minutes);
+
+  /// No description provided for @backToSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to sign in'**
+  String get backToSignIn;
+
+  /// No description provided for @linkNotReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t get the link?'**
+  String get linkNotReceived;
+
+  /// No description provided for @resendLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend link'**
+  String get resendLink;
+
+  /// No description provided for @noInternetConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'No internet connection'**
+  String get noInternetConnection;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
 }
 
 class _AppLocalizationsDelegate

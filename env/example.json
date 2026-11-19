@@ -2,5 +2,6 @@
   "BASE_URL": "https://your-api.example.com",
   "SEND_OTP_ENDPOINT": "/auth/otp/send",
   "VERIFY_OTP_ENDPOINT": "/auth/otp/verify",
-  "LOGIN_ENDPOINT": "/auth/login"
+  "LOGIN_ENDPOINT": "/auth/login",
+  "FORGOT_PASSWORD_ENDPOINT": "/auth/password/forgot"
 }

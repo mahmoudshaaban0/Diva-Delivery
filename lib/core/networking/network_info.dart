@@ -2,6 +2,9 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 
 abstract class NetworkInfo {
   Future<bool> get isConnected;
+
+  /// Emits each time the device goes from offline back to online.
+  Stream<void> get onReconnected;
 }
 
 class NetworkInfoImpl implements NetworkInfo {
@@ -15,4 +18,10 @@ class NetworkInfoImpl implements NetworkInfo {
     final results = await _connectivity.checkConnectivity();
     return !results.contains(ConnectivityResult.none);
   }
+
+  @override
+  Stream<void> get onReconnected => _connectivity.onConnectivityChanged
+      .map((results) => !results.contains(ConnectivityResult.none))
+      .distinct()
+      .where((isOnline) => isOnline);
 }

@@ -24,6 +24,7 @@ class AppTextField extends StatelessWidget {
     this.inputFormatters,
     this.autofillHints,
     this.ltrInput = false,
+    this.alignLeft = false,
     super.key,
   });
 
@@ -47,9 +48,14 @@ class AppTextField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final Iterable<String>? autofillHints;
 
-  /// Types the value left-to-right with the cursor starting at the left,
-  /// in both Arabic and English (phone numbers, emails, passwords).
+  /// Types the value left-to-right (emails, passwords, numbers) while
+  /// keeping it at the reading start, so in Arabic it sits next to the
+  /// leading icon like the RTL design.
   final bool ltrInput;
+
+  /// Starts the cursor and text at the physical left in both languages.
+  /// Only the phone field uses it, so the number follows `+966`.
+  final bool alignLeft;
 
   @override
   Widget build(BuildContext context) {
@@ -96,9 +102,12 @@ class AppTextField extends StatelessWidget {
           onFieldSubmitted: onFieldSubmitted,
           inputFormatters: inputFormatters,
           autofillHints: autofillHints,
-          // LTR + start = the cursor and text begin at the left, also in
-          // Arabic.
-          textDirection: ltrInput ? TextDirection.ltr : null,
+          textDirection: ltrInput || alignLeft ? TextDirection.ltr : null,
+          textAlign: alignLeft || !ltrInput
+              ? TextAlign.start
+              : Directionality.of(context) == TextDirection.rtl
+              ? TextAlign.right
+              : TextAlign.left,
           style: context.typography.bodyM.copyWith(
             color: context.colors.textTitle,
           ),

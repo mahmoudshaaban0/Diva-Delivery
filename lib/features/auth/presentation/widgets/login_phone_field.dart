@@ -36,7 +36,7 @@ class LoginPhoneField extends StatelessWidget {
       keyboardType: TextInputType.phone,
       textInputAction: TextInputAction.done,
       autofillHints: const [AutofillHints.telephoneNumberNational],
-      ltrInput: true,
+      alignLeft: true,
       inputFormatters: [
         const WesternDigitsFormatter(),
         FilteringTextInputFormatter.digitsOnly,

@@ -21,6 +21,8 @@ import 'package:shared_preferences/shared_preferences.dart' as _i460;
 import '../../../features/auth/data/auth_module.dart' as _i124;
 import '../../../features/auth/data/datasources/auth_data_source.dart' as _i118;
 import '../../../features/auth/data/repositories/auth_repository.dart' as _i960;
+import '../../../features/auth/presentation/bloc/forgot_password_cubit.dart'
+    as _i690;
 import '../../../features/auth/presentation/bloc/login_cubit.dart' as _i618;
 import '../../../features/auth/presentation/bloc/otp_cubit.dart' as _i989;
 import '../../../features/home/presentation/cubit/home_cubit.dart' as _i893;
@@ -82,7 +84,10 @@ extension GetItInjectableX on _i174.GetIt {
       () => coreInjectableModule.localeCubit(gh<_i291.KeyValueStorage>()),
     );
     gh.lazySingleton<_i118.AuthDataSource>(
-      () => authModule.authDataSource(gh<_i685.ApiConsumer>()),
+      () => authModule.authDataSource(
+        gh<_i685.ApiConsumer>(),
+        gh<_i421.NetworkInfo>(),
+      ),
     );
     gh.lazySingleton<_i960.AuthRepository>(
       () => _i960.AuthRepository(gh<_i118.AuthDataSource>()),
@@ -90,6 +95,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factoryParam<_i989.OtpCubit, String, int?>(
       (phone, resendAfterSeconds) =>
           _i989.OtpCubit(gh<_i960.AuthRepository>(), phone, resendAfterSeconds),
+    );
+    gh.factory<_i690.ForgotPasswordCubit>(
+      () => _i690.ForgotPasswordCubit(gh<_i960.AuthRepository>()),
     );
     gh.factory<_i618.LoginCubit>(
       () => _i618.LoginCubit(gh<_i960.AuthRepository>()),

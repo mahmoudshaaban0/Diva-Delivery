@@ -6,8 +6,8 @@ import 'package:limitless_code_template/core/design_system/tokens/app_radius.dar
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
 /// "Resend in 00:45" pill (Figma "Timer").
-class OtpResendTimer extends StatelessWidget {
-  const OtpResendTimer({required this.secondsLeft, super.key});
+class AuthResendTimer extends StatelessWidget {
+  const AuthResendTimer({required this.secondsLeft, super.key});
 
   final int secondsLeft;
 
@@ -32,7 +32,7 @@ class OtpResendTimer extends StatelessWidget {
             color: context.colors.textSubTitle,
           ),
           AppText(
-            context.localizations.otpResendIn,
+            context.localizations.resendIn,
             style: context.typography.bodyS,
             color: context.colors.textSubTitle,
           ),

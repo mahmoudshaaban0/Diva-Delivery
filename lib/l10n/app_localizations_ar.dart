@@ -103,7 +103,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get otpResendIn => 'إعادة الإرسال خلال';
+  String get resendIn => 'إعادة الإرسال خلال';
 
   @override
   String get otpNotReceived => 'لم يصلك الرمز؟';
@@ -133,4 +133,37 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get otpInvalid => 'انتهت صلاحية الرمز أو أُدخل خطأً';
+
+  @override
+  String get forgotPasswordTitle => 'استعادة كلمة المرور';
+
+  @override
+  String get forgotPasswordSubtitle =>
+      'أدخل بريدك الإلكتروني المسجّل، وهنرسل لك رابط لتعيين كلمة مرور جديدة.';
+
+  @override
+  String get sendLink => 'إرسال الرابط';
+
+  @override
+  String get checkYourEmail => 'تحقق من بريدك';
+
+  @override
+  String resetLinkSentTo(String email, int minutes) {
+    return 'أرسلنا رابط إعادة التعيين إلى $email. الرابط صالح لمدة $minutes دقيقة.';
+  }
+
+  @override
+  String get backToSignIn => 'العودة لتسجيل الدخول';
+
+  @override
+  String get linkNotReceived => 'لم يصلك الرابط؟';
+
+  @override
+  String get resendLink => 'إعادة إرسال الرابط';
+
+  @override
+  String get noInternetConnection => 'لا يوجد اتصال بالإنترنت';
+
+  @override
+  String get retry => 'إعادة المحاولة';
 }

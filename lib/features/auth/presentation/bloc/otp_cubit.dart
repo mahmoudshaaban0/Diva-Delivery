@@ -5,7 +5,6 @@ import 'package:injectable/injectable.dart';
 import 'package:limitless_code_template/core/cubit/base_state.dart';
 import 'package:limitless_code_template/core/error/exceptions.dart';
 import 'package:limitless_code_template/core/networking/result.dart';
-import 'package:limitless_code_template/features/auth/data/auth_exceptions.dart';
 import 'package:limitless_code_template/features/auth/data/models/otp_sent_model.dart';
 import 'package:limitless_code_template/features/auth/data/repositories/auth_repository.dart';
 import 'package:limitless_code_template/features/auth/presentation/bloc/otp_state.dart';

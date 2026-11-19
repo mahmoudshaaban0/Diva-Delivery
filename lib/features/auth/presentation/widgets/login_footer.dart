@@ -13,6 +13,10 @@ class LoginFooter extends StatelessWidget {
     super.key,
   });
 
+  /// Toast bottom margin that clears this footer: 12 + 46 button + 12 +
+  /// 20 terms line + 8, plus the 16 gap from the design.
+  static const double toastClearance = 114;
+
   final String label;
   final bool isLoading;
   final VoidCallback onPressed;

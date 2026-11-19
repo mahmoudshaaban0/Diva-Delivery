@@ -5,6 +5,7 @@ import 'package:limitless_code_template/core/utility/logger.dart';
 import 'package:limitless_code_template/features/auth/data/datasources/auth_data_source.dart';
 import 'package:limitless_code_template/features/auth/data/models/auth_response_model.dart';
 import 'package:limitless_code_template/features/auth/data/models/otp_sent_model.dart';
+import 'package:limitless_code_template/features/auth/data/models/reset_link_sent_model.dart';
 
 @lazySingleton
 class AuthRepository {
@@ -63,6 +64,28 @@ class AuthRepository {
         email: email,
         password: password,
       );
+      return Success(data);
+    } on ServerException catch (e, st) {
+      AppLogger.instance.logError('$e\n$st');
+      return Error(e);
+    } on FormatException catch (e, st) {
+      AppLogger.instance.logError('$e\n$st');
+      return const Error(
+        BadRequestException('Invalid data received from server.'),
+      );
+    } on Exception catch (e, st) {
+      AppLogger.instance.logError('$e\n$st');
+      return Error(ServerException(e.toString()));
+    }
+  }
+
+  /// Never throws: returns [Success] or [Error] (no connection comes back as
+  /// `Error(NoInternetConnectionException)`).
+  Future<Result<ResetLinkSentModel>> sendPasswordResetLink({
+    required String email,
+  }) async {
+    try {
+      final data = await authDataSource.sendPasswordResetLink(email: email);
       return Success(data);
     } on ServerException catch (e, st) {
       AppLogger.instance.logError('$e\n$st');

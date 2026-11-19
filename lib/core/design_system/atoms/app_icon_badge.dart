@@ -3,7 +3,7 @@ import 'package:limitless_code_template/core/design_system/atoms/app_svg_icon.da
 import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
-enum AppIconBadgeTone { brand, error }
+enum AppIconBadgeTone { brand, success, error }
 
 /// Large round badge: an 88 soft ring around a 60 solid core with a 28 icon
 /// (Figma "Icon Box" on the OTP screens).
@@ -25,6 +25,11 @@ class AppIconBadge extends StatelessWidget {
         context.colors.brandPrimaryTint,
         context.colors.brandPrimary,
         context.colors.buttonPrimary.label,
+      ),
+      AppIconBadgeTone.success => (
+        context.colors.systemGreenBg,
+        context.colors.systemGreen,
+        context.colors.textAlwaysWhite,
       ),
       AppIconBadgeTone.error => (
         context.colors.systemRedBg,

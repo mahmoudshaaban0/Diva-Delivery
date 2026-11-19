@@ -58,6 +58,7 @@ Feature-first layout: `lib/features/<feature>/{data/{datasources,models,reposito
 
 **Data layer rules**:
 - API endpoint paths live in the env files, not in code. Add each key to `env/example.json` (and the flavor files), expose it as a `String.fromEnvironment` constant on `Env` (`lib/core/constants/env.dart`), and use it as `Env.sendOtpEndpoint`. No `static const _endpoint` strings in data sources.
+- All exceptions live in `lib/core/error/exceptions.dart` (extend `ServerException` or one of its subclasses). Don't create per-feature exception files.
 - No private helper methods in data sources or repositories (`_unwrap`, `_asMap`, `_guard`). Write the response parsing, and the brick's `try`/`on ServerException`/`on FormatException`/`on Exception` block, inside each method, even though it repeats.
 
 **Cubit state rules**: every cubit state extends `BaseState<T>` (generate it with `mason make cubit`). Emit only through `state.copyWith(...)`. Don't construct a fresh state in `emit(...)`, and don't add private helpers like `_failure()`. Map errors inline in the `switch` on `Result`, exactly like the feature brick does.
@@ -69,7 +70,7 @@ Feature-first layout: `lib/features/<feature>/{data/{datasources,models,reposito
 - Data formatting (phone numbers, dates, digits) belongs in `lib/core/formatters/`, not in widgets or screens.
 - Every regular expression lives in `AppRegex` (`lib/core/constants/app_regex.dart`), e.g. `AppRegex.saudiMobile.hasMatch(value)`. Don't declare `RegExp` fields inside widgets, formatters or other classes.
 - For spacing use the gap widgets from `tokens/app_spacing.dart` (`gapH4`…`gapH24`, `gapW4`…`gapW24`, scaled getters, not `const`), or `16.vs` / `16.hs` for other values. No `SizedBox(height: …)` / `SizedBox(width: …)` spacers.
-- Latin inputs (phone, email, password) use `AppTextField(ltrInput: true)`: the cursor and text start at the left in Arabic too. The `+966` country code always sits on the physical left of the phone field (`LoginCountryCode`), in both languages.
+- Phone number field only: `AppTextField(alignLeft: true)` starts the cursor and text at the left in both languages, and `+966` always sits on the physical left (`LoginCountryCode`). Other Latin inputs (email, password) use `ltrInput: true`: typed LTR but aligned to the reading start, so in Arabic they sit on the right next to the icon, like the design.
 - Read theme and strings inline at each use: `context.colors.textTitle`, `context.typography.bodyS`, `context.localizations.signIn`. Don't cache them in locals (`final colors = context.colors;`, `final l10n = ...`, `final typography = ...`).
 
 **Design system** (`lib/core/design_system/`, atomic layout):
@@ -78,6 +79,8 @@ Feature-first layout: `lib/features/<feature>/{data/{datasources,models,reposito
 - `responsive.dart`: `ResponsiveScope` (placed in `MaterialApp.builder`) updates `SizeConfig` against a 375×812 design frame. Size with the `num` extensions `.w .h .r .sp .sw .sh` and the `.vs` / `.hs` spacer widgets. Scale factors are clamped. See `docs/responsive_explained.pdf`.
   - Tokens built from `.w/.h/.r/.sp` must be **getters**, not `static`/top-level fields (fields are computed once and go stale on rotation/resize).
   - Don't scale fixed component sizes (button height, borders, dividers). The button atoms use a fixed 46 height, and expanded buttons are capped at 400 wide and centered.
+
+**Toasts**: show short messages with `context.showToast(...)` (`organisms/app_toast.dart`, Figma `Courier/Toast`). A "no connection" failure (state `isOffline`, set when the cubit gets `NoInternetConnectionException`) uses `iconAsset: Assets.vectorsIcWifiOff20` plus a retry action. On screens with a pinned footer, pass `bottomMargin: AppToast.aboveFooterMargin` (or the footer's own clearance, e.g. `LoginFooter.toastClearance`).
 
 **OTP input**: use `AppOtpField` (molecule wrapping `pinput`). Keep `pinput` on **6.x**: 7.x is built on the decoupled `material_ui` package and crashes under the framework's `Scaffold`. SMS autofill works through `oneTimeCode` on iOS and `SmsCodeRetriever` (`lib/core/utility/`, `smart_auth` SMS User Consent API) on Android.
 

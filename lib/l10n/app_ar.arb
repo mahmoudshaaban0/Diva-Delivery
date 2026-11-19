@@ -29,11 +29,21 @@
   "otpHeading": "أدخل رمز التحقق",
   "otpHeadingError": "الرمز غير صحيح",
   "otpSentTo": "أرسلنا رمزًا من {length} أرقام إلى",
-  "otpResendIn": "إعادة الإرسال خلال",
+  "resendIn": "إعادة الإرسال خلال",
   "otpNotReceived": "لم يصلك الرمز؟",
   "otpResend": "إعادة إرسال الرمز",
   "otpVerify": "تحقّق ومتابعة",
   "otpVerifyAgain": "تحقّق مرة أخرى",
   "otpInvalidAttempts": "انتهت صلاحية الرمز أو أُدخل خطأً — {count, plural, =0{لم تتبقَّ محاولات} =1{تبقّت محاولة واحدة} =2{تبقّت محاولتان} few{تبقّت {count} محاولات} other{تبقّت {count} محاولة}}",
-  "otpInvalid": "انتهت صلاحية الرمز أو أُدخل خطأً"
+  "otpInvalid": "انتهت صلاحية الرمز أو أُدخل خطأً",
+  "forgotPasswordTitle": "استعادة كلمة المرور",
+  "forgotPasswordSubtitle": "أدخل بريدك الإلكتروني المسجّل، وهنرسل لك رابط لتعيين كلمة مرور جديدة.",
+  "sendLink": "إرسال الرابط",
+  "checkYourEmail": "تحقق من بريدك",
+  "resetLinkSentTo": "أرسلنا رابط إعادة التعيين إلى {email}. الرابط صالح لمدة {minutes} دقيقة.",
+  "backToSignIn": "العودة لتسجيل الدخول",
+  "linkNotReceived": "لم يصلك الرابط؟",
+  "resendLink": "إعادة إرسال الرابط",
+  "noInternetConnection": "لا يوجد اتصال بالإنترنت",
+  "retry": "إعادة المحاولة"
 }

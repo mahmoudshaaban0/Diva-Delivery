@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:limitless_code_template/core/config/di/injectable.dart';
+import 'package:limitless_code_template/core/constants/assets.dart';
 import 'package:limitless_code_template/core/cubit/base_state.dart';
 import 'package:limitless_code_template/core/design_system/molecules/app_inline_alert.dart';
+import 'package:limitless_code_template/core/design_system/organisms/app_toast.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
 import 'package:limitless_code_template/core/routing/app_routes.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
@@ -75,6 +77,16 @@ class _LoginViewState extends State<_LoginView> {
   }
 
   void _onStateChanged(BuildContext context, LoginState state) {
+    if (state.status == AppStatus.failure && state.isOffline) {
+      context.showToast(
+        message: context.localizations.noInternetConnection,
+        iconAsset: Assets.vectorsIcWifiOff20,
+        actionLabel: context.localizations.retry,
+        onAction: () => _submit(state.method),
+        bottomMargin: LoginFooter.toastClearance,
+      );
+      return;
+    }
     if (state.status != AppStatus.success) return;
     switch (state.method) {
       case LoginMethod.phone:
@@ -146,14 +158,19 @@ class _LoginViewState extends State<_LoginView> {
                                     controller: _password,
                                     focusNode: _passwordFocus,
                                     onSubmitted: () => _submit(state.method),
-                                    onForgotPassword: () {
-                                      // NOTE: route to "نسيت كلمة المرور"
-                                      // (Flow 01, 34274:6004) once built.
-                                    },
+                                    onForgotPassword: () => unawaited(
+                                      context.pushNamed(
+                                        AppRoutes.forgotPassword.name,
+                                        queryParameters: {
+                                          'email': _email.text.trim(),
+                                        },
+                                      ),
+                                    ),
                                   ),
                                 ],
                         ),
                         if (state.status == AppStatus.failure &&
+                            !state.isOffline &&
                             state.errorMessage != null) ...[
                           gapH16,
                           AppInlineAlert(message: state.errorMessage!),

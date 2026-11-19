@@ -14,10 +14,10 @@ import 'package:limitless_code_template/core/routing/app_routes.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 import 'package:limitless_code_template/features/auth/presentation/bloc/otp_cubit.dart';
 import 'package:limitless_code_template/features/auth/presentation/bloc/otp_state.dart';
+import 'package:limitless_code_template/features/auth/presentation/widgets/auth_resend_link.dart';
+import 'package:limitless_code_template/features/auth/presentation/widgets/auth_resend_timer.dart';
 import 'package:limitless_code_template/features/auth/presentation/widgets/otp_error_alert.dart';
 import 'package:limitless_code_template/features/auth/presentation/widgets/otp_heading.dart';
-import 'package:limitless_code_template/features/auth/presentation/widgets/otp_resend_link.dart';
-import 'package:limitless_code_template/features/auth/presentation/widgets/otp_resend_timer.dart';
 
 /// Figma: Flow 01 · "رمز التحقق" (34135:724) and "رمز التحقق – خطأ"
 /// (34135:783).
@@ -107,9 +107,11 @@ class _OtpViewState extends State<_OtpView> {
                         gapH24,
                         if (failed) ...[OtpErrorAlert(state: state), gapH24],
                         if (state.secondsLeft > 0 && !failed)
-                          OtpResendTimer(secondsLeft: state.secondsLeft)
+                          AuthResendTimer(secondsLeft: state.secondsLeft)
                         else
-                          OtpResendLink(
+                          AuthResendLink(
+                            question: context.localizations.otpNotReceived,
+                            actionLabel: context.localizations.otpResend,
                             onTap: state.canResend
                                 ? () => unawaited(cubit.resend())
                                 : null,

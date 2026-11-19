@@ -53,7 +53,7 @@
       }
     }
   },
-  "otpResendIn": "Resend in",
+  "resendIn": "Resend in",
   "otpNotReceived": "Didn't get the code?",
   "otpResend": "Resend code",
   "otpVerify": "Verify and continue",
@@ -66,5 +66,25 @@
       }
     }
   },
-  "otpInvalid": "The code expired or was entered incorrectly"
+  "otpInvalid": "The code expired or was entered incorrectly",
+  "forgotPasswordTitle": "Reset password",
+  "forgotPasswordSubtitle": "Enter your registered email and we'll send you a link to set a new password.",
+  "sendLink": "Send link",
+  "checkYourEmail": "Check your email",
+  "resetLinkSentTo": "We sent a reset link to {email}. The link is valid for {minutes} minutes.",
+  "@resetLinkSentTo": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "backToSignIn": "Back to sign in",
+  "linkNotReceived": "Didn't get the link?",
+  "resendLink": "Resend link",
+  "noInternetConnection": "No internet connection",
+  "retry": "Retry"
 }

@@ -13,4 +13,7 @@ final class Env {
     'VERIFY_OTP_ENDPOINT',
   );
   static const String loginEndpoint = String.fromEnvironment('LOGIN_ENDPOINT');
+  static const String forgotPasswordEndpoint = String.fromEnvironment(
+    'FORGOT_PASSWORD_ENDPOINT',
+  );
 }

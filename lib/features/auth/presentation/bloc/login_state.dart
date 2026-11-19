@@ -9,6 +9,7 @@ class LoginState extends BaseState<LoginState> {
     this.method = LoginMethod.phone,
     this.phone,
     this.resendAfterSeconds,
+    this.isOffline = false,
   });
 
   final LoginMethod method;
@@ -19,6 +20,9 @@ class LoginState extends BaseState<LoginState> {
   /// Countdown to pass to the OTP screen.
   final int? resendAfterSeconds;
 
+  /// The last failure was a missing connection (shown as a toast).
+  final bool isOffline;
+
   @override
   LoginState copyWith({
     AppStatus? status,
@@ -26,6 +30,7 @@ class LoginState extends BaseState<LoginState> {
     LoginMethod? method,
     String? phone,
     int? resendAfterSeconds,
+    bool? isOffline,
   }) {
     return LoginState(
       status: status ?? this.status,
@@ -33,6 +38,7 @@ class LoginState extends BaseState<LoginState> {
       method: method ?? this.method,
       phone: phone ?? this.phone,
       resendAfterSeconds: resendAfterSeconds ?? this.resendAfterSeconds,
+      isOffline: isOffline ?? this.isOffline,
     );
   }
 
@@ -42,5 +48,6 @@ class LoginState extends BaseState<LoginState> {
     method,
     phone,
     resendAfterSeconds,
+    isOffline,
   ];
 }

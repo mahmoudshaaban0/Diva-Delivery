@@ -2,9 +2,9 @@ import 'package:limitless_code_template/core/constants/env.dart';
 import 'package:limitless_code_template/core/error/exceptions.dart';
 import 'package:limitless_code_template/core/formatters/phone_formatter.dart';
 import 'package:limitless_code_template/core/networking/api_consumer.dart';
-import 'package:limitless_code_template/features/auth/data/auth_exceptions.dart';
 import 'package:limitless_code_template/features/auth/data/models/auth_response_model.dart';
 import 'package:limitless_code_template/features/auth/data/models/otp_sent_model.dart';
+import 'package:limitless_code_template/features/auth/data/models/reset_link_sent_model.dart';
 
 /// Courier authentication API. Endpoints come from `env/<flavor>.json`.
 ///
@@ -65,6 +65,23 @@ class AuthDataSource {
       throw BadRequestException(json['message'] as String?);
     }
     return AuthResponseModel.fromJson(
+      json['data'] as Map<String, dynamic>? ?? {},
+    );
+  }
+
+  /// Emails a link to set a new password.
+  Future<ResetLinkSentModel> sendPasswordResetLink({
+    required String email,
+  }) async {
+    final response = await apiConsumer.post(
+      Env.forgotPasswordEndpoint,
+      body: {'email': email},
+    );
+    final json = response as Map<String, dynamic>? ?? {};
+    if (json['success'] == false) {
+      throw BadRequestException(json['message'] as String?);
+    }
+    return ResetLinkSentModel.fromJson(
       json['data'] as Map<String, dynamic>? ?? {},
     );
   }
