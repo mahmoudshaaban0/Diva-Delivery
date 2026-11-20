@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limitless_code_template/core/design_system/atoms/app_filled_button.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_icon.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
@@ -37,6 +38,15 @@ class ErrorState extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             gapH16,
+            AppFilledButton(
+              expanded: false,
+              onPressed: onRetry,
+              child: AppText(
+                retryLabel,
+                style: context.typography.subtitleS,
+                color: context.colors.buttonPrimary.label,
+              ),
+            ),
           ],
         ),
       ),

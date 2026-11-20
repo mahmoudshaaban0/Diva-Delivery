@@ -271,4 +271,142 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get later => 'Later';
+
+  @override
+  String get homeDayNotStarted => 'You haven\'t started your day yet';
+
+  @override
+  String get homeDayStarted => 'Your day has started, good luck';
+
+  @override
+  String homeDayStartedAt(String time) {
+    return 'Day started · $time';
+  }
+
+  @override
+  String get homeTotalCollected => 'Total collected';
+
+  @override
+  String get homeTotalOrders => 'Total orders';
+
+  @override
+  String get orderStatusCancelled => 'Cancelled';
+
+  @override
+  String get orderStatusCompleted => 'Completed';
+
+  @override
+  String get orderStatusNew => 'New';
+
+  @override
+  String get orderStatusWithCaptain => 'With captain';
+
+  @override
+  String get homeAnnouncements => 'Management announcements';
+
+  @override
+  String countOf(int current, int total) {
+    return '$current of $total';
+  }
+
+  @override
+  String get inRange => 'In range';
+
+  @override
+  String get outOfRange => 'Out of range';
+
+  @override
+  String get swipeToStartDay => 'Swipe to start the day';
+
+  @override
+  String get checkingLocation => 'Checking your location…';
+
+  @override
+  String get noOrdersToStartDay => 'No orders to start the day';
+
+  @override
+  String get noOrdersHint =>
+      'We\'ll notify you as soon as new orders are assigned to you';
+
+  @override
+  String get deliveredToday => 'Delivered today';
+
+  @override
+  String get viewOrders => 'View orders';
+
+  @override
+  String get outOfRangeTitle => 'You\'re outside the warehouse zone';
+
+  @override
+  String outOfRangeSubtitle(String warehouse) {
+    return 'Get closer to “$warehouse” and try again to start your day';
+  }
+
+  @override
+  String distanceFromWarehouse(String distance) {
+    return '$distance km from the warehouse';
+  }
+
+  @override
+  String get youAreHere => 'You are here';
+
+  @override
+  String get openDirections => 'Open directions';
+
+  @override
+  String get dayStartedTitle => 'Your day has started';
+
+  @override
+  String dayStartedSubtitle(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'You received $count orders and they\'re all “with the captain”. Good luck!',
+      one: 'You received 1 order and it\'s now “with the captain”. Good luck!',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get summaryWarehouse => 'Warehouse';
+
+  @override
+  String get summaryStartTime => 'Start time';
+
+  @override
+  String get summaryOrders => 'Orders';
+
+  @override
+  String ordersWithCaptain(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count orders · with captain',
+      one: '1 order · with captain',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get navHome => 'Home';
+
+  @override
+  String get navOrders => 'Orders';
+
+  @override
+  String get navProfile => 'Profile';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get locationUnavailable =>
+      'Couldn\'t get your location. Make sure location is on and try again.';
+
+  @override
+  String get homeLoadError => 'Couldn\'t load your day';
+
+  @override
+  String get comingSoon => 'Coming soon';
 }

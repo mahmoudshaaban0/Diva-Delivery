@@ -268,4 +268,144 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get later => 'لاحقًا';
+
+  @override
+  String get homeDayNotStarted => 'لم تبدأ يومك بعد';
+
+  @override
+  String get homeDayStarted => 'يومك بدأ، بالتوفيق';
+
+  @override
+  String homeDayStartedAt(String time) {
+    return 'بدأ يومك · $time';
+  }
+
+  @override
+  String get homeTotalCollected => 'إجمالي المحصّل';
+
+  @override
+  String get homeTotalOrders => 'إجمالي الطلبات';
+
+  @override
+  String get orderStatusCancelled => 'ملغاة';
+
+  @override
+  String get orderStatusCompleted => 'مكتملة';
+
+  @override
+  String get orderStatusNew => 'جديدة';
+
+  @override
+  String get orderStatusWithCaptain => 'مع الكابتن';
+
+  @override
+  String get homeAnnouncements => 'إعلانات الإدارة';
+
+  @override
+  String countOf(int current, int total) {
+    return '$current من $total';
+  }
+
+  @override
+  String get inRange => 'داخل النطاق';
+
+  @override
+  String get outOfRange => 'خارج النطاق';
+
+  @override
+  String get swipeToStartDay => 'اسحب لبدء اليوم';
+
+  @override
+  String get checkingLocation => 'جارٍ التحقق من موقعك…';
+
+  @override
+  String get noOrdersToStartDay => 'لا توجد طلبات لبدء اليوم';
+
+  @override
+  String get noOrdersHint => 'سنرسل لك إشعارًا فور إسناد طلبات جديدة لك';
+
+  @override
+  String get deliveredToday => 'تم التسليم اليوم';
+
+  @override
+  String get viewOrders => 'عرض الطلبات';
+
+  @override
+  String get outOfRangeTitle => 'أنت خارج نطاق المستودع';
+
+  @override
+  String outOfRangeSubtitle(String warehouse) {
+    return 'اقترب من «$warehouse» ثم حاول مرة أخرى لبدء يومك';
+  }
+
+  @override
+  String distanceFromWarehouse(String distance) {
+    return 'تبعد $distance كم عن المستودع';
+  }
+
+  @override
+  String get youAreHere => 'أنت هنا';
+
+  @override
+  String get openDirections => 'فتح الاتجاهات';
+
+  @override
+  String get dayStartedTitle => 'بدأ يومك بنجاح';
+
+  @override
+  String dayStartedSubtitle(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'استلمت $count طلبًا وأصبحت جميعها «مع الكابتن». بالتوفيق!',
+      few: 'استلمت $count طلبات وأصبحت جميعها «مع الكابتن». بالتوفيق!',
+      two: 'استلمت طلبين وأصبحا «مع الكابتن». بالتوفيق!',
+      one: 'استلمت طلبًا واحدًا وأصبح «مع الكابتن». بالتوفيق!',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get summaryWarehouse => 'المستودع';
+
+  @override
+  String get summaryStartTime => 'وقت البدء';
+
+  @override
+  String get summaryOrders => 'الطلبات';
+
+  @override
+  String ordersWithCaptain(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count طلبًا · مع الكابتن',
+      few: '$count طلبات · مع الكابتن',
+      two: 'طلبان · مع الكابتن',
+      one: 'طلب واحد · مع الكابتن',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get navHome => 'الرئيسية';
+
+  @override
+  String get navOrders => 'الطلبات';
+
+  @override
+  String get navProfile => 'الملف الشخصي';
+
+  @override
+  String get notifications => 'الإشعارات';
+
+  @override
+  String get locationUnavailable =>
+      'تعذّر تحديد موقعك. تأكد من تشغيل الموقع وحاول مرة أخرى.';
+
+  @override
+  String get homeLoadError => 'تعذّر تحميل بيانات يومك';
+
+  @override
+  String get comingSoon => 'قريبًا';
 }

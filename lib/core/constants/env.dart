@@ -16,4 +16,10 @@ final class Env {
   static const String forgotPasswordEndpoint = String.fromEnvironment(
     'FORGOT_PASSWORD_ENDPOINT',
   );
+
+  // Home (courier day).
+  static const String homeEndpoint = String.fromEnvironment('HOME_ENDPOINT');
+  static const String startDayEndpoint = String.fromEnvironment(
+    'START_DAY_ENDPOINT',
+  );
 }

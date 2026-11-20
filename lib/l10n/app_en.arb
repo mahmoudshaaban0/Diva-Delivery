@@ -126,5 +126,87 @@
   "cameraBenefitCallLogTitle": "Call log screenshot",
   "cameraBenefitCallLogSubtitle": "Upload a screenshot when you can't reach the customer",
   "allowAccess": "Allow access",
-  "later": "Later"
+  "later": "Later",
+  "homeDayNotStarted": "You haven't started your day yet",
+  "homeDayStarted": "Your day has started, good luck",
+  "homeDayStartedAt": "Day started · {time}",
+  "@homeDayStartedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "homeTotalCollected": "Total collected",
+  "homeTotalOrders": "Total orders",
+  "orderStatusCancelled": "Cancelled",
+  "orderStatusCompleted": "Completed",
+  "orderStatusNew": "New",
+  "orderStatusWithCaptain": "With captain",
+  "homeAnnouncements": "Management announcements",
+  "countOf": "{current} of {total}",
+  "@countOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "inRange": "In range",
+  "outOfRange": "Out of range",
+  "swipeToStartDay": "Swipe to start the day",
+  "checkingLocation": "Checking your location…",
+  "noOrdersToStartDay": "No orders to start the day",
+  "noOrdersHint": "We'll notify you as soon as new orders are assigned to you",
+  "deliveredToday": "Delivered today",
+  "viewOrders": "View orders",
+  "outOfRangeTitle": "You're outside the warehouse zone",
+  "outOfRangeSubtitle": "Get closer to “{warehouse}” and try again to start your day",
+  "@outOfRangeSubtitle": {
+    "placeholders": {
+      "warehouse": {
+        "type": "String"
+      }
+    }
+  },
+  "distanceFromWarehouse": "{distance} km from the warehouse",
+  "@distanceFromWarehouse": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "youAreHere": "You are here",
+  "openDirections": "Open directions",
+  "dayStartedTitle": "Your day has started",
+  "dayStartedSubtitle": "{count, plural, =1{You received 1 order and it's now “with the captain”. Good luck!} other{You received {count} orders and they're all “with the captain”. Good luck!}}",
+  "@dayStartedSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryWarehouse": "Warehouse",
+  "summaryStartTime": "Start time",
+  "summaryOrders": "Orders",
+  "ordersWithCaptain": "{count, plural, =1{1 order · with captain} other{{count} orders · with captain}}",
+  "@ordersWithCaptain": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "navHome": "Home",
+  "navOrders": "Orders",
+  "navProfile": "Profile",
+  "notifications": "Notifications",
+  "locationUnavailable": "Couldn't get your location. Make sure location is on and try again.",
+  "homeLoadError": "Couldn't load your day",
+  "comingSoon": "Coming soon"
 }

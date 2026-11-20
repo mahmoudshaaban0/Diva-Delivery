@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:limitless_code_template/core/design_system/responsive.dart';
+import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 
@@ -86,7 +88,8 @@ Future<T?> showAppDraggableSheet<T>({
   );
 }
 
-/// Rounded top, themed background and the small drag handle.
+/// Rounded top, themed background and the drag handle (Figma
+/// `Courier/Bottom Sheet`: surface card, 28 radius, 40×5 grabber).
 class _SheetSurface extends StatelessWidget {
   const _SheetSurface({required this.child, required this.fill});
 
@@ -101,24 +104,22 @@ class _SheetSurface extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: context.colors.surfaceBg,
-        borderRadius: const BorderRadius.vertical(
-          top: Radius.circular(AppPadding.s24),
-        ),
+        color: context.colors.surfaceCard,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
       ),
       child: Column(
         mainAxisSize: fill ? MainAxisSize.max : MainAxisSize.min,
         children: [
-          gapH12,
+          10.vs,
           Container(
             width: 40,
-            height: 4,
+            height: 5,
             decoration: BoxDecoration(
-              color: context.colors.surfaceStroke,
-              borderRadius: BorderRadius.circular(AppPadding.s2),
+              color: context.colors.surfaceLine,
+              borderRadius: AppRadius.rfull,
             ),
           ),
-          gapH12,
+          gapH20,
           child,
         ],
       ),

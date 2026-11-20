@@ -553,6 +553,228 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Later'**
   String get later;
+
+  /// No description provided for @homeDayNotStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t started your day yet'**
+  String get homeDayNotStarted;
+
+  /// No description provided for @homeDayStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Your day has started, good luck'**
+  String get homeDayStarted;
+
+  /// No description provided for @homeDayStartedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Day started · {time}'**
+  String homeDayStartedAt(String time);
+
+  /// No description provided for @homeTotalCollected.
+  ///
+  /// In en, this message translates to:
+  /// **'Total collected'**
+  String get homeTotalCollected;
+
+  /// No description provided for @homeTotalOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'Total orders'**
+  String get homeTotalOrders;
+
+  /// No description provided for @orderStatusCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get orderStatusCancelled;
+
+  /// No description provided for @orderStatusCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get orderStatusCompleted;
+
+  /// No description provided for @orderStatusNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New'**
+  String get orderStatusNew;
+
+  /// No description provided for @orderStatusWithCaptain.
+  ///
+  /// In en, this message translates to:
+  /// **'With captain'**
+  String get orderStatusWithCaptain;
+
+  /// No description provided for @homeAnnouncements.
+  ///
+  /// In en, this message translates to:
+  /// **'Management announcements'**
+  String get homeAnnouncements;
+
+  /// No description provided for @countOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{current} of {total}'**
+  String countOf(int current, int total);
+
+  /// No description provided for @inRange.
+  ///
+  /// In en, this message translates to:
+  /// **'In range'**
+  String get inRange;
+
+  /// No description provided for @outOfRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Out of range'**
+  String get outOfRange;
+
+  /// No description provided for @swipeToStartDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe to start the day'**
+  String get swipeToStartDay;
+
+  /// No description provided for @checkingLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking your location…'**
+  String get checkingLocation;
+
+  /// No description provided for @noOrdersToStartDay.
+  ///
+  /// In en, this message translates to:
+  /// **'No orders to start the day'**
+  String get noOrdersToStartDay;
+
+  /// No description provided for @noOrdersHint.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll notify you as soon as new orders are assigned to you'**
+  String get noOrdersHint;
+
+  /// No description provided for @deliveredToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered today'**
+  String get deliveredToday;
+
+  /// No description provided for @viewOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'View orders'**
+  String get viewOrders;
+
+  /// No description provided for @outOfRangeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re outside the warehouse zone'**
+  String get outOfRangeTitle;
+
+  /// No description provided for @outOfRangeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Get closer to “{warehouse}” and try again to start your day'**
+  String outOfRangeSubtitle(String warehouse);
+
+  /// No description provided for @distanceFromWarehouse.
+  ///
+  /// In en, this message translates to:
+  /// **'{distance} km from the warehouse'**
+  String distanceFromWarehouse(String distance);
+
+  /// No description provided for @youAreHere.
+  ///
+  /// In en, this message translates to:
+  /// **'You are here'**
+  String get youAreHere;
+
+  /// No description provided for @openDirections.
+  ///
+  /// In en, this message translates to:
+  /// **'Open directions'**
+  String get openDirections;
+
+  /// No description provided for @dayStartedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your day has started'**
+  String get dayStartedTitle;
+
+  /// No description provided for @dayStartedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{You received 1 order and it\'s now “with the captain”. Good luck!} other{You received {count} orders and they\'re all “with the captain”. Good luck!}}'**
+  String dayStartedSubtitle(int count);
+
+  /// No description provided for @summaryWarehouse.
+  ///
+  /// In en, this message translates to:
+  /// **'Warehouse'**
+  String get summaryWarehouse;
+
+  /// No description provided for @summaryStartTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Start time'**
+  String get summaryStartTime;
+
+  /// No description provided for @summaryOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get summaryOrders;
+
+  /// No description provided for @ordersWithCaptain.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 order · with captain} other{{count} orders · with captain}}'**
+  String ordersWithCaptain(int count);
+
+  /// No description provided for @navHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get navHome;
+
+  /// No description provided for @navOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get navOrders;
+
+  /// No description provided for @navProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get navProfile;
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @locationUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t get your location. Make sure location is on and try again.'**
+  String get locationUnavailable;
+
+  /// No description provided for @homeLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load your day'**
+  String get homeLoadError;
+
+  /// No description provided for @comingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get comingSoon;
 }
 
 class _AppLocalizationsDelegate

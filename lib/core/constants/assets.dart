@@ -37,6 +37,35 @@ class Assets {
   static const String fontsPlayfairDisplayVariable =
       "assets/fonts/PlayfairDisplay-Variable.ttf";
 
+  /// Assets for rastersGeofenceWarehouseZone
+  /// assets/rasters/geofence_warehouse_zone.png
+  static const String rastersGeofenceWarehouseZone =
+      "assets/rasters/geofence_warehouse_zone.png";
+
+  /// Assets for vectorsGeofenceDistancePath
+  /// assets/vectors/geofence_distance_path.svg
+  static const String vectorsGeofenceDistancePath =
+      "assets/vectors/geofence_distance_path.svg";
+
+  /// Assets for vectorsGeofenceYou
+  /// assets/vectors/geofence_you.svg
+  static const String vectorsGeofenceYou = "assets/vectors/geofence_you.svg";
+
+  /// Assets for vectorsGeofenceYouHalo
+  /// assets/vectors/geofence_you_halo.svg
+  static const String vectorsGeofenceYouHalo =
+      "assets/vectors/geofence_you_halo.svg";
+
+  /// Assets for vectorsIcArrowLeft14
+  /// assets/vectors/ic_arrow_left_14.svg
+  static const String vectorsIcArrowLeft14 =
+      "assets/vectors/ic_arrow_left_14.svg";
+
+  /// Assets for vectorsIcArrowLeft24
+  /// assets/vectors/ic_arrow_left_24.svg
+  static const String vectorsIcArrowLeft24 =
+      "assets/vectors/ic_arrow_left_24.svg";
+
   /// Assets for vectorsIcArrowRight22
   /// assets/vectors/ic_arrow_right_22.svg
   static const String vectorsIcArrowRight22 =
@@ -68,6 +97,16 @@ class Assets {
   static const String vectorsIcDeliveryBox20 =
       "assets/vectors/ic_delivery_box_20.svg";
 
+  /// Assets for vectorsIcDeliveryTruck84
+  /// assets/vectors/ic_delivery_truck_84.svg
+  static const String vectorsIcDeliveryTruck84 =
+      "assets/vectors/ic_delivery_truck_84.svg";
+
+  /// Assets for vectorsIcHomeSolid24
+  /// assets/vectors/ic_home_solid_24.svg
+  static const String vectorsIcHomeSolid24 =
+      "assets/vectors/ic_home_solid_24.svg";
+
   /// Assets for vectorsIcImage20
   /// assets/vectors/ic_image_20.svg
   static const String vectorsIcImage20 = "assets/vectors/ic_image_20.svg";
@@ -77,9 +116,21 @@ class Assets {
   static const String vectorsIcInformationCircle18 =
       "assets/vectors/ic_information_circle_18.svg";
 
+  /// Assets for vectorsIcLocation14
+  /// assets/vectors/ic_location_14.svg
+  static const String vectorsIcLocation14 = "assets/vectors/ic_location_14.svg";
+
+  /// Assets for vectorsIcLocation18
+  /// assets/vectors/ic_location_18.svg
+  static const String vectorsIcLocation18 = "assets/vectors/ic_location_18.svg";
+
   /// Assets for vectorsIcLocation20
   /// assets/vectors/ic_location_20.svg
   static const String vectorsIcLocation20 = "assets/vectors/ic_location_20.svg";
+
+  /// Assets for vectorsIcLocation26
+  /// assets/vectors/ic_location_26.svg
+  static const String vectorsIcLocation26 = "assets/vectors/ic_location_26.svg";
 
   /// Assets for vectorsIcLocation36
   /// assets/vectors/ic_location_36.svg
@@ -107,6 +158,28 @@ class Assets {
   /// assets/vectors/ic_mail_28.svg
   static const String vectorsIcMail28 = "assets/vectors/ic_mail_28.svg";
 
+  /// Assets for vectorsIcNotificationBody
+  /// assets/vectors/ic_notification_body.svg
+  static const String vectorsIcNotificationBody =
+      "assets/vectors/ic_notification_body.svg";
+
+  /// Assets for vectorsIcNotificationClapper
+  /// assets/vectors/ic_notification_clapper.svg
+  static const String vectorsIcNotificationClapper =
+      "assets/vectors/ic_notification_clapper.svg";
+
+  /// Assets for vectorsIcPackage16
+  /// assets/vectors/ic_package_16.svg
+  static const String vectorsIcPackage16 = "assets/vectors/ic_package_16.svg";
+
+  /// Assets for vectorsIcPackage24
+  /// assets/vectors/ic_package_24.svg
+  static const String vectorsIcPackage24 = "assets/vectors/ic_package_24.svg";
+
+  /// Assets for vectorsIcRiyal
+  /// assets/vectors/ic_riyal.svg
+  static const String vectorsIcRiyal = "assets/vectors/ic_riyal.svg";
+
   /// Assets for vectorsIcSettings20
   /// assets/vectors/ic_settings_20.svg
   static const String vectorsIcSettings20 = "assets/vectors/ic_settings_20.svg";
@@ -130,9 +203,26 @@ class Assets {
   static const String vectorsIcSmartPhone28 =
       "assets/vectors/ic_smart_phone_28.svg";
 
+  /// Assets for vectorsIcTick26
+  /// assets/vectors/ic_tick_26.svg
+  static const String vectorsIcTick26 = "assets/vectors/ic_tick_26.svg";
+
+  /// Assets for vectorsIcUser24
+  /// assets/vectors/ic_user_24.svg
+  static const String vectorsIcUser24 = "assets/vectors/ic_user_24.svg";
+
   /// Assets for vectorsIcViewOff20
   /// assets/vectors/ic_view_off_20.svg
   static const String vectorsIcViewOff20 = "assets/vectors/ic_view_off_20.svg";
+
+  /// Assets for vectorsIcWallet16
+  /// assets/vectors/ic_wallet_16.svg
+  static const String vectorsIcWallet16 = "assets/vectors/ic_wallet_16.svg";
+
+  /// Assets for vectorsIcWarehouse22
+  /// assets/vectors/ic_warehouse_22.svg
+  static const String vectorsIcWarehouse22 =
+      "assets/vectors/ic_warehouse_22.svg";
 
   /// Assets for vectorsIcWifiOff20
   /// assets/vectors/ic_wifi_off_20.svg

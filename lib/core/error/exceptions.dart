@@ -78,3 +78,15 @@ class InvalidOtpException extends BadRequestException {
   @override
   List<Object?> get props => [...super.props, attemptsLeft];
 }
+
+/// Starting the day was refused because the courier is outside the
+/// warehouse zone. [distanceKm] is how far they are, when the server says.
+class OutOfWarehouseRangeException extends BadRequestException {
+  const OutOfWarehouseRangeException({this.distanceKm, String? message})
+    : super(message ?? 'Outside the warehouse zone.');
+
+  final double? distanceKm;
+
+  @override
+  List<Object?> get props => [...super.props, distanceKm];
+}
