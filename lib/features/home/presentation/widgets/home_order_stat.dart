@@ -13,12 +13,16 @@ class HomeOrderStat extends StatelessWidget {
     required this.label,
     required this.dotColor,
     required this.count,
+    this.pulse = false,
     super.key,
   });
 
   final String label;
   final Color dotColor;
   final int count;
+
+  /// Pulses the dot (see `AppDot.pulse`), e.g. new orders waiting.
+  final bool pulse;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +33,7 @@ class HomeOrderStat extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           spacing: 4.w,
           children: [
-            AppDot(color: dotColor),
+            AppDot(color: dotColor, pulse: pulse),
             Flexible(
               child: AppText(
                 label,

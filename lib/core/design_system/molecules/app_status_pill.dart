@@ -10,10 +10,18 @@ enum AppStatusPillTone { success, error }
 
 /// Small colored pill with a dot (Figma "Status Pill", e.g. "داخل النطاق").
 class AppStatusPill extends StatelessWidget {
-  const AppStatusPill({required this.label, required this.tone, super.key});
+  const AppStatusPill({
+    required this.label,
+    required this.tone,
+    this.pulse = false,
+    super.key,
+  });
 
   final String label;
   final AppStatusPillTone tone;
+
+  /// Pulses the dot to show a live state (see `AppDot.pulse`).
+  final bool pulse;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +49,7 @@ class AppStatusPill extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         spacing: 4.w,
         children: [
-          AppDot(color: dot, size: 6),
+          AppDot(color: dot, size: 6, pulse: pulse),
           AppText(label, style: context.typography.body2XS, color: foreground),
         ],
       ),

@@ -41,6 +41,8 @@ class HomeOrdersStatusCard extends StatelessWidget {
                   ? context.colors.systemYellow
                   : context.colors.systemBlue,
               count: pending,
+              // New orders waiting before the day starts: draw attention.
+              pulse: !isDayStarted && pending > 0,
             ),
           ),
           const AppVerticalDivider(height: 36),

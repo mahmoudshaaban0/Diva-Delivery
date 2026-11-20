@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     // NOTE: once sessions are stored, route to home when already signed in.
     _timer = Timer(_duration, () {
-      if (mounted) context.goNamed(AppRoutes.login.name);
+      if (mounted) context.goNamed(AppRoutes.home.name);
     });
   }
 

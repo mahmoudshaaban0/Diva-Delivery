@@ -66,6 +66,8 @@ class HomeStartDayCard extends StatelessWidget {
                   tone: inRange
                       ? AppStatusPillTone.success
                       : AppStatusPillTone.error,
+                  // Live position check: pulse only while in range.
+                  pulse: inRange,
                 ),
             ],
           ),

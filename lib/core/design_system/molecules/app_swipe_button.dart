@@ -5,6 +5,7 @@ import 'package:limitless_code_template/core/design_system/atoms/app_text.dart';
 import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
+import 'package:shimmer/shimmer.dart';
 
 enum AppSwipeButtonState {
   /// Drag the knob to the end to confirm.
@@ -159,6 +160,8 @@ class _AppSwipeButtonState extends State<AppSwipeButton>
           AppSwipeButtonState.idle => LayoutBuilder(
             builder: (context, constraints) {
               final maxTravel = constraints.maxWidth - AppSwipeButton._knob;
+              final isRtl = Directionality.of(context) == TextDirection.rtl;
+              final reduceMotion = MediaQuery.disableAnimationsOf(context);
               return AnimatedBuilder(
                 animation: _progress,
                 builder: (context, _) => Stack(
@@ -171,17 +174,30 @@ class _AppSwipeButtonState extends State<AppSwipeButton>
                       ),
                       child: Opacity(
                         opacity: 1 - _progress.value,
-                        child: Row(
-                          children: [
-                            Expanded(child: label),
-                            for (var i = 0; i < 3; i++)
-                              AppSvgIcon(
-                                Assets.vectorsIcArrowLeft14,
-                                size: 14,
-                                color: foreground,
-                                flipInLtr: true,
-                              ),
-                          ],
+                        // "Slide to answer" shine: a soft light sweeps
+                        // across the label and arrows in the swipe
+                        // direction. The base stays at 70% so the text is
+                        // always readable; off with "reduce motion".
+                        child: Shimmer.fromColors(
+                          baseColor: foreground.withValues(alpha: 0.7),
+                          highlightColor: foreground,
+                          period: const Duration(milliseconds: 2500),
+                          direction: isRtl
+                              ? ShimmerDirection.rtl
+                              : ShimmerDirection.ltr,
+                          enabled: !reduceMotion,
+                          child: Row(
+                            children: [
+                              Expanded(child: label),
+                              for (var i = 0; i < 3; i++)
+                                AppSvgIcon(
+                                  Assets.vectorsIcArrowLeft14,
+                                  size: 14,
+                                  color: foreground,
+                                  flipInLtr: true,
+                                ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

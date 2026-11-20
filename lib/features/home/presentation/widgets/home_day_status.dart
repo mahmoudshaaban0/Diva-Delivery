@@ -38,6 +38,8 @@ class HomeDayStatus extends StatelessWidget {
                     ? context.colors.textCaption
                     : context.colors.systemGreen,
                 size: 6,
+                // On shift: pulse once the day has started.
+                pulse: started != null,
               ),
               AppText(
                 started == null
