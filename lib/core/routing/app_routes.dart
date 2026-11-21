@@ -12,7 +12,8 @@ enum AppRoutes {
   profile('/profile', 'profile'),
   personalInfo('/personal-info', 'personalInfo'),
   language('/language', 'language'),
-  theme('/theme', 'theme');
+  theme('/theme', 'theme'),
+  orderDetails('/order-details/:id', 'orderDetails');
 
   AppRoutes(this.path, this.name);
   final String path;

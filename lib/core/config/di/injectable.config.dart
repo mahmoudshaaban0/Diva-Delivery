@@ -29,6 +29,14 @@ import '../../../features/home/data/datasources/home_data_source.dart' as _i607;
 import '../../../features/home/data/home_module.dart' as _i860;
 import '../../../features/home/data/repositories/home_repository.dart' as _i127;
 import '../../../features/home/presentation/bloc/home_cubit.dart' as _i382;
+import '../../../features/orders/data/datasources/orders_data_source.dart'
+    as _i58;
+import '../../../features/orders/data/orders_module.dart' as _i342;
+import '../../../features/orders/data/repositories/orders_repository.dart'
+    as _i670;
+import '../../../features/orders/presentation/bloc/order_details_cubit.dart'
+    as _i410;
+import '../../../features/orders/presentation/bloc/orders_cubit.dart' as _i659;
 import '../../../features/permissions/presentation/bloc/camera_permission_cubit.dart'
     as _i240;
 import '../../../features/permissions/presentation/bloc/location_permission_cubit.dart'
@@ -46,6 +54,7 @@ import '../../networking/api_consumer.dart' as _i685;
 import '../../networking/app_intercepters.dart' as _i301;
 import '../../networking/dio_consumer.dart' as _i1031;
 import '../../networking/network_info.dart' as _i421;
+import '../../services/call_service.dart' as _i277;
 import '../../services/directions_service.dart' as _i567;
 import '../../services/image_picker_service.dart' as _i928;
 import '../../services/location_service.dart' as _i537;
@@ -63,6 +72,7 @@ extension GetItInjectableX on _i174.GetIt {
     final coreInjectableModule = _$CoreInjectableModule();
     final authModule = _$AuthModule();
     final homeModule = _$HomeModule();
+    final ordersModule = _$OrdersModule();
     final profileModule = _$ProfileModule();
     gh.factory<String>(() => coreInjectableModule.envBaseUrl);
     await gh.factoryAsync<_i460.SharedPreferences>(
@@ -84,6 +94,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i421.NetworkInfo>(
       () => coreInjectableModule.networkInfo(),
     );
+    gh.lazySingleton<_i277.CallService>(() => _i277.CallService());
     gh.lazySingleton<_i567.DirectionsService>(() => _i567.DirectionsService());
     gh.lazySingleton<_i928.ImagePickerService>(
       () => _i928.ImagePickerService(),
@@ -126,10 +137,33 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i421.NetworkInfo>(),
       ),
     );
+    gh.lazySingleton<_i58.OrdersDataSource>(
+      () => ordersModule.ordersDataSource(
+        gh<_i685.ApiConsumer>(),
+        gh<_i421.NetworkInfo>(),
+      ),
+    );
     gh.lazySingleton<_i431.ProfileDataSource>(
       () => profileModule.profileDataSource(
         gh<_i685.ApiConsumer>(),
         gh<_i421.NetworkInfo>(),
+      ),
+    );
+    gh.lazySingleton<_i670.OrdersRepository>(
+      () => _i670.OrdersRepository(gh<_i58.OrdersDataSource>()),
+    );
+    gh.factory<_i410.OrderDetailsCubit>(
+      () => _i410.OrderDetailsCubit(
+        gh<_i670.OrdersRepository>(),
+        gh<_i277.CallService>(),
+        gh<_i567.DirectionsService>(),
+      ),
+    );
+    gh.factory<_i659.OrdersCubit>(
+      () => _i659.OrdersCubit(
+        gh<_i670.OrdersRepository>(),
+        gh<_i277.CallService>(),
+        gh<_i567.DirectionsService>(),
       ),
     );
     gh.lazySingleton<_i960.AuthRepository>(
@@ -174,5 +208,7 @@ class _$CoreInjectableModule extends _i292.CoreInjectableModule {}
 class _$AuthModule extends _i124.AuthModule {}
 
 class _$HomeModule extends _i860.HomeModule {}
+
+class _$OrdersModule extends _i342.OrdersModule {}
 
 class _$ProfileModule extends _i337.ProfileModule {}

@@ -111,6 +111,17 @@ Feature-first layout: `lib/features/<feature>/{data/{datasources,models,reposito
   - `DateFormatter.formatMonthYear` formats month and year.
 - Photos: `ImagePickerService` (`lib/core/services/`, wraps `image_picker`). `PermissionService.locationAccess()` returns always / while in use / denied.
 
+**Reusable pieces from Flow 03** (use these, don't rebuild them):
+- `AppPageHeader(action:, bottom:)`: `action` is the 44-px button at the end of the title row (sort, call); `bottom` sits under it (e.g. `AppSearchBar`).
+- `AppSearchBar` (molecule, Figma `Courier/Search Bar`): the screen owns the controller; it shows a clear button and a primary border once filled. Pass `WesternDigitsFormatter` when users may type Arabic digits.
+- `AppTone` + `AppToneIcon` (atom, Figma `Courier/Tone Icon`): 16-px icon on a soft 32-px circle; blue = info / on the way, green = done, yellow = needs attention, red = failed, neutral.
+- `AppStatusChip` (molecule, Figma `Courier/Status Chip`): order status pill with a 6-px dot, colored by `AppTone`. `OrderStatusChip` maps `OrderStatus` to it.
+- `AppStatusView` (organism): centered empty / no-results state (status icon, title, text, optional soft 200-wide action).
+- `AppInfoCard(title?, icon: AppToneIcon?)`: section cards like the order details. `AppInfoRow` takes exactly one of `value` / `amount` (riyal price) / `trailing`, plus `valueColor`, `onCopy`, `onTap` (link with chevron).
+- `AppPrice(showCents: true)` → `1,280.00` (`AmountFormatter.money`). Dates: `DateFormatter.formatDayMonth`, `formatWeekdayDayMonth`, `formatFullDateAndTime`.
+- `CallService` (`lib/core/services/`): opens the dialer (`tel:`); with `DirectionsService` for navigation.
+- Order details is a top-level route `/order-details/:id` (no tab bar) and takes the tapped `OrderModel` as `extra` for an instant header.
+
 **Loading skeletons**: content that's loading shows a shimmer skeleton (`shimmer` package), never a centered `CircularProgressIndicator`. Wrap a layout of `AppSkeletonBox`es (`atoms/app_skeleton_box.dart`, `.circle` for avatars) in `AppSkeleton` (`atoms/app_skeleton.dart`, theme colors, sweeps in the reading direction). Each screen gets its own `<Feature>Skeleton` widget that mirrors the real layout (e.g. `HomeSkeleton`). Spinners stay only inside buttons (`AppFilledButton(isLoading: true)`) and the swipe button's checking state.
 
 **OTP input**: use `AppOtpField` (molecule wrapping `pinput`). Keep `pinput` on **6.x**: 7.x is built on the decoupled `material_ui` package and crashes under the framework's `Scaffold`. SMS autofill works through `oneTimeCode` on iOS and `SmsCodeRetriever` (`lib/core/utility/`, `smart_auth` SMS User Consent API) on Android.

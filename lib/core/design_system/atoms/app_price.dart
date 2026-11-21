@@ -9,13 +9,22 @@ import 'package:limitless_code_template/core/utility/extensions.dart';
 /// left of the number in both languages, takes the text color, and is about
 /// 0.85 × the font size.
 class AppPrice extends StatelessWidget {
-  const AppPrice({required this.amount, this.style, this.color, super.key});
+  const AppPrice({
+    required this.amount,
+    this.style,
+    this.color,
+    this.showCents = false,
+    super.key,
+  });
 
   final num amount;
 
   /// Defaults to `typography.titleS`.
   final TextStyle? style;
   final Color? color;
+
+  /// `1,280.00` instead of `1,280` (order cards and details).
+  final bool showCents;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +51,12 @@ class AppPrice extends StatelessWidget {
               ),
             ),
           ),
-          Text(AmountFormatter.format(amount), style: textStyle),
+          Text(
+            showCents
+                ? AmountFormatter.money(amount)
+                : AmountFormatter.format(amount),
+            style: textStyle,
+          ),
         ],
       ),
     );

@@ -7,6 +7,8 @@ import 'package:limitless_code_template/features/auth/presentation/screens/forgo
 import 'package:limitless_code_template/features/auth/presentation/screens/login_screen.dart';
 import 'package:limitless_code_template/features/auth/presentation/screens/otp_screen.dart';
 import 'package:limitless_code_template/features/home/presentation/screens/home_screen.dart';
+import 'package:limitless_code_template/features/orders/data/models/order_model.dart';
+import 'package:limitless_code_template/features/orders/presentation/screens/order_details_screen.dart';
 import 'package:limitless_code_template/features/orders/presentation/screens/orders_screen.dart';
 import 'package:limitless_code_template/features/permissions/presentation/screens/camera_permission_screen.dart';
 import 'package:limitless_code_template/features/permissions/presentation/screens/location_permission_screen.dart';
@@ -129,6 +131,16 @@ class AppRouter {
         name: AppRoutes.theme.name,
         path: AppRoutes.theme.path,
         builder: (context, state) => const ThemeScreen(),
+      ),
+      GoRoute(
+        name: AppRoutes.orderDetails.name,
+        path: AppRoutes.orderDetails.path,
+        // Full screen (no tab bar), like the design. `extra`: the tapped
+        // list item, so the header shows while the details load.
+        builder: (context, state) => OrderDetailsScreen(
+          id: state.pathParameters['id'] ?? '',
+          order: state.extra is OrderModel ? state.extra! as OrderModel : null,
+        ),
       ),
     ],
   );

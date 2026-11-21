@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:limitless_code_template/core/config/di/injectable.dart';
 import 'package:limitless_code_template/core/constants/assets.dart';
 import 'package:limitless_code_template/core/cubit/base_state.dart';
@@ -10,6 +11,7 @@ import 'package:limitless_code_template/core/design_system/organisms/app_toast.d
 import 'package:limitless_code_template/core/design_system/organisms/error_state.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
+import 'package:limitless_code_template/core/routing/app_routes.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
 import 'package:limitless_code_template/features/home/presentation/bloc/home_cubit.dart';
 import 'package:limitless_code_template/features/home/presentation/bloc/home_state.dart';
@@ -80,7 +82,7 @@ class _HomeView extends StatelessWidget {
             warehouseName: home.warehouse.name,
             onViewOrders: () {
               Navigator.of(context).pop();
-              // NOTE: open the orders list (Flow 03) once it's built.
+              context.goNamed(AppRoutes.orders.name);
             },
             onLater: () => Navigator.of(context).pop(),
           ),
@@ -174,9 +176,8 @@ class _HomeView extends StatelessWidget {
                             HomeDayProgressCard(
                               delivered: home.deliveredToday,
                               assigned: home.assignedToday,
-                              onViewOrders: () {
-                                // NOTE: open the orders list (Flow 03).
-                              },
+                              onViewOrders: () =>
+                                  context.goNamed(AppRoutes.orders.name),
                             )
                           else
                             HomeStartDayCard(

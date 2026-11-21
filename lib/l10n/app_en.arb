@@ -281,5 +281,272 @@
       }
     }
   },
-  "logoutError": "Couldn't log out"
+  "logoutError": "Couldn't log out",
+  "ordersTitle": "Orders",
+  "ordersCurrentSubtitle": "{count, plural, =1{1 order} other{{count} orders}} · {date}",
+  "@ordersCurrentSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "ordersPreviousSubtitle": "{count, plural, =1{1 past order} other{{count} past orders}}",
+  "@ordersPreviousSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ordersNoCurrentSubtitle": "No current orders",
+  "ordersSearchHint": "Search by order number or customer name",
+  "ordersClearSearch": "Clear search",
+  "ordersTabCurrent": "Current ({count})",
+  "@ordersTabCurrent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ordersTabPrevious": "Past",
+  "ordersSortTitle": "Sort orders",
+  "ordersSortNearest": "Nearest to you",
+  "ordersSortNewest": "Newest assigned",
+  "ordersSortOldest": "Oldest assigned",
+  "ordersSortStatus": "By status",
+  "ordersApply": "Apply",
+  "ordersOthersSorted": "Other orders · sorted by {sort, select, nearest{nearest to you} newest{newest assigned} oldest{oldest assigned} other{status}}",
+  "@ordersOthersSorted": {
+    "placeholders": {
+      "sort": {
+        "type": "String"
+      }
+    }
+  },
+  "ordersAllSorted": "Orders · sorted by {sort, select, nearest{nearest to you} newest{newest assigned} oldest{oldest assigned} other{status}}",
+  "@ordersAllSorted": {
+    "placeholders": {
+      "sort": {
+        "type": "String"
+      }
+    }
+  },
+  "ordersSearchResults": "{count, plural, =1{1 result} other{{count} results}} in {tab, select, current{current orders} other{past orders}}",
+  "@ordersSearchResults": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tab": {
+        "type": "String"
+      }
+    }
+  },
+  "ordersNoResultsTitle": "No results",
+  "ordersNoResultsMessage": "No order matches “{query}”. Check the order number or try the customer name",
+  "@ordersNoResultsMessage": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "ordersEmptyTitle": "You've finished today's orders",
+  "ordersEmptyMessage": "New orders assigned to you will show up here, and you'll get a notification",
+  "ordersShowPrevious": "View past orders",
+  "ordersPreviousEmptyTitle": "No past orders yet",
+  "ordersPreviousEmptyMessage": "Orders you finish will show up here",
+  "ordersLoadError": "Couldn't load your orders",
+  "ordersToday": "Today · {date}",
+  "@ordersToday": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "ordersYesterday": "Yesterday · {date}",
+  "@ordersYesterday": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "orderStatusWithCourier": "With courier",
+  "orderStatusOnTheWay": "On the way",
+  "orderStatusArrived": "Arrived",
+  "orderStatusDelivered": "Delivered",
+  "orderStatusNoAnswer": "No answer",
+  "orderStatusRejected": "Rejected",
+  "customerIndividual": "Individual",
+  "customerBusiness": "Business",
+  "customerIndividualFull": "Individual (B2C)",
+  "customerBusinessFull": "Business (B2B)",
+  "orderItems": "{count, plural, =1{1 item} other{{count} items}}",
+  "@orderItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "distanceKm": "{distance} km",
+  "@distanceKm": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "orderAddress": "{district}, {city}",
+  "@orderAddress": {
+    "placeholders": {
+      "district": {
+        "type": "String"
+      },
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentCashOnDelivery": "Cash on delivery",
+  "paymentOnline": "Online payment",
+  "paymentPaid": "Paid",
+  "paymentCollectedCash": "Collected in cash",
+  "paymentUnpaid": "Unpaid",
+  "orderDeliveredAt": "Delivered {time}",
+  "@orderDeliveredAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "orderLastAttemptAt": "Last attempt {time}",
+  "@orderLastAttemptAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "orderRejectedAt": "Refused {time}",
+  "@orderRejectedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "orderTimeAndDate": "{time} · {date}",
+  "@orderTimeAndDate": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "ordersActiveKicker": "Your current order · out for delivery",
+  "ordersActiveMeta": "{code} · {district} · {distance}",
+  "@ordersActiveMeta": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      },
+      "district": {
+        "type": "String"
+      },
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "ordersCollect": "Collect",
+  "ordersContinueNavigation": "Continue navigation",
+  "callCustomer": "Call customer",
+  "callFailed": "Couldn't start the call",
+  "mapsFailed": "Couldn't open maps",
+  "orderDetailsTitle": "Order details",
+  "orderDetailsSubtitle": "{code} · {name}",
+  "@orderDetailsSubtitle": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "orderDetailsLoadError": "Couldn't load the order",
+  "orderInfo": "Order info",
+  "orderNumber": "Order number",
+  "orderDateTime": "Order date & time",
+  "orderDeliveryDateTime": "Delivery date & time",
+  "orderStatus": "Order status",
+  "orderCustomer": "Customer details",
+  "customerName": "Customer name",
+  "customerType": "Customer type",
+  "customerPhone": "Mobile number",
+  "customerLocation": "Location",
+  "customerMap": "Location map",
+  "openMap": "Open map",
+  "nationalAddress": "National address",
+  "orderProducts": "Products ({count})",
+  "@orderProducts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "productMeta": "{category} · Qty {quantity}",
+  "@productMeta": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      },
+      "quantity": {
+        "type": "int"
+      }
+    }
+  },
+  "productUnitPrice": "each",
+  "showAllProducts": "Show all products ({count})",
+  "@showAllProducts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "showFewerProducts": "Show less",
+  "orderPayment": "Payment",
+  "paymentMethod": "Payment method",
+  "paymentStatus": "Payment status",
+  "orderSubtotal": "Subtotal ({items})",
+  "@orderSubtotal": {
+    "placeholders": {
+      "items": {
+        "type": "String"
+      }
+    }
+  },
+  "deliveryFee": "Delivery fee",
+  "totalToCollect": "Total to collect",
+  "totalCollected": "Amount collected",
+  "orderTotal": "Total",
+  "proofOfDelivery": "Proof of delivery",
+  "proofHomePhoto": "Home photo",
+  "proofOrderPhoto": "Order photo",
+  "goToCustomer": "Go to customer"
 }

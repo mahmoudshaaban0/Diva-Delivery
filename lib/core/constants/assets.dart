@@ -56,6 +56,11 @@ class Assets {
   static const String vectorsGeofenceYouHalo =
       "assets/vectors/geofence_you_halo.svg";
 
+  /// Assets for vectorsIcArrowDown14
+  /// assets/vectors/ic_arrow_down_14.svg
+  static const String vectorsIcArrowDown14 =
+      "assets/vectors/ic_arrow_down_14.svg";
+
   /// Assets for vectorsIcArrowLeft14
   /// assets/vectors/ic_arrow_left_14.svg
   static const String vectorsIcArrowLeft14 =
@@ -71,6 +76,14 @@ class Assets {
   static const String vectorsIcArrowRight22 =
       "assets/vectors/ic_arrow_right_22.svg";
 
+  /// Assets for vectorsIcCalendar16
+  /// assets/vectors/ic_calendar_16.svg
+  static const String vectorsIcCalendar16 = "assets/vectors/ic_calendar_16.svg";
+
+  /// Assets for vectorsIcCall22
+  /// assets/vectors/ic_call_22.svg
+  static const String vectorsIcCall22 = "assets/vectors/ic_call_22.svg";
+
   /// Assets for vectorsIcCamera15
   /// assets/vectors/ic_camera_15.svg
   static const String vectorsIcCamera15 = "assets/vectors/ic_camera_15.svg";
@@ -83,9 +96,17 @@ class Assets {
   /// assets/vectors/ic_camera_36.svg
   static const String vectorsIcCamera36 = "assets/vectors/ic_camera_36.svg";
 
+  /// Assets for vectorsIcCancel18
+  /// assets/vectors/ic_cancel_18.svg
+  static const String vectorsIcCancel18 = "assets/vectors/ic_cancel_18.svg";
+
   /// Assets for vectorsIcClock16
   /// assets/vectors/ic_clock_16.svg
   static const String vectorsIcClock16 = "assets/vectors/ic_clock_16.svg";
+
+  /// Assets for vectorsIcClock18
+  /// assets/vectors/ic_clock_18.svg
+  static const String vectorsIcClock18 = "assets/vectors/ic_clock_18.svg";
 
   /// Assets for vectorsIcClock20
   /// assets/vectors/ic_clock_20.svg
@@ -124,9 +145,18 @@ class Assets {
   static const String vectorsIcHomeSolid24 =
       "assets/vectors/ic_home_solid_24.svg";
 
+  /// Assets for vectorsIcImage16
+  /// assets/vectors/ic_image_16.svg
+  static const String vectorsIcImage16 = "assets/vectors/ic_image_16.svg";
+
   /// Assets for vectorsIcImage20
   /// assets/vectors/ic_image_20.svg
   static const String vectorsIcImage20 = "assets/vectors/ic_image_20.svg";
+
+  /// Assets for vectorsIcInformationCircle16
+  /// assets/vectors/ic_information_circle_16.svg
+  static const String vectorsIcInformationCircle16 =
+      "assets/vectors/ic_information_circle_16.svg";
 
   /// Assets for vectorsIcInformationCircle18
   /// assets/vectors/ic_information_circle_18.svg
@@ -141,6 +171,10 @@ class Assets {
   /// Assets for vectorsIcLocation14
   /// assets/vectors/ic_location_14.svg
   static const String vectorsIcLocation14 = "assets/vectors/ic_location_14.svg";
+
+  /// Assets for vectorsIcLocation16
+  /// assets/vectors/ic_location_16.svg
+  static const String vectorsIcLocation16 = "assets/vectors/ic_location_16.svg";
 
   /// Assets for vectorsIcLocation18
   /// assets/vectors/ic_location_18.svg
@@ -197,6 +231,16 @@ class Assets {
   /// assets/vectors/ic_moon_20.svg
   static const String vectorsIcMoon20 = "assets/vectors/ic_moon_20.svg";
 
+  /// Assets for vectorsIcNavigation16
+  /// assets/vectors/ic_navigation_16.svg
+  static const String vectorsIcNavigation16 =
+      "assets/vectors/ic_navigation_16.svg";
+
+  /// Assets for vectorsIcNavigation22
+  /// assets/vectors/ic_navigation_22.svg
+  static const String vectorsIcNavigation22 =
+      "assets/vectors/ic_navigation_22.svg";
+
   /// Assets for vectorsIcNotificationBody
   /// assets/vectors/ic_notification_body.svg
   static const String vectorsIcNotificationBody =
@@ -211,6 +255,14 @@ class Assets {
   /// assets/vectors/ic_package_16.svg
   static const String vectorsIcPackage16 = "assets/vectors/ic_package_16.svg";
 
+  /// Assets for vectorsIcPackage18
+  /// assets/vectors/ic_package_18.svg
+  static const String vectorsIcPackage18 = "assets/vectors/ic_package_18.svg";
+
+  /// Assets for vectorsIcPackage22
+  /// assets/vectors/ic_package_22.svg
+  static const String vectorsIcPackage22 = "assets/vectors/ic_package_22.svg";
+
   /// Assets for vectorsIcPackage24
   /// assets/vectors/ic_package_24.svg
   static const String vectorsIcPackage24 = "assets/vectors/ic_package_24.svg";
@@ -219,9 +271,22 @@ class Assets {
   /// assets/vectors/ic_package_26.svg
   static const String vectorsIcPackage26 = "assets/vectors/ic_package_26.svg";
 
+  /// Assets for vectorsIcPackageSolid24
+  /// assets/vectors/ic_package_solid_24.svg
+  static const String vectorsIcPackageSolid24 =
+      "assets/vectors/ic_package_solid_24.svg";
+
   /// Assets for vectorsIcRiyal
   /// assets/vectors/ic_riyal.svg
   static const String vectorsIcRiyal = "assets/vectors/ic_riyal.svg";
+
+  /// Assets for vectorsIcSearch20
+  /// assets/vectors/ic_search_20.svg
+  static const String vectorsIcSearch20 = "assets/vectors/ic_search_20.svg";
+
+  /// Assets for vectorsIcSearch26
+  /// assets/vectors/ic_search_26.svg
+  static const String vectorsIcSearch26 = "assets/vectors/ic_search_26.svg";
 
   /// Assets for vectorsIcSettings20
   /// assets/vectors/ic_settings_20.svg
@@ -245,6 +310,10 @@ class Assets {
   /// assets/vectors/ic_smart_phone_28.svg
   static const String vectorsIcSmartPhone28 =
       "assets/vectors/ic_smart_phone_28.svg";
+
+  /// Assets for vectorsIcSorting22
+  /// assets/vectors/ic_sorting_22.svg
+  static const String vectorsIcSorting22 = "assets/vectors/ic_sorting_22.svg";
 
   /// Assets for vectorsIcTick26
   /// assets/vectors/ic_tick_26.svg

@@ -32,11 +32,11 @@ class MainShell extends StatelessWidget {
           ),
         ),
         PersistentRouterTabConfig(
-          // NOTE: the solid "active" icon arrives with Flow 03.
           item: AppBottomNav.item(
             context,
             title: context.localizations.navOrders,
-            icon: const AppSvgIcon(Assets.vectorsIcPackage24, size: 24),
+            icon: const AppSvgIcon(Assets.vectorsIcPackageSolid24, size: 24),
+            inactiveIcon: const AppSvgIcon(Assets.vectorsIcPackage24, size: 24),
           ),
         ),
         PersistentRouterTabConfig(

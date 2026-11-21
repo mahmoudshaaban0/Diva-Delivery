@@ -580,4 +580,357 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get logoutError => 'Couldn\'t log out';
+
+  @override
+  String get ordersTitle => 'Orders';
+
+  @override
+  String ordersCurrentSubtitle(int count, String date) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count orders',
+      one: '1 order',
+    );
+    return '$_temp0 · $date';
+  }
+
+  @override
+  String ordersPreviousSubtitle(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count past orders',
+      one: '1 past order',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get ordersNoCurrentSubtitle => 'No current orders';
+
+  @override
+  String get ordersSearchHint => 'Search by order number or customer name';
+
+  @override
+  String get ordersClearSearch => 'Clear search';
+
+  @override
+  String ordersTabCurrent(int count) {
+    return 'Current ($count)';
+  }
+
+  @override
+  String get ordersTabPrevious => 'Past';
+
+  @override
+  String get ordersSortTitle => 'Sort orders';
+
+  @override
+  String get ordersSortNearest => 'Nearest to you';
+
+  @override
+  String get ordersSortNewest => 'Newest assigned';
+
+  @override
+  String get ordersSortOldest => 'Oldest assigned';
+
+  @override
+  String get ordersSortStatus => 'By status';
+
+  @override
+  String get ordersApply => 'Apply';
+
+  @override
+  String ordersOthersSorted(String sort) {
+    String _temp0 = intl.Intl.selectLogic(sort, {
+      'nearest': 'nearest to you',
+      'newest': 'newest assigned',
+      'oldest': 'oldest assigned',
+      'other': 'status',
+    });
+    return 'Other orders · sorted by $_temp0';
+  }
+
+  @override
+  String ordersAllSorted(String sort) {
+    String _temp0 = intl.Intl.selectLogic(sort, {
+      'nearest': 'nearest to you',
+      'newest': 'newest assigned',
+      'oldest': 'oldest assigned',
+      'other': 'status',
+    });
+    return 'Orders · sorted by $_temp0';
+  }
+
+  @override
+  String ordersSearchResults(int count, String tab) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count results',
+      one: '1 result',
+    );
+    String _temp1 = intl.Intl.selectLogic(tab, {
+      'current': 'current orders',
+      'other': 'past orders',
+    });
+    return '$_temp0 in $_temp1';
+  }
+
+  @override
+  String get ordersNoResultsTitle => 'No results';
+
+  @override
+  String ordersNoResultsMessage(String query) {
+    return 'No order matches “$query”. Check the order number or try the customer name';
+  }
+
+  @override
+  String get ordersEmptyTitle => 'You\'ve finished today\'s orders';
+
+  @override
+  String get ordersEmptyMessage =>
+      'New orders assigned to you will show up here, and you\'ll get a notification';
+
+  @override
+  String get ordersShowPrevious => 'View past orders';
+
+  @override
+  String get ordersPreviousEmptyTitle => 'No past orders yet';
+
+  @override
+  String get ordersPreviousEmptyMessage =>
+      'Orders you finish will show up here';
+
+  @override
+  String get ordersLoadError => 'Couldn\'t load your orders';
+
+  @override
+  String ordersToday(String date) {
+    return 'Today · $date';
+  }
+
+  @override
+  String ordersYesterday(String date) {
+    return 'Yesterday · $date';
+  }
+
+  @override
+  String get orderStatusWithCourier => 'With courier';
+
+  @override
+  String get orderStatusOnTheWay => 'On the way';
+
+  @override
+  String get orderStatusArrived => 'Arrived';
+
+  @override
+  String get orderStatusDelivered => 'Delivered';
+
+  @override
+  String get orderStatusNoAnswer => 'No answer';
+
+  @override
+  String get orderStatusRejected => 'Rejected';
+
+  @override
+  String get customerIndividual => 'Individual';
+
+  @override
+  String get customerBusiness => 'Business';
+
+  @override
+  String get customerIndividualFull => 'Individual (B2C)';
+
+  @override
+  String get customerBusinessFull => 'Business (B2B)';
+
+  @override
+  String orderItems(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items',
+      one: '1 item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String distanceKm(String distance) {
+    return '$distance km';
+  }
+
+  @override
+  String orderAddress(String district, String city) {
+    return '$district, $city';
+  }
+
+  @override
+  String get paymentCashOnDelivery => 'Cash on delivery';
+
+  @override
+  String get paymentOnline => 'Online payment';
+
+  @override
+  String get paymentPaid => 'Paid';
+
+  @override
+  String get paymentCollectedCash => 'Collected in cash';
+
+  @override
+  String get paymentUnpaid => 'Unpaid';
+
+  @override
+  String orderDeliveredAt(String time) {
+    return 'Delivered $time';
+  }
+
+  @override
+  String orderLastAttemptAt(String time) {
+    return 'Last attempt $time';
+  }
+
+  @override
+  String orderRejectedAt(String time) {
+    return 'Refused $time';
+  }
+
+  @override
+  String orderTimeAndDate(String time, String date) {
+    return '$time · $date';
+  }
+
+  @override
+  String get ordersActiveKicker => 'Your current order · out for delivery';
+
+  @override
+  String ordersActiveMeta(String code, String district, String distance) {
+    return '$code · $district · $distance';
+  }
+
+  @override
+  String get ordersCollect => 'Collect';
+
+  @override
+  String get ordersContinueNavigation => 'Continue navigation';
+
+  @override
+  String get callCustomer => 'Call customer';
+
+  @override
+  String get callFailed => 'Couldn\'t start the call';
+
+  @override
+  String get mapsFailed => 'Couldn\'t open maps';
+
+  @override
+  String get orderDetailsTitle => 'Order details';
+
+  @override
+  String orderDetailsSubtitle(String code, String name) {
+    return '$code · $name';
+  }
+
+  @override
+  String get orderDetailsLoadError => 'Couldn\'t load the order';
+
+  @override
+  String get orderInfo => 'Order info';
+
+  @override
+  String get orderNumber => 'Order number';
+
+  @override
+  String get orderDateTime => 'Order date & time';
+
+  @override
+  String get orderDeliveryDateTime => 'Delivery date & time';
+
+  @override
+  String get orderStatus => 'Order status';
+
+  @override
+  String get orderCustomer => 'Customer details';
+
+  @override
+  String get customerName => 'Customer name';
+
+  @override
+  String get customerType => 'Customer type';
+
+  @override
+  String get customerPhone => 'Mobile number';
+
+  @override
+  String get customerLocation => 'Location';
+
+  @override
+  String get customerMap => 'Location map';
+
+  @override
+  String get openMap => 'Open map';
+
+  @override
+  String get nationalAddress => 'National address';
+
+  @override
+  String orderProducts(int count) {
+    return 'Products ($count)';
+  }
+
+  @override
+  String productMeta(String category, int quantity) {
+    return '$category · Qty $quantity';
+  }
+
+  @override
+  String get productUnitPrice => 'each';
+
+  @override
+  String showAllProducts(int count) {
+    return 'Show all products ($count)';
+  }
+
+  @override
+  String get showFewerProducts => 'Show less';
+
+  @override
+  String get orderPayment => 'Payment';
+
+  @override
+  String get paymentMethod => 'Payment method';
+
+  @override
+  String get paymentStatus => 'Payment status';
+
+  @override
+  String orderSubtotal(String items) {
+    return 'Subtotal ($items)';
+  }
+
+  @override
+  String get deliveryFee => 'Delivery fee';
+
+  @override
+  String get totalToCollect => 'Total to collect';
+
+  @override
+  String get totalCollected => 'Amount collected';
+
+  @override
+  String get orderTotal => 'Total';
+
+  @override
+  String get proofOfDelivery => 'Proof of delivery';
+
+  @override
+  String get proofHomePhoto => 'Home photo';
+
+  @override
+  String get proofOrderPhoto => 'Order photo';
+
+  @override
+  String get goToCustomer => 'Go to customer';
 }

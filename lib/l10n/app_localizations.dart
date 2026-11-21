@@ -1087,6 +1087,540 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Couldn\'t log out'**
   String get logoutError;
+
+  /// No description provided for @ordersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get ordersTitle;
+
+  /// No description provided for @ordersCurrentSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 order} other{{count} orders}} · {date}'**
+  String ordersCurrentSubtitle(int count, String date);
+
+  /// No description provided for @ordersPreviousSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 past order} other{{count} past orders}}'**
+  String ordersPreviousSubtitle(int count);
+
+  /// No description provided for @ordersNoCurrentSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No current orders'**
+  String get ordersNoCurrentSubtitle;
+
+  /// No description provided for @ordersSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search by order number or customer name'**
+  String get ordersSearchHint;
+
+  /// No description provided for @ordersClearSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear search'**
+  String get ordersClearSearch;
+
+  /// No description provided for @ordersTabCurrent.
+  ///
+  /// In en, this message translates to:
+  /// **'Current ({count})'**
+  String ordersTabCurrent(int count);
+
+  /// No description provided for @ordersTabPrevious.
+  ///
+  /// In en, this message translates to:
+  /// **'Past'**
+  String get ordersTabPrevious;
+
+  /// No description provided for @ordersSortTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sort orders'**
+  String get ordersSortTitle;
+
+  /// No description provided for @ordersSortNearest.
+  ///
+  /// In en, this message translates to:
+  /// **'Nearest to you'**
+  String get ordersSortNearest;
+
+  /// No description provided for @ordersSortNewest.
+  ///
+  /// In en, this message translates to:
+  /// **'Newest assigned'**
+  String get ordersSortNewest;
+
+  /// No description provided for @ordersSortOldest.
+  ///
+  /// In en, this message translates to:
+  /// **'Oldest assigned'**
+  String get ordersSortOldest;
+
+  /// No description provided for @ordersSortStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'By status'**
+  String get ordersSortStatus;
+
+  /// No description provided for @ordersApply.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get ordersApply;
+
+  /// No description provided for @ordersOthersSorted.
+  ///
+  /// In en, this message translates to:
+  /// **'Other orders · sorted by {sort, select, nearest{nearest to you} newest{newest assigned} oldest{oldest assigned} other{status}}'**
+  String ordersOthersSorted(String sort);
+
+  /// No description provided for @ordersAllSorted.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders · sorted by {sort, select, nearest{nearest to you} newest{newest assigned} oldest{oldest assigned} other{status}}'**
+  String ordersAllSorted(String sort);
+
+  /// No description provided for @ordersSearchResults.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 result} other{{count} results}} in {tab, select, current{current orders} other{past orders}}'**
+  String ordersSearchResults(int count, String tab);
+
+  /// No description provided for @ordersNoResultsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No results'**
+  String get ordersNoResultsTitle;
+
+  /// No description provided for @ordersNoResultsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'No order matches “{query}”. Check the order number or try the customer name'**
+  String ordersNoResultsMessage(String query);
+
+  /// No description provided for @ordersEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve finished today\'s orders'**
+  String get ordersEmptyTitle;
+
+  /// No description provided for @ordersEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'New orders assigned to you will show up here, and you\'ll get a notification'**
+  String get ordersEmptyMessage;
+
+  /// No description provided for @ordersShowPrevious.
+  ///
+  /// In en, this message translates to:
+  /// **'View past orders'**
+  String get ordersShowPrevious;
+
+  /// No description provided for @ordersPreviousEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No past orders yet'**
+  String get ordersPreviousEmptyTitle;
+
+  /// No description provided for @ordersPreviousEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders you finish will show up here'**
+  String get ordersPreviousEmptyMessage;
+
+  /// No description provided for @ordersLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load your orders'**
+  String get ordersLoadError;
+
+  /// No description provided for @ordersToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today · {date}'**
+  String ordersToday(String date);
+
+  /// No description provided for @ordersYesterday.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday · {date}'**
+  String ordersYesterday(String date);
+
+  /// No description provided for @orderStatusWithCourier.
+  ///
+  /// In en, this message translates to:
+  /// **'With courier'**
+  String get orderStatusWithCourier;
+
+  /// No description provided for @orderStatusOnTheWay.
+  ///
+  /// In en, this message translates to:
+  /// **'On the way'**
+  String get orderStatusOnTheWay;
+
+  /// No description provided for @orderStatusArrived.
+  ///
+  /// In en, this message translates to:
+  /// **'Arrived'**
+  String get orderStatusArrived;
+
+  /// No description provided for @orderStatusDelivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered'**
+  String get orderStatusDelivered;
+
+  /// No description provided for @orderStatusNoAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'No answer'**
+  String get orderStatusNoAnswer;
+
+  /// No description provided for @orderStatusRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get orderStatusRejected;
+
+  /// No description provided for @customerIndividual.
+  ///
+  /// In en, this message translates to:
+  /// **'Individual'**
+  String get customerIndividual;
+
+  /// No description provided for @customerBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Business'**
+  String get customerBusiness;
+
+  /// No description provided for @customerIndividualFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Individual (B2C)'**
+  String get customerIndividualFull;
+
+  /// No description provided for @customerBusinessFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Business (B2B)'**
+  String get customerBusinessFull;
+
+  /// No description provided for @orderItems.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 item} other{{count} items}}'**
+  String orderItems(int count);
+
+  /// No description provided for @distanceKm.
+  ///
+  /// In en, this message translates to:
+  /// **'{distance} km'**
+  String distanceKm(String distance);
+
+  /// No description provided for @orderAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'{district}, {city}'**
+  String orderAddress(String district, String city);
+
+  /// No description provided for @paymentCashOnDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Cash on delivery'**
+  String get paymentCashOnDelivery;
+
+  /// No description provided for @paymentOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'Online payment'**
+  String get paymentOnline;
+
+  /// No description provided for @paymentPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get paymentPaid;
+
+  /// No description provided for @paymentCollectedCash.
+  ///
+  /// In en, this message translates to:
+  /// **'Collected in cash'**
+  String get paymentCollectedCash;
+
+  /// No description provided for @paymentUnpaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Unpaid'**
+  String get paymentUnpaid;
+
+  /// No description provided for @orderDeliveredAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered {time}'**
+  String orderDeliveredAt(String time);
+
+  /// No description provided for @orderLastAttemptAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Last attempt {time}'**
+  String orderLastAttemptAt(String time);
+
+  /// No description provided for @orderRejectedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Refused {time}'**
+  String orderRejectedAt(String time);
+
+  /// No description provided for @orderTimeAndDate.
+  ///
+  /// In en, this message translates to:
+  /// **'{time} · {date}'**
+  String orderTimeAndDate(String time, String date);
+
+  /// No description provided for @ordersActiveKicker.
+  ///
+  /// In en, this message translates to:
+  /// **'Your current order · out for delivery'**
+  String get ordersActiveKicker;
+
+  /// No description provided for @ordersActiveMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'{code} · {district} · {distance}'**
+  String ordersActiveMeta(String code, String district, String distance);
+
+  /// No description provided for @ordersCollect.
+  ///
+  /// In en, this message translates to:
+  /// **'Collect'**
+  String get ordersCollect;
+
+  /// No description provided for @ordersContinueNavigation.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue navigation'**
+  String get ordersContinueNavigation;
+
+  /// No description provided for @callCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Call customer'**
+  String get callCustomer;
+
+  /// No description provided for @callFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t start the call'**
+  String get callFailed;
+
+  /// No description provided for @mapsFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open maps'**
+  String get mapsFailed;
+
+  /// No description provided for @orderDetailsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Order details'**
+  String get orderDetailsTitle;
+
+  /// No description provided for @orderDetailsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{code} · {name}'**
+  String orderDetailsSubtitle(String code, String name);
+
+  /// No description provided for @orderDetailsLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the order'**
+  String get orderDetailsLoadError;
+
+  /// No description provided for @orderInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Order info'**
+  String get orderInfo;
+
+  /// No description provided for @orderNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Order number'**
+  String get orderNumber;
+
+  /// No description provided for @orderDateTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Order date & time'**
+  String get orderDateTime;
+
+  /// No description provided for @orderDeliveryDateTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery date & time'**
+  String get orderDeliveryDateTime;
+
+  /// No description provided for @orderStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Order status'**
+  String get orderStatus;
+
+  /// No description provided for @orderCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer details'**
+  String get orderCustomer;
+
+  /// No description provided for @customerName.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer name'**
+  String get customerName;
+
+  /// No description provided for @customerType.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer type'**
+  String get customerType;
+
+  /// No description provided for @customerPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile number'**
+  String get customerPhone;
+
+  /// No description provided for @customerLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get customerLocation;
+
+  /// No description provided for @customerMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Location map'**
+  String get customerMap;
+
+  /// No description provided for @openMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Open map'**
+  String get openMap;
+
+  /// No description provided for @nationalAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'National address'**
+  String get nationalAddress;
+
+  /// No description provided for @orderProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Products ({count})'**
+  String orderProducts(int count);
+
+  /// No description provided for @productMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'{category} · Qty {quantity}'**
+  String productMeta(String category, int quantity);
+
+  /// No description provided for @productUnitPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'each'**
+  String get productUnitPrice;
+
+  /// No description provided for @showAllProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Show all products ({count})'**
+  String showAllProducts(int count);
+
+  /// No description provided for @showFewerProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Show less'**
+  String get showFewerProducts;
+
+  /// No description provided for @orderPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment'**
+  String get orderPayment;
+
+  /// No description provided for @paymentMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment method'**
+  String get paymentMethod;
+
+  /// No description provided for @paymentStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment status'**
+  String get paymentStatus;
+
+  /// No description provided for @orderSubtotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Subtotal ({items})'**
+  String orderSubtotal(String items);
+
+  /// No description provided for @deliveryFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery fee'**
+  String get deliveryFee;
+
+  /// No description provided for @totalToCollect.
+  ///
+  /// In en, this message translates to:
+  /// **'Total to collect'**
+  String get totalToCollect;
+
+  /// No description provided for @totalCollected.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount collected'**
+  String get totalCollected;
+
+  /// No description provided for @orderTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get orderTotal;
+
+  /// No description provided for @proofOfDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Proof of delivery'**
+  String get proofOfDelivery;
+
+  /// No description provided for @proofHomePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Home photo'**
+  String get proofHomePhoto;
+
+  /// No description provided for @proofOrderPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Order photo'**
+  String get proofOrderPhoto;
+
+  /// No description provided for @goToCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to customer'**
+  String get goToCustomer;
 }
 
 class _AppLocalizationsDelegate

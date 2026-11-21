@@ -33,5 +33,10 @@
       <action android:name="android.intent.action.PROCESS_TEXT"/>
       <data android:mimeType="text/plain"/>
     </intent>
+    <!-- url_launcher: call the customer from the orders screens. -->
+    <intent>
+      <action android:name="android.intent.action.DIAL"/>
+      <data android:scheme="tel"/>
+    </intent>
   </queries>
 </manifest>

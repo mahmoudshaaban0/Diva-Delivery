@@ -33,4 +33,12 @@ final class Env {
   static const String logoutEndpoint = String.fromEnvironment(
     'LOGOUT_ENDPOINT',
   );
+
+  // Orders. The details path holds an `{id}` placeholder.
+  static const String ordersEndpoint = String.fromEnvironment(
+    'ORDERS_ENDPOINT',
+  );
+  static const String orderDetailsEndpoint = String.fromEnvironment(
+    'ORDER_DETAILS_ENDPOINT',
+  );
 }

@@ -8,5 +8,7 @@
   "START_DAY_ENDPOINT": "/courier/day/start",
   "PROFILE_ENDPOINT": "/courier/profile",
   "PROFILE_PHOTO_ENDPOINT": "/courier/profile/photo",
-  "LOGOUT_ENDPOINT": "/auth/logout"
+  "LOGOUT_ENDPOINT": "/auth/logout",
+  "ORDERS_ENDPOINT": "/courier/orders",
+  "ORDER_DETAILS_ENDPOINT": "/courier/orders/{id}"
 }
