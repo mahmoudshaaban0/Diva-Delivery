@@ -408,4 +408,176 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get comingSoon => 'قريبًا';
+
+  @override
+  String get profileTitle => 'الملف الشخصي';
+
+  @override
+  String get profileSubtitle => 'حسابك وإعدادات التطبيق';
+
+  @override
+  String profileCaption(String code) {
+    return 'كابتن توصيل · $code';
+  }
+
+  @override
+  String get profileOnDuty => 'في الخدمة';
+
+  @override
+  String get profileOffDuty => 'خارج الخدمة';
+
+  @override
+  String get profilePersonalInfo => 'المعلومات الشخصية';
+
+  @override
+  String get profileLanguage => 'اللغة';
+
+  @override
+  String get profileLocationPermission => 'إذن الموقع';
+
+  @override
+  String get locationAccessAlways => 'دائمًا';
+
+  @override
+  String get locationAccessWhileInUse => 'أثناء الاستخدام';
+
+  @override
+  String get locationAccessOff => 'غير مفعّل';
+
+  @override
+  String get profileSupport => 'الدعم والمساعدة';
+
+  @override
+  String get logout => 'تسجيل الخروج';
+
+  @override
+  String appVersion(String version) {
+    return 'الإصدار $version';
+  }
+
+  @override
+  String get profileLoadError => 'تعذّر تحميل الملف الشخصي';
+
+  @override
+  String get changePhoto => 'تغيير الصورة';
+
+  @override
+  String get personalInfoSubtitle => 'بياناتك المسجّلة لدى الشركة';
+
+  @override
+  String get personalInfoReadOnly =>
+      'البيانات للعرض فقط · لتعديلها تواصل مع المشرف';
+
+  @override
+  String get personalInfoBasic => 'البيانات الأساسية';
+
+  @override
+  String get personalInfoName => 'الاسم';
+
+  @override
+  String get personalInfoCode => 'رقم الكابتن';
+
+  @override
+  String get personalInfoPhone => 'رقم الجوال';
+
+  @override
+  String get personalInfoEmail => 'البريد الإلكتروني';
+
+  @override
+  String get personalInfoWork => 'بيانات العمل';
+
+  @override
+  String get personalInfoWarehouse => 'المستودع';
+
+  @override
+  String get personalInfoSupervisor => 'المشرف';
+
+  @override
+  String get personalInfoVehicle => 'المركبة';
+
+  @override
+  String get personalInfoJoined => 'تاريخ الانضمام';
+
+  @override
+  String get copied => 'تم النسخ';
+
+  @override
+  String get photoSheetTitle => 'صورة الملف الشخصي';
+
+  @override
+  String get photoSheetSubtitle => 'تظهر للمشرف وللعميل عند التوصيل';
+
+  @override
+  String get photoTake => 'التقاط صورة';
+
+  @override
+  String get photoChoose => 'اختيار من المعرض';
+
+  @override
+  String get photoDelete => 'حذف الصورة';
+
+  @override
+  String get photoUpdated => 'تم تحديث الصورة';
+
+  @override
+  String get photoRemoved => 'تم حذف الصورة';
+
+  @override
+  String get photoUpdateError => 'تعذّر تحديث الصورة';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get save => 'حفظ';
+
+  @override
+  String get languageSubtitle => 'لغة واجهة التطبيق';
+
+  @override
+  String get languageArabic => 'العربية';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get profileTheme => 'المظهر';
+
+  @override
+  String get themeSubtitle => 'مظهر واجهة التطبيق';
+
+  @override
+  String get themeSystem => 'حسب النظام';
+
+  @override
+  String get themeLight => 'فاتح';
+
+  @override
+  String get themeDark => 'داكن';
+
+  @override
+  String get logoutTitle => 'تسجيل الخروج؟';
+
+  @override
+  String get logoutSubtitle =>
+      'سيتوقف تتبع موقعك ولن تصلك طلبات جديدة حتى تسجّل الدخول مرة أخرى.';
+
+  @override
+  String get logoutOpenOrdersTitle => 'لديك طلبات مفتوحة';
+
+  @override
+  String logoutOpenOrdersSubtitle(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count طلب قيد التوصيل',
+      few: '$count طلبات قيد التوصيل',
+      two: 'طلبان قيد التوصيل',
+      one: 'طلب واحد قيد التوصيل',
+    );
+    return 'عندك $_temp0 ومبالغ لم تُسلَّم للمستودع. لو خرجت هيتوقف تتبع موقعك ولن تصلك طلبات جديدة.';
+  }
+
+  @override
+  String get logoutError => 'تعذّر تسجيل الخروج';
 }

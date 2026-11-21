@@ -22,4 +22,15 @@ final class Env {
   static const String startDayEndpoint = String.fromEnvironment(
     'START_DAY_ENDPOINT',
   );
+
+  // Profile.
+  static const String profileEndpoint = String.fromEnvironment(
+    'PROFILE_ENDPOINT',
+  );
+  static const String profilePhotoEndpoint = String.fromEnvironment(
+    'PROFILE_PHOTO_ENDPOINT',
+  );
+  static const String logoutEndpoint = String.fromEnvironment(
+    'LOGOUT_ENDPOINT',
+  );
 }

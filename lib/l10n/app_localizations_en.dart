@@ -409,4 +409,175 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get comingSoon => 'Coming soon';
+
+  @override
+  String get profileTitle => 'Profile';
+
+  @override
+  String get profileSubtitle => 'Your account and app settings';
+
+  @override
+  String profileCaption(String code) {
+    return 'Delivery captain · $code';
+  }
+
+  @override
+  String get profileOnDuty => 'On duty';
+
+  @override
+  String get profileOffDuty => 'Off duty';
+
+  @override
+  String get profilePersonalInfo => 'Personal information';
+
+  @override
+  String get profileLanguage => 'Language';
+
+  @override
+  String get profileLocationPermission => 'Location permission';
+
+  @override
+  String get locationAccessAlways => 'Always';
+
+  @override
+  String get locationAccessWhileInUse => 'While using';
+
+  @override
+  String get locationAccessOff => 'Off';
+
+  @override
+  String get profileSupport => 'Help & support';
+
+  @override
+  String get logout => 'Log out';
+
+  @override
+  String appVersion(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get profileLoadError => 'Couldn\'t load your profile';
+
+  @override
+  String get changePhoto => 'Change photo';
+
+  @override
+  String get personalInfoSubtitle => 'Your details on record with the company';
+
+  @override
+  String get personalInfoReadOnly =>
+      'View only · contact your supervisor to change it';
+
+  @override
+  String get personalInfoBasic => 'Basic details';
+
+  @override
+  String get personalInfoName => 'Name';
+
+  @override
+  String get personalInfoCode => 'Captain number';
+
+  @override
+  String get personalInfoPhone => 'Mobile number';
+
+  @override
+  String get personalInfoEmail => 'Email';
+
+  @override
+  String get personalInfoWork => 'Work details';
+
+  @override
+  String get personalInfoWarehouse => 'Warehouse';
+
+  @override
+  String get personalInfoSupervisor => 'Supervisor';
+
+  @override
+  String get personalInfoVehicle => 'Vehicle';
+
+  @override
+  String get personalInfoJoined => 'Joined';
+
+  @override
+  String get copied => 'Copied';
+
+  @override
+  String get photoSheetTitle => 'Profile photo';
+
+  @override
+  String get photoSheetSubtitle =>
+      'Shown to your supervisor and to customers on delivery';
+
+  @override
+  String get photoTake => 'Take a photo';
+
+  @override
+  String get photoChoose => 'Choose from gallery';
+
+  @override
+  String get photoDelete => 'Remove photo';
+
+  @override
+  String get photoUpdated => 'Profile photo updated';
+
+  @override
+  String get photoRemoved => 'Profile photo removed';
+
+  @override
+  String get photoUpdateError => 'Couldn\'t update the photo';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get languageSubtitle => 'App interface language';
+
+  @override
+  String get languageArabic => 'العربية';
+
+  @override
+  String get languageEnglish => 'English';
+
+  @override
+  String get profileTheme => 'Appearance';
+
+  @override
+  String get themeSubtitle => 'How the app looks';
+
+  @override
+  String get themeSystem => 'System default';
+
+  @override
+  String get themeLight => 'Light';
+
+  @override
+  String get themeDark => 'Dark';
+
+  @override
+  String get logoutTitle => 'Log out?';
+
+  @override
+  String get logoutSubtitle =>
+      'Location tracking will stop and you won\'t get new orders until you sign in again.';
+
+  @override
+  String get logoutOpenOrdersTitle => 'You have open orders';
+
+  @override
+  String logoutOpenOrdersSubtitle(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count orders',
+      one: '1 order',
+    );
+    return 'You have $_temp0 out for delivery and cash not yet handed in to the warehouse. If you log out, location tracking will stop and you won\'t get new orders.';
+  }
+
+  @override
+  String get logoutError => 'Couldn\'t log out';
 }

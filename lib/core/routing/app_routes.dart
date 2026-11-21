@@ -9,7 +9,10 @@ enum AppRoutes {
   locationPermission('/permissions/location', 'locationPermission'),
   cameraPermission('/permissions/camera', 'cameraPermission'),
   orders('/orders', 'orders'),
-  profile('/profile', 'profile');
+  profile('/profile', 'profile'),
+  personalInfo('/personal-info', 'personalInfo'),
+  language('/language', 'language'),
+  theme('/theme', 'theme');
 
   AppRoutes(this.path, this.name);
   final String path;

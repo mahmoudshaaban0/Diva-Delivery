@@ -20,6 +20,10 @@ class DateFormatter {
   static String formatDayAndDate(DateTime date) =>
       (DateFormat('EEEE · d MMMM')..useNativeDigits = false).format(date);
 
+  /// en: March 2025 | ar: مارس 2025 (Western digits in both languages).
+  static String formatMonthYear(DateTime date) =>
+      (DateFormat('MMMM y')..useNativeDigits = false).format(date);
+
   /// en: 8:42 AM | ar: 8:42 ص (Western digits in both languages).
   static String formatTime(DateTime date) =>
       (DateFormat.jm()..useNativeDigits = false).format(date);

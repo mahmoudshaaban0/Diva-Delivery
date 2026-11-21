@@ -7,9 +7,9 @@
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>Diva Courier uses your location while the screen is locked to keep your delivery trip updated for the operations team.</string>
     <key>NSCameraUsageDescription</key>
-    <string>Diva Courier uses the camera to take proof-of-delivery photos.</string>
+    <string>Diva Courier uses the camera to take proof-of-delivery photos and your profile photo.</string>
     <key>NSPhotoLibraryUsageDescription</key>
-    <string>Diva Courier uses your photos to upload call-log screenshots when a customer can't be reached.</string>
+    <string>Diva Courier uses your photos to upload call-log screenshots when a customer can't be reached, and to set your profile photo.</string>
     <key>CADisableMinimumFrameDurationOnPhone</key>
     <true/>
     <key>CFBundleDevelopmentRegion</key>

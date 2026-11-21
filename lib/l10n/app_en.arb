@@ -208,5 +208,78 @@
   "notifications": "Notifications",
   "locationUnavailable": "Couldn't get your location. Make sure location is on and try again.",
   "homeLoadError": "Couldn't load your day",
-  "comingSoon": "Coming soon"
+  "comingSoon": "Coming soon",
+  "profileTitle": "Profile",
+  "profileSubtitle": "Your account and app settings",
+  "profileCaption": "Delivery captain · {code}",
+  "@profileCaption": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "profileOnDuty": "On duty",
+  "profileOffDuty": "Off duty",
+  "profilePersonalInfo": "Personal information",
+  "profileLanguage": "Language",
+  "profileLocationPermission": "Location permission",
+  "locationAccessAlways": "Always",
+  "locationAccessWhileInUse": "While using",
+  "locationAccessOff": "Off",
+  "profileSupport": "Help & support",
+  "logout": "Log out",
+  "appVersion": "Version {version}",
+  "@appVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "profileLoadError": "Couldn't load your profile",
+  "changePhoto": "Change photo",
+  "personalInfoSubtitle": "Your details on record with the company",
+  "personalInfoReadOnly": "View only · contact your supervisor to change it",
+  "personalInfoBasic": "Basic details",
+  "personalInfoName": "Name",
+  "personalInfoCode": "Captain number",
+  "personalInfoPhone": "Mobile number",
+  "personalInfoEmail": "Email",
+  "personalInfoWork": "Work details",
+  "personalInfoWarehouse": "Warehouse",
+  "personalInfoSupervisor": "Supervisor",
+  "personalInfoVehicle": "Vehicle",
+  "personalInfoJoined": "Joined",
+  "copied": "Copied",
+  "photoSheetTitle": "Profile photo",
+  "photoSheetSubtitle": "Shown to your supervisor and to customers on delivery",
+  "photoTake": "Take a photo",
+  "photoChoose": "Choose from gallery",
+  "photoDelete": "Remove photo",
+  "photoUpdated": "Profile photo updated",
+  "photoRemoved": "Profile photo removed",
+  "photoUpdateError": "Couldn't update the photo",
+  "cancel": "Cancel",
+  "save": "Save",
+  "languageSubtitle": "App interface language",
+  "languageArabic": "العربية",
+  "languageEnglish": "English",
+  "profileTheme": "Appearance",
+  "themeSubtitle": "How the app looks",
+  "themeSystem": "System default",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "logoutTitle": "Log out?",
+  "logoutSubtitle": "Location tracking will stop and you won't get new orders until you sign in again.",
+  "logoutOpenOrdersTitle": "You have open orders",
+  "logoutOpenOrdersSubtitle": "You have {count, plural, =1{1 order} other{{count} orders}} out for delivery and cash not yet handed in to the warehouse. If you log out, location tracking will stop and you won't get new orders.",
+  "@logoutOpenOrdersSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "logoutError": "Couldn't log out"
 }

@@ -33,6 +33,13 @@ import '../../../features/permissions/presentation/bloc/camera_permission_cubit.
     as _i240;
 import '../../../features/permissions/presentation/bloc/location_permission_cubit.dart'
     as _i552;
+import '../../../features/profile/data/datasources/profile_data_source.dart'
+    as _i431;
+import '../../../features/profile/data/profile_module.dart' as _i337;
+import '../../../features/profile/data/repositories/profile_repository.dart'
+    as _i549;
+import '../../../features/profile/presentation/bloc/profile_cubit.dart'
+    as _i699;
 import '../../cubit/locale_cubit.dart' as _i148;
 import '../../cubit/theme_cubit.dart' as _i1053;
 import '../../networking/api_consumer.dart' as _i685;
@@ -40,6 +47,7 @@ import '../../networking/app_intercepters.dart' as _i301;
 import '../../networking/dio_consumer.dart' as _i1031;
 import '../../networking/network_info.dart' as _i421;
 import '../../services/directions_service.dart' as _i567;
+import '../../services/image_picker_service.dart' as _i928;
 import '../../services/location_service.dart' as _i537;
 import '../../services/permission_service.dart' as _i496;
 import '../../storage/key_value_storage.dart' as _i291;
@@ -55,6 +63,7 @@ extension GetItInjectableX on _i174.GetIt {
     final coreInjectableModule = _$CoreInjectableModule();
     final authModule = _$AuthModule();
     final homeModule = _$HomeModule();
+    final profileModule = _$ProfileModule();
     gh.factory<String>(() => coreInjectableModule.envBaseUrl);
     await gh.factoryAsync<_i460.SharedPreferences>(
       () => coreInjectableModule.prefs(),
@@ -76,6 +85,9 @@ extension GetItInjectableX on _i174.GetIt {
       () => coreInjectableModule.networkInfo(),
     );
     gh.lazySingleton<_i567.DirectionsService>(() => _i567.DirectionsService());
+    gh.lazySingleton<_i928.ImagePickerService>(
+      () => _i928.ImagePickerService(),
+    );
     gh.lazySingleton<_i537.LocationService>(() => _i537.LocationService());
     gh.lazySingleton<_i496.PermissionService>(() => _i496.PermissionService());
     gh.factory<_i240.CameraPermissionCubit>(
@@ -114,11 +126,20 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i421.NetworkInfo>(),
       ),
     );
+    gh.lazySingleton<_i431.ProfileDataSource>(
+      () => profileModule.profileDataSource(
+        gh<_i685.ApiConsumer>(),
+        gh<_i421.NetworkInfo>(),
+      ),
+    );
     gh.lazySingleton<_i960.AuthRepository>(
       () => _i960.AuthRepository(gh<_i118.AuthDataSource>()),
     );
     gh.lazySingleton<_i127.HomeRepository>(
       () => _i127.HomeRepository(gh<_i607.HomeDataSource>()),
+    );
+    gh.lazySingleton<_i549.ProfileRepository>(
+      () => _i549.ProfileRepository(gh<_i431.ProfileDataSource>()),
     );
     gh.factory<_i382.HomeCubit>(
       () => _i382.HomeCubit(
@@ -130,6 +151,13 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factoryParam<_i989.OtpCubit, String, int?>(
       (phone, resendAfterSeconds) =>
           _i989.OtpCubit(gh<_i960.AuthRepository>(), phone, resendAfterSeconds),
+    );
+    gh.factory<_i699.ProfileCubit>(
+      () => _i699.ProfileCubit(
+        gh<_i549.ProfileRepository>(),
+        gh<_i496.PermissionService>(),
+        gh<_i928.ImagePickerService>(),
+      ),
     );
     gh.factory<_i690.ForgotPasswordCubit>(
       () => _i690.ForgotPasswordCubit(gh<_i960.AuthRepository>()),
@@ -146,3 +174,5 @@ class _$CoreInjectableModule extends _i292.CoreInjectableModule {}
 class _$AuthModule extends _i124.AuthModule {}
 
 class _$HomeModule extends _i860.HomeModule {}
+
+class _$ProfileModule extends _i337.ProfileModule {}

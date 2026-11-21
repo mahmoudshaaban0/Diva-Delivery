@@ -5,5 +5,8 @@
   "LOGIN_ENDPOINT": "/auth/login",
   "FORGOT_PASSWORD_ENDPOINT": "/auth/password/forgot",
   "HOME_ENDPOINT": "/courier/home",
-  "START_DAY_ENDPOINT": "/courier/day/start"
+  "START_DAY_ENDPOINT": "/courier/day/start",
+  "PROFILE_ENDPOINT": "/courier/profile",
+  "PROFILE_PHOTO_ENDPOINT": "/courier/profile/photo",
+  "LOGOUT_ENDPOINT": "/auth/logout"
 }

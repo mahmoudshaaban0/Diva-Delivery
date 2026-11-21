@@ -10,7 +10,11 @@ import 'package:limitless_code_template/features/home/presentation/screens/home_
 import 'package:limitless_code_template/features/orders/presentation/screens/orders_screen.dart';
 import 'package:limitless_code_template/features/permissions/presentation/screens/camera_permission_screen.dart';
 import 'package:limitless_code_template/features/permissions/presentation/screens/location_permission_screen.dart';
+import 'package:limitless_code_template/features/profile/data/models/profile_response_model.dart';
+import 'package:limitless_code_template/features/profile/presentation/screens/language_screen.dart';
+import 'package:limitless_code_template/features/profile/presentation/screens/personal_info_screen.dart';
 import 'package:limitless_code_template/features/profile/presentation/screens/profile_screen.dart';
+import 'package:limitless_code_template/features/profile/presentation/screens/theme_screen.dart';
 import 'package:limitless_code_template/features/splash/presentation/screens/splash_screen.dart';
 
 /// App routes. Tabs live in the `StatefulShellRoute` (see `MainShell`);
@@ -104,6 +108,27 @@ class AppRouter {
             ? AppRoutes.home.path
             : null,
         builder: (context, state) => const CameraPermissionScreen(),
+      ),
+      GoRoute(
+        name: AppRoutes.personalInfo.name,
+        path: AppRoutes.personalInfo.path,
+        // `extra`: the profile the tab already loaded (fetched again when
+        // missing, e.g. a deep link).
+        builder: (context, state) => PersonalInfoScreen(
+          profile: state.extra is ProfileResponseModel
+              ? state.extra! as ProfileResponseModel
+              : null,
+        ),
+      ),
+      GoRoute(
+        name: AppRoutes.language.name,
+        path: AppRoutes.language.path,
+        builder: (context, state) => const LanguageScreen(),
+      ),
+      GoRoute(
+        name: AppRoutes.theme.name,
+        path: AppRoutes.theme.path,
+        builder: (context, state) => const ThemeScreen(),
       ),
     ],
   );

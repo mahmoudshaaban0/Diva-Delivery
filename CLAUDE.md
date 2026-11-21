@@ -94,6 +94,23 @@ Feature-first layout: `lib/features/<feature>/{data/{datasources,models,reposito
 - Money: `AppPrice(amount: …)` draws the riyal symbol left of the number (Figma `Icon/Riyal`). Numbers and dates show Western digits in both languages: use `AmountFormatter` and `DateFormatter.formatDayAndDate` / `formatTime`, never a raw `NumberFormat` / `DateFormat`.
 - Location and maps: `LocationService` (current position, distance) and `DirectionsService` (open the maps app) in `lib/core/services/`.
 
+**Reusable pieces from Flow 07** (use these, don't rebuild them):
+- `AppPageHeader` (organism, Figma `Courier/Page Header`): title + description, optional back button (`onBack`). Inner full-screen screens pass `onBack: () => context.pop()`.
+- Settings lists: `AppMenuGroup` holding `AppMenuRow`s (icon box, title, optional value + chevron, `destructive` red variant).
+- Read-only details: `AppInfoCard` holding `AppInfoRow`s (label / value, `onCopy`). `AppInfoBanner` is the blue info banner. `AppRadioRow` is a single-choice pill.
+- Pickers (`LanguageScreen`, `ThemeScreen`): a column of `AppRadioRow`s plus a "Save" button in `AppFooterBar`, disabled until the selection differs from the current value. Saving calls the cubit (`LocaleCubit.setLocale` / `ThemeCubit.setThemeMode`) and pops.
+- `AppFooterBar` (organism): a pinned footer with a top hairline, used as `Scaffold.bottomNavigationBar`.
+- `AppStatusSheet`:
+  - `iconAsset` and the primary action are optional.
+  - `primaryVariant: AppFilledVariant.red` makes the primary action red (destructive confirms).
+  - `isPrimaryLoading` shows a spinner on the primary action while its request runs.
+- `AppStatusPill(size: AppStatusPillSize.medium)` is the bigger pill.
+- Formatters:
+  - `LtrFormatter.isolate` / `.code` keeps Latin codes, phone numbers and emails in order inside Arabic text.
+  - `NameFormatter.initials` builds avatar initials and skips the Arabic article "ال".
+  - `DateFormatter.formatMonthYear` formats month and year.
+- Photos: `ImagePickerService` (`lib/core/services/`, wraps `image_picker`). `PermissionService.locationAccess()` returns always / while in use / denied.
+
 **Loading skeletons**: content that's loading shows a shimmer skeleton (`shimmer` package), never a centered `CircularProgressIndicator`. Wrap a layout of `AppSkeletonBox`es (`atoms/app_skeleton_box.dart`, `.circle` for avatars) in `AppSkeleton` (`atoms/app_skeleton.dart`, theme colors, sweeps in the reading direction). Each screen gets its own `<Feature>Skeleton` widget that mirrors the real layout (e.g. `HomeSkeleton`). Spinners stay only inside buttons (`AppFilledButton(isLoading: true)`) and the swipe button's checking state.
 
 **OTP input**: use `AppOtpField` (molecule wrapping `pinput`). Keep `pinput` on **6.x**: 7.x is built on the decoupled `material_ui` package and crashes under the framework's `Scaffold`. SMS autofill works through `oneTimeCode` on iOS and `SmsCodeRetriever` (`lib/core/utility/`, `smart_auth` SMS User Consent API) on Android.

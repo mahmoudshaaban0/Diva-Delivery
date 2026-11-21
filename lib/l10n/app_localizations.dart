@@ -775,6 +775,318 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Coming soon'**
   String get comingSoon;
+
+  /// No description provided for @profileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileTitle;
+
+  /// No description provided for @profileSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account and app settings'**
+  String get profileSubtitle;
+
+  /// No description provided for @profileCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery captain · {code}'**
+  String profileCaption(String code);
+
+  /// No description provided for @profileOnDuty.
+  ///
+  /// In en, this message translates to:
+  /// **'On duty'**
+  String get profileOnDuty;
+
+  /// No description provided for @profileOffDuty.
+  ///
+  /// In en, this message translates to:
+  /// **'Off duty'**
+  String get profileOffDuty;
+
+  /// No description provided for @profilePersonalInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal information'**
+  String get profilePersonalInfo;
+
+  /// No description provided for @profileLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get profileLanguage;
+
+  /// No description provided for @profileLocationPermission.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission'**
+  String get profileLocationPermission;
+
+  /// No description provided for @locationAccessAlways.
+  ///
+  /// In en, this message translates to:
+  /// **'Always'**
+  String get locationAccessAlways;
+
+  /// No description provided for @locationAccessWhileInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'While using'**
+  String get locationAccessWhileInUse;
+
+  /// No description provided for @locationAccessOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get locationAccessOff;
+
+  /// No description provided for @profileSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Help & support'**
+  String get profileSupport;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out'**
+  String get logout;
+
+  /// No description provided for @appVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version}'**
+  String appVersion(String version);
+
+  /// No description provided for @profileLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load your profile'**
+  String get profileLoadError;
+
+  /// No description provided for @changePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Change photo'**
+  String get changePhoto;
+
+  /// No description provided for @personalInfoSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your details on record with the company'**
+  String get personalInfoSubtitle;
+
+  /// No description provided for @personalInfoReadOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'View only · contact your supervisor to change it'**
+  String get personalInfoReadOnly;
+
+  /// No description provided for @personalInfoBasic.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic details'**
+  String get personalInfoBasic;
+
+  /// No description provided for @personalInfoName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get personalInfoName;
+
+  /// No description provided for @personalInfoCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Captain number'**
+  String get personalInfoCode;
+
+  /// No description provided for @personalInfoPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile number'**
+  String get personalInfoPhone;
+
+  /// No description provided for @personalInfoEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get personalInfoEmail;
+
+  /// No description provided for @personalInfoWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Work details'**
+  String get personalInfoWork;
+
+  /// No description provided for @personalInfoWarehouse.
+  ///
+  /// In en, this message translates to:
+  /// **'Warehouse'**
+  String get personalInfoWarehouse;
+
+  /// No description provided for @personalInfoSupervisor.
+  ///
+  /// In en, this message translates to:
+  /// **'Supervisor'**
+  String get personalInfoSupervisor;
+
+  /// No description provided for @personalInfoVehicle.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle'**
+  String get personalInfoVehicle;
+
+  /// No description provided for @personalInfoJoined.
+  ///
+  /// In en, this message translates to:
+  /// **'Joined'**
+  String get personalInfoJoined;
+
+  /// No description provided for @copied.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied'**
+  String get copied;
+
+  /// No description provided for @photoSheetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile photo'**
+  String get photoSheetTitle;
+
+  /// No description provided for @photoSheetSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Shown to your supervisor and to customers on delivery'**
+  String get photoSheetSubtitle;
+
+  /// No description provided for @photoTake.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a photo'**
+  String get photoTake;
+
+  /// No description provided for @photoChoose.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose from gallery'**
+  String get photoChoose;
+
+  /// No description provided for @photoDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove photo'**
+  String get photoDelete;
+
+  /// No description provided for @photoUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile photo updated'**
+  String get photoUpdated;
+
+  /// No description provided for @photoRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile photo removed'**
+  String get photoRemoved;
+
+  /// No description provided for @photoUpdateError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t update the photo'**
+  String get photoUpdateError;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @languageSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'App interface language'**
+  String get languageSubtitle;
+
+  /// No description provided for @languageArabic.
+  ///
+  /// In en, this message translates to:
+  /// **'العربية'**
+  String get languageArabic;
+
+  /// No description provided for @languageEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get languageEnglish;
+
+  /// No description provided for @profileTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get profileTheme;
+
+  /// No description provided for @themeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How the app looks'**
+  String get themeSubtitle;
+
+  /// No description provided for @themeSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System default'**
+  String get themeSystem;
+
+  /// No description provided for @themeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get themeLight;
+
+  /// No description provided for @themeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get themeDark;
+
+  /// No description provided for @logoutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out?'**
+  String get logoutTitle;
+
+  /// No description provided for @logoutSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location tracking will stop and you won\'t get new orders until you sign in again.'**
+  String get logoutSubtitle;
+
+  /// No description provided for @logoutOpenOrdersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You have open orders'**
+  String get logoutOpenOrdersTitle;
+
+  /// No description provided for @logoutOpenOrdersSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You have {count, plural, =1{1 order} other{{count} orders}} out for delivery and cash not yet handed in to the warehouse. If you log out, location tracking will stop and you won\'t get new orders.'**
+  String logoutOpenOrdersSubtitle(int count);
+
+  /// No description provided for @logoutError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t log out'**
+  String get logoutError;
 }
 
 class _AppLocalizationsDelegate

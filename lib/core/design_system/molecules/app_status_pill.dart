@@ -8,12 +8,21 @@ import 'package:limitless_code_template/core/utility/extensions.dart';
 
 enum AppStatusPillTone { success, error }
 
+enum AppStatusPillSize {
+  /// 6-px dot, 12-px text (home range pill).
+  small,
+
+  /// 8-px dot, 13-px semibold text (profile "في الخدمة").
+  medium,
+}
+
 /// Small colored pill with a dot (Figma "Status Pill", e.g. "داخل النطاق").
 class AppStatusPill extends StatelessWidget {
   const AppStatusPill({
     required this.label,
     required this.tone,
     this.pulse = false,
+    this.size = AppStatusPillSize.small,
     super.key,
   });
 
@@ -22,6 +31,7 @@ class AppStatusPill extends StatelessWidget {
 
   /// Pulses the dot to show a live state (see `AppDot.pulse`).
   final bool pulse;
+  final AppStatusPillSize size;
 
   @override
   Widget build(BuildContext context) {
@@ -38,19 +48,27 @@ class AppStatusPill extends StatelessWidget {
       ),
     };
 
+    final isMedium = size == AppStatusPillSize.medium;
+
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
-      padding: AppInsets.symmetric(horizontal: 10, vertical: 4),
+      padding: AppInsets.symmetric(horizontal: isMedium ? 12 : 10, vertical: 4),
       decoration: BoxDecoration(
         color: background,
         borderRadius: AppRadius.rfull,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        spacing: 4.w,
+        spacing: (isMedium ? 6 : 4).w,
         children: [
-          AppDot(color: dot, size: 6, pulse: pulse),
-          AppText(label, style: context.typography.body2XS, color: foreground),
+          AppDot(color: dot, size: isMedium ? 8 : 6, pulse: pulse),
+          AppText(
+            label,
+            style: isMedium
+                ? context.typography.subtitleXS
+                : context.typography.body2XS,
+            color: foreground,
+          ),
         ],
       ),
     );

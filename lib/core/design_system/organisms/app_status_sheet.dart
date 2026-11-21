@@ -9,28 +9,40 @@ import 'package:limitless_code_template/core/utility/extensions.dart';
 /// Bottom sheet content (Figma `Courier/Bottom Sheet`): status icon, title,
 /// description, swappable content (`Sheet Content/*`) and two actions.
 /// Show it with `showAppBottomSheet(size: AppSheetSize.wrap, child: ...)`.
+///
+/// The icon and the primary action are optional (the photo-options sheet
+/// has neither). [primaryVariant] colors the primary action, e.g.
+/// `AppFilledVariant.red` for "تسجيل الخروج".
 class AppStatusSheet extends StatelessWidget {
   const AppStatusSheet({
-    required this.iconAsset,
-    required this.tone,
     required this.title,
     required this.subtitle,
-    required this.primaryLabel,
-    required this.onPrimary,
     required this.secondaryLabel,
     required this.onSecondary,
+    this.iconAsset,
+    this.tone = AppIconBadgeTone.brand,
+    this.primaryLabel,
+    this.onPrimary,
+    this.primaryVariant = AppFilledVariant.primary,
+    this.isPrimaryLoading = false,
     this.content,
     super.key,
   });
 
-  /// A 26-px SVG icon for the status badge.
-  final String iconAsset;
+  /// A 26-px SVG icon for the status badge; no badge when null.
+  final String? iconAsset;
   final AppIconBadgeTone tone;
   final String title;
   final String subtitle;
   final Widget? content;
-  final String primaryLabel;
-  final VoidCallback onPrimary;
+
+  /// The primary action is shown when [primaryLabel] is set.
+  final String? primaryLabel;
+  final VoidCallback? onPrimary;
+  final AppFilledVariant primaryVariant;
+
+  /// Spinner in the primary action while its request runs.
+  final bool isPrimaryLoading;
   final String secondaryLabel;
   final VoidCallback onSecondary;
 
@@ -47,12 +59,14 @@ class AppStatusSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          AppIconBadge(
-            assetPath: iconAsset,
-            tone: tone,
-            size: AppIconBadgeSize.sheet,
-          ),
-          gapH20,
+          if (iconAsset != null) ...[
+            AppIconBadge(
+              assetPath: iconAsset!,
+              tone: tone,
+              size: AppIconBadgeSize.sheet,
+            ),
+            gapH20,
+          ],
           AppText(
             title,
             style: context.typography.titleM,
@@ -66,18 +80,32 @@ class AppStatusSheet extends StatelessWidget {
           ),
           if (content != null) ...[gapH20, content!],
           gapH24,
-          AppFilledButton(
-            onPressed: onPrimary,
-            child: AppText(
-              primaryLabel,
-              style: buttonLabel,
-              color: context.colors.buttonPrimary.label,
+          if (primaryLabel != null) ...[
+            AppFilledButton(
+              variant: primaryVariant,
+              isLoading: isPrimaryLoading,
+              onPressed: onPrimary,
+              child: AppText(
+                primaryLabel!,
+                style: buttonLabel,
+                color: switch (primaryVariant) {
+                  AppFilledVariant.red => context.colors.buttonRed.label,
+                  AppFilledVariant.yellow => context.colors.buttonYellow.label,
+                  AppFilledVariant.neutral =>
+                    context.colors.buttonNeutral.label,
+                  AppFilledVariant.primarySoft =>
+                    context.colors.buttonPrimary.onSoft,
+                  AppFilledVariant.primary =>
+                    context.colors.buttonPrimary.label,
+                },
+              ),
             ),
-          ),
-          gapH12,
+            gapH12,
+          ],
           AppFilledButton(
             variant: AppFilledVariant.primarySoft,
-            onPressed: onSecondary,
+            // Can't cancel while the primary request runs.
+            onPressed: isPrimaryLoading ? null : onSecondary,
             child: AppText(
               secondaryLabel,
               style: buttonLabel,

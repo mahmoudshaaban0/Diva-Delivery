@@ -1,6 +1,18 @@
 import 'package:injectable/injectable.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+/// How much location access the courier gave the app.
+enum LocationAccess {
+  /// "Allow all the time" (tracking keeps working with the screen locked).
+  always,
+
+  /// "While using the app".
+  whileInUse,
+
+  /// Not granted (denied, restricted or never asked).
+  denied,
+}
+
 /// Device permissions the courier app needs, wrapped around
 /// `permission_handler` so cubits can be tested with a fake.
 @lazySingleton
@@ -8,6 +20,17 @@ class PermissionService {
   /// "While using the app" location, needed to start the day.
   Future<bool> isLocationGranted() async =>
       (await Permission.locationWhenInUse.status).isGranted;
+
+  /// The current location access level (profile "Location permission" row).
+  Future<LocationAccess> locationAccess() async {
+    if ((await Permission.locationAlways.status).isGranted) {
+      return LocationAccess.always;
+    }
+    if ((await Permission.locationWhenInUse.status).isGranted) {
+      return LocationAccess.whileInUse;
+    }
+    return LocationAccess.denied;
+  }
 
   /// Asks for "while using the app" location. Returns true when granted.
   Future<bool> requestLocation() async =>
