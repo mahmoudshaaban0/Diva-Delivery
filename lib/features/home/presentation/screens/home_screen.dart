@@ -25,6 +25,8 @@ import 'package:limitless_code_template/features/home/presentation/widgets/home_
 import 'package:limitless_code_template/features/home/presentation/widgets/home_skeleton.dart';
 import 'package:limitless_code_template/features/home/presentation/widgets/home_start_day_card.dart';
 import 'package:limitless_code_template/features/home/presentation/widgets/home_totals_card.dart';
+import 'package:limitless_code_template/features/notifications/presentation/bloc/notifications_cubit.dart';
+import 'package:limitless_code_template/features/notifications/presentation/bloc/notifications_state.dart';
 
 /// Figma: Flow 02 · "الرئيسية" (before / checking / after starting the day,
 /// no orders) with the "outside the warehouse" and "day started" sheets.
@@ -142,14 +144,20 @@ class _HomeView extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          HomeHeader(
-                            name: home.courierName,
-                            area: home.area,
-                            hasUnreadNotifications: true,
-                            onNotifications: () {
-                              // NOTE: opens notifications (Flow 08) once
-                              // that screen is built.
-                            },
+                          BlocSelector<
+                            NotificationsCubit,
+                            NotificationsState,
+                            bool
+                          >(
+                            selector: (state) => state.unreadCount > 0,
+                            builder: (context, hasUnread) => HomeHeader(
+                              name: home.courierName,
+                              area: home.area,
+                              hasUnreadNotifications: hasUnread,
+                              onNotifications: () => unawaited(
+                                context.pushNamed(AppRoutes.notifications.name),
+                              ),
+                            ),
                           ),
                           gapH20,
                           HomeDayStatus(startedAt: home.dayStartedAt),

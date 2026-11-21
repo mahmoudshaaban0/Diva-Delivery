@@ -10,6 +10,7 @@ import 'package:limitless_code_template/core/design_system/atoms/app_circle_icon
 import 'package:limitless_code_template/core/design_system/atoms/app_svg_icon.dart';
 import 'package:limitless_code_template/core/design_system/molecules/app_search_bar.dart';
 import 'package:limitless_code_template/core/design_system/organisms/app_bottom_sheet.dart';
+import 'package:limitless_code_template/core/design_system/organisms/app_connection_banner.dart';
 import 'package:limitless_code_template/core/design_system/organisms/app_page_header.dart';
 import 'package:limitless_code_template/core/design_system/organisms/app_toast.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
@@ -61,6 +62,12 @@ class _OrdersScreenState extends State<OrdersScreen> {
     if (sort != null) _cubit.sortBy(sort);
   }
 
+  /// NOTE: the support channel isn't decided yet (same as the profile's
+  /// "الدعم والمساعدة").
+  void _onContactSupport() {
+    context.showToast(message: context.localizations.comingSoon);
+  }
+
   void _onClearSearch() {
     _searchController.clear();
     _cubit.search('');
@@ -93,10 +100,12 @@ class _OrdersScreenState extends State<OrdersScreen> {
   /// A refresh that failed while a list is already on screen: keep the list
   /// and say why in a toast (with no data, the tab shows the error state).
   void _onRefreshFailed(BuildContext context, OrdersState state) {
-    final hasData = state.tab == OrdersScope.current
-        ? state.currentOrders != null
-        : state.previousOrders != null;
-    if (!hasData) return;
+    // Only the visible tab's list, and only if it was already on screen.
+    final visibleListFailed = state.tab == OrdersScope.current
+        ? state.status == AppStatus.failure && state.currentOrders != null
+        : state.previousStatus == AppStatus.failure &&
+              state.previousOrders != null;
+    if (!visibleListFailed) return;
     context.showToast(
       message: state.isOffline
           ? context.localizations.noInternetConnection
@@ -122,6 +131,19 @@ class _OrdersScreenState extends State<OrdersScreen> {
           final current = state.currentOrders;
           final previous = state.previousOrders;
           final isCurrentTab = state.tab == OrdersScope.current;
+          final cachedAt = state.cachedAt;
+          // Until the first list arrives (loading, or failed with nothing
+          // saved) the header is just the title, like the design.
+          final isFirstLoad = current == null;
+          final banner = AppConnectionBanner(
+            status: state.connection,
+            bottomSpacing: 20,
+            message: state.connection == AppConnectionStatus.offline
+                ? context.localizations.ordersOfflineBanner(
+                    cachedAt == null ? '' : DateFormatter.formatTime(cachedAt),
+                  )
+                : context.localizations.connectionRestored,
+          );
 
           return Scaffold(
             backgroundColor: context.colors.surfaceBg,
@@ -130,57 +152,66 @@ class _OrdersScreenState extends State<OrdersScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  AppPageHeader(
-                    title: context.localizations.ordersTitle,
-                    subtitle: isCurrentTab
-                        ? current == null
-                              ? null
-                              : current.isEmpty
-                              ? context.localizations.ordersNoCurrentSubtitle
-                              : context.localizations.ordersCurrentSubtitle(
-                                  current.length,
-                                  DateFormatter.formatWeekdayDayMonth(
-                                    DateTime.now(),
-                                  ),
-                                )
-                        : previous == null
-                        ? null
-                        : context.localizations.ordersPreviousSubtitle(
-                            previous.length,
-                          ),
-                    // Sorting applies to the current orders only.
-                    action: isCurrentTab
-                        ? AppCircleIconButton(
-                            tooltip: context.localizations.ordersSortTitle,
-                            onPressed: () => unawaited(_onSort()),
-                            icon: AppSvgIcon(
-                              Assets.vectorsIcSorting22,
-                              size: 22,
-                              color: context.colors.textTitle,
+                  if (isFirstLoad)
+                    AppPageHeader(
+                      title: context.localizations.ordersTitle,
+                      subtitle: state.status == AppStatus.failure
+                          ? null
+                          : context.localizations.ordersLoadingSubtitle,
+                    )
+                  else ...[
+                    AppPageHeader(
+                      title: context.localizations.ordersTitle,
+                      subtitle: isCurrentTab
+                          ? current.isEmpty
+                                ? context.localizations.ordersNoCurrentSubtitle
+                                : context.localizations.ordersCurrentSubtitle(
+                                    current.length,
+                                    DateFormatter.formatWeekdayDayMonth(
+                                      DateTime.now(),
+                                    ),
+                                  )
+                          : previous == null
+                          ? null
+                          : context.localizations.ordersPreviousSubtitle(
+                              previous.length,
                             ),
-                          )
-                        : null,
-                    bottom: AppSearchBar(
-                      controller: _searchController,
-                      hintText: context.localizations.ordersSearchHint,
-                      clearTooltip: context.localizations.ordersClearSearch,
-                      inputFormatters: const [WesternDigitsFormatter()],
-                      onChanged: _cubit.search,
+                      // Sorting applies to the current orders only.
+                      action: isCurrentTab
+                          ? AppCircleIconButton(
+                              tooltip: context.localizations.ordersSortTitle,
+                              onPressed: () => unawaited(_onSort()),
+                              icon: AppSvgIcon(
+                                Assets.vectorsIcSorting22,
+                                size: 22,
+                                color: context.colors.textTitle,
+                              ),
+                            )
+                          : null,
+                      bottom: AppSearchBar(
+                        controller: _searchController,
+                        hintText: context.localizations.ordersSearchHint,
+                        clearTooltip: context.localizations.ordersClearSearch,
+                        inputFormatters: const [WesternDigitsFormatter()],
+                        onChanged: _cubit.search,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: AppInsets.only(start: 20, end: 20, top: 16),
-                    child: OrdersTabs(
-                      selected: state.tab,
-                      currentCount: current?.length ?? 0,
-                      onChanged: _cubit.selectTab,
+                    Padding(
+                      padding: AppInsets.only(start: 20, end: 20, top: 16),
+                      child: OrdersTabs(
+                        selected: state.tab,
+                        currentCount: current.length,
+                        onChanged: _cubit.selectTab,
+                      ),
                     ),
-                  ),
+                  ],
                   Expanded(
                     child: isCurrentTab
                         ? OrdersCurrentTab(
                             state: state,
+                            banner: banner,
                             onRefresh: _cubit.load,
+                            onContactSupport: _onContactSupport,
                             onClearSearch: _onClearSearch,
                             onShowPrevious: () =>
                                 _cubit.selectTab(OrdersScope.previous),
@@ -191,7 +222,9 @@ class _OrdersScreenState extends State<OrdersScreen> {
                           )
                         : OrdersPreviousTab(
                             state: state,
+                            banner: banner,
                             onRefresh: _cubit.load,
+                            onContactSupport: _onContactSupport,
                             onClearSearch: _onClearSearch,
                             onOpen: _onOpen,
                           ),

@@ -29,6 +29,16 @@ import '../../../features/home/data/datasources/home_data_source.dart' as _i607;
 import '../../../features/home/data/home_module.dart' as _i860;
 import '../../../features/home/data/repositories/home_repository.dart' as _i127;
 import '../../../features/home/presentation/bloc/home_cubit.dart' as _i382;
+import '../../../features/notifications/data/datasources/notifications_data_source.dart'
+    as _i338;
+import '../../../features/notifications/data/notifications_module.dart'
+    as _i102;
+import '../../../features/notifications/data/repositories/notifications_repository.dart'
+    as _i451;
+import '../../../features/notifications/presentation/bloc/notifications_cubit.dart'
+    as _i262;
+import '../../../features/orders/data/datasources/orders_cache_data_source.dart'
+    as _i298;
 import '../../../features/orders/data/datasources/orders_data_source.dart'
     as _i58;
 import '../../../features/orders/data/orders_module.dart' as _i342;
@@ -72,6 +82,7 @@ extension GetItInjectableX on _i174.GetIt {
     final coreInjectableModule = _$CoreInjectableModule();
     final authModule = _$AuthModule();
     final homeModule = _$HomeModule();
+    final notificationsModule = _$NotificationsModule();
     final ordersModule = _$OrdersModule();
     final profileModule = _$ProfileModule();
     gh.factory<String>(() => coreInjectableModule.envBaseUrl);
@@ -125,6 +136,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i148.LocaleCubit>(
       () => coreInjectableModule.localeCubit(gh<_i291.KeyValueStorage>()),
     );
+    gh.lazySingleton<_i298.OrdersCacheDataSource>(
+      () => _i298.OrdersCacheDataSource(gh<_i291.KeyValueStorage>()),
+    );
     gh.lazySingleton<_i118.AuthDataSource>(
       () => authModule.authDataSource(
         gh<_i685.ApiConsumer>(),
@@ -133,6 +147,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i607.HomeDataSource>(
       () => homeModule.homeDataSource(
+        gh<_i685.ApiConsumer>(),
+        gh<_i421.NetworkInfo>(),
+      ),
+    );
+    gh.lazySingleton<_i338.NotificationsDataSource>(
+      () => notificationsModule.notificationsDataSource(
         gh<_i685.ApiConsumer>(),
         gh<_i421.NetworkInfo>(),
       ),
@@ -150,7 +170,18 @@ extension GetItInjectableX on _i174.GetIt {
       ),
     );
     gh.lazySingleton<_i670.OrdersRepository>(
-      () => _i670.OrdersRepository(gh<_i58.OrdersDataSource>()),
+      () => _i670.OrdersRepository(
+        gh<_i58.OrdersDataSource>(),
+        gh<_i298.OrdersCacheDataSource>(),
+      ),
+    );
+    gh.factory<_i659.OrdersCubit>(
+      () => _i659.OrdersCubit(
+        gh<_i670.OrdersRepository>(),
+        gh<_i277.CallService>(),
+        gh<_i567.DirectionsService>(),
+        gh<_i421.NetworkInfo>(),
+      ),
     );
     gh.factory<_i410.OrderDetailsCubit>(
       () => _i410.OrderDetailsCubit(
@@ -159,12 +190,8 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i567.DirectionsService>(),
       ),
     );
-    gh.factory<_i659.OrdersCubit>(
-      () => _i659.OrdersCubit(
-        gh<_i670.OrdersRepository>(),
-        gh<_i277.CallService>(),
-        gh<_i567.DirectionsService>(),
-      ),
+    gh.lazySingleton<_i451.NotificationsRepository>(
+      () => _i451.NotificationsRepository(gh<_i338.NotificationsDataSource>()),
     );
     gh.lazySingleton<_i960.AuthRepository>(
       () => _i960.AuthRepository(gh<_i118.AuthDataSource>()),
@@ -193,6 +220,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i928.ImagePickerService>(),
       ),
     );
+    gh.lazySingleton<_i262.NotificationsCubit>(
+      () => _i262.NotificationsCubit(gh<_i451.NotificationsRepository>()),
+    );
     gh.factory<_i690.ForgotPasswordCubit>(
       () => _i690.ForgotPasswordCubit(gh<_i960.AuthRepository>()),
     );
@@ -208,6 +238,8 @@ class _$CoreInjectableModule extends _i292.CoreInjectableModule {}
 class _$AuthModule extends _i124.AuthModule {}
 
 class _$HomeModule extends _i860.HomeModule {}
+
+class _$NotificationsModule extends _i102.NotificationsModule {}
 
 class _$OrdersModule extends _i342.OrdersModule {}
 

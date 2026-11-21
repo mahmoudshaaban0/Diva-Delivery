@@ -23,6 +23,12 @@ class AppShadow {
     BoxShadow(color: Color(0x2E08402E), offset: Offset(0, 8), blurRadius: 12),
   ];
 
+  /// In-app push banner (Figma `Courier/Push Banner`: 0 12 16,
+  /// rgba(13,26,38,.18)).
+  static const pushBanner = [
+    BoxShadow(color: Color(0x2E0D1A26), offset: Offset(0, 12), blurRadius: 16),
+  ];
+
   static const lg = [
     BoxShadow(color: Color(0x0D101828), offset: Offset(0, -6), blurRadius: 24),
   ];

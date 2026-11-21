@@ -1,6 +1,7 @@
 enum AppRoutes {
   home('/', 'home'),
-  notifications('/notifications', 'notifications'),
+  // Relative: a sub-route of home (keeps the tab bar).
+  notifications('notifications', 'notifications'),
   cart('/cart', 'cart'),
   splash('/splash', 'splash'),
   login('/login', 'login'),

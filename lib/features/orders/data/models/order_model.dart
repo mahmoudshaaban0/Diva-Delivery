@@ -24,6 +24,15 @@ enum OrderStatus {
     delivered || noAnswer || rejected => false,
   };
 
+  String toJson() => switch (this) {
+    withCourier => 'with_courier',
+    onTheWay => 'on_the_way',
+    arrived => 'arrived',
+    delivered => 'delivered',
+    noAnswer => 'no_answer',
+    rejected => 'rejected',
+  };
+
   static OrderStatus fromJson(String? value) => switch (value) {
     'on_the_way' => onTheWay,
     'arrived' => arrived,
@@ -39,6 +48,8 @@ enum CustomerType {
   individual,
   business;
 
+  String toJson() => this == business ? 'business' : 'individual';
+
   static CustomerType fromJson(String? value) =>
       value == 'business' ? business : individual;
 }
@@ -49,6 +60,8 @@ enum PaymentMethod {
 
   /// Paid online before delivery ("مدفوع").
   prepaid;
+
+  String toJson() => this == prepaid ? 'prepaid' : 'cash_on_delivery';
 
   static PaymentMethod fromJson(String? value) =>
       value == 'prepaid' ? prepaid : cashOnDelivery;
@@ -150,4 +163,25 @@ class OrderModel {
   /// Cash still to collect from the customer ("تحصيل").
   bool get needsCollection =>
       paymentMethod == PaymentMethod.cashOnDelivery && !isPaid;
+
+  /// The same shape as [OrderModel.fromJson] (used for the offline cache).
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'code': code,
+    'customer_name': customerName,
+    'customer_type': customerType.toJson(),
+    'phone': phone,
+    'district': district,
+    'city': city,
+    'latitude': latitude,
+    'longitude': longitude,
+    'distance_km': distanceKm,
+    'status': status.toJson(),
+    'assigned_at': assignedAt.toIso8601String(),
+    'closed_at': closedAt?.toIso8601String(),
+    'items_count': itemsCount,
+    'total': total,
+    'payment_method': paymentMethod.toJson(),
+    'is_paid': isPaid,
+  };
 }

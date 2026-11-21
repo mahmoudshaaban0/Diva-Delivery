@@ -944,4 +944,84 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get goToCustomer => 'الذهاب للعميل';
+
+  @override
+  String get offlineMessage =>
+      'تحقق من بيانات الجوال أو الواي فاي، ثم حاول مرة أخرى.';
+
+  @override
+  String get ordersOfflineMessage =>
+      'تحقق من بيانات الجوال أو الواي فاي، وسنحمّل طلباتك تلقائيًا فور عودة الاتصال.';
+
+  @override
+  String get serverErrorTitle => 'تعذّر تحميل البيانات';
+
+  @override
+  String get serverErrorMessage =>
+      'النظام لا يستجيب حاليًا والمشكلة ليست من جهازك. حاول مرة أخرى بعد قليل، أو تواصل مع المشرف إذا تكرر الأمر.';
+
+  @override
+  String get ordersLoadingSubtitle => 'جارٍ تحميل طلبات اليوم…';
+
+  @override
+  String ordersOfflineBanner(String time) {
+    return 'غير متصل · تعرض آخر بيانات محفوظة $time';
+  }
+
+  @override
+  String get connectionRestored => 'عاد الاتصال · تمت مزامنة البيانات';
+
+  @override
+  String notificationsUnread(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count غير مقروءة',
+      many: '$count غير مقروءة',
+      few: '$count غير مقروءة',
+      two: 'إشعاران غير مقروءين',
+      one: 'إشعار واحد غير مقروء',
+      zero: 'لا توجد إشعارات غير مقروءة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get markAllRead => 'تعليم الكل كمقروء';
+
+  @override
+  String get markAllReadError => 'تعذّر تحديث الإشعارات';
+
+  @override
+  String get notificationsFilterAll => 'الكل';
+
+  @override
+  String get notificationsFilterOrders => 'الطلبات';
+
+  @override
+  String get notificationsFilterCollection => 'التحصيل';
+
+  @override
+  String get notificationsFilterAlerts => 'التنبيهات';
+
+  @override
+  String get notificationsToday => 'اليوم';
+
+  @override
+  String get notificationsYesterday => 'أمس';
+
+  @override
+  String get notificationsEmptyTitle => 'لا توجد إشعارات';
+
+  @override
+  String get notificationsEmptyMessage =>
+      'ستظهر هنا الطلبات الجديدة وتحديثات الجدولة والتحصيل فور وصولها.';
+
+  @override
+  String get timeNow => 'الآن';
+
+  @override
+  String minutesAgo(int count) {
+    return 'قبل $count د';
+  }
 }

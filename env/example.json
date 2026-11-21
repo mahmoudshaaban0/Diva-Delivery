@@ -10,5 +10,8 @@
   "PROFILE_PHOTO_ENDPOINT": "/courier/profile/photo",
   "LOGOUT_ENDPOINT": "/auth/logout",
   "ORDERS_ENDPOINT": "/courier/orders",
-  "ORDER_DETAILS_ENDPOINT": "/courier/orders/{id}"
+  "ORDER_DETAILS_ENDPOINT": "/courier/orders/{id}",
+  "NOTIFICATIONS_ENDPOINT": "/courier/notifications",
+  "NOTIFICATION_READ_ENDPOINT": "/courier/notifications/{id}/read",
+  "NOTIFICATIONS_READ_ALL_ENDPOINT": "/courier/notifications/read-all"
 }

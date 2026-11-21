@@ -548,5 +548,46 @@
   "proofOfDelivery": "Proof of delivery",
   "proofHomePhoto": "Home photo",
   "proofOrderPhoto": "Order photo",
-  "goToCustomer": "Go to customer"
+  "goToCustomer": "Go to customer",
+  "offlineMessage": "Check your mobile data or Wi-Fi, then try again",
+  "ordersOfflineMessage": "Check your mobile data or Wi-Fi. We'll load your orders as soon as you're back online.",
+  "serverErrorTitle": "Couldn't load data",
+  "serverErrorMessage": "The system isn't responding right now, and it's not your device. Try again in a moment, or contact your supervisor if it keeps happening.",
+  "ordersLoadingSubtitle": "Loading today's orders…",
+  "ordersOfflineBanner": "Offline · showing data saved at {time}",
+  "@ordersOfflineBanner": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "connectionRestored": "Back online · data synced",
+  "notificationsUnread": "{count, plural, =0{All caught up} =1{1 unread} other{{count} unread}}",
+  "@notificationsUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "markAllRead": "Mark all as read",
+  "markAllReadError": "Couldn't update notifications",
+  "notificationsFilterAll": "All",
+  "notificationsFilterOrders": "Orders",
+  "notificationsFilterCollection": "Collection",
+  "notificationsFilterAlerts": "Alerts",
+  "notificationsToday": "Today",
+  "notificationsYesterday": "Yesterday",
+  "notificationsEmptyTitle": "No notifications",
+  "notificationsEmptyMessage": "New orders, schedule changes and collection updates will show up here as they arrive.",
+  "timeNow": "Now",
+  "minutesAgo": "{count} min ago",
+  "@minutesAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

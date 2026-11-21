@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:limitless_code_template/core/config/di/injectable.dart';
 import 'package:limitless_code_template/core/constants/assets.dart';
 import 'package:limitless_code_template/core/design_system/atoms/app_svg_icon.dart';
 import 'package:limitless_code_template/core/design_system/organisms/app_bottom_nav.dart';
 import 'package:limitless_code_template/core/utility/extensions.dart';
+import 'package:limitless_code_template/features/notifications/presentation/bloc/notifications_cubit.dart';
+import 'package:limitless_code_template/features/notifications/presentation/widgets/notifications_push_listener.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
 /// The Home · Orders · Profile tab shell (`persistent_bottom_nav_bar_v2`
@@ -19,35 +23,52 @@ class MainShell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PersistentTabView.router(
-      navigationShell: navigationShell,
-      backgroundColor: context.colors.surfaceBg,
-      navBarBuilder: (navBarConfig) => AppBottomNav(navBarConfig: navBarConfig),
-      tabs: [
-        PersistentRouterTabConfig(
-          item: AppBottomNav.item(
-            context,
-            title: context.localizations.navHome,
-            icon: const AppSvgIcon(Assets.vectorsIcHomeSolid24, size: 24),
-          ),
+    // One NotificationsCubit for the signed-in app: the home bell's dot,
+    // the notifications screen and the in-app banner share it.
+    return BlocProvider.value(
+      value: getIt<NotificationsCubit>(),
+      child: NotificationsPushListener(
+        child: PersistentTabView.router(
+          navigationShell: navigationShell,
+          backgroundColor: context.colors.surfaceBg,
+          navBarBuilder: (navBarConfig) =>
+              AppBottomNav(navBarConfig: navBarConfig),
+          tabs: [
+            PersistentRouterTabConfig(
+              item: AppBottomNav.item(
+                context,
+                title: context.localizations.navHome,
+                icon: const AppSvgIcon(Assets.vectorsIcHomeSolid24, size: 24),
+              ),
+            ),
+            PersistentRouterTabConfig(
+              item: AppBottomNav.item(
+                context,
+                title: context.localizations.navOrders,
+                icon: const AppSvgIcon(
+                  Assets.vectorsIcPackageSolid24,
+                  size: 24,
+                ),
+                inactiveIcon: const AppSvgIcon(
+                  Assets.vectorsIcPackage24,
+                  size: 24,
+                ),
+              ),
+            ),
+            PersistentRouterTabConfig(
+              item: AppBottomNav.item(
+                context,
+                title: context.localizations.navProfile,
+                icon: const AppSvgIcon(Assets.vectorsIcUserSolid24, size: 24),
+                inactiveIcon: const AppSvgIcon(
+                  Assets.vectorsIcUser24,
+                  size: 24,
+                ),
+              ),
+            ),
+          ],
         ),
-        PersistentRouterTabConfig(
-          item: AppBottomNav.item(
-            context,
-            title: context.localizations.navOrders,
-            icon: const AppSvgIcon(Assets.vectorsIcPackageSolid24, size: 24),
-            inactiveIcon: const AppSvgIcon(Assets.vectorsIcPackage24, size: 24),
-          ),
-        ),
-        PersistentRouterTabConfig(
-          item: AppBottomNav.item(
-            context,
-            title: context.localizations.navProfile,
-            icon: const AppSvgIcon(Assets.vectorsIcUserSolid24, size: 24),
-            inactiveIcon: const AppSvgIcon(Assets.vectorsIcUser24, size: 24),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

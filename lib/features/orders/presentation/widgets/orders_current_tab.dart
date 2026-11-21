@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:limitless_code_template/core/constants/assets.dart';
 import 'package:limitless_code_template/core/cubit/base_state.dart';
+import 'package:limitless_code_template/core/design_system/organisms/app_load_error_view.dart';
 import 'package:limitless_code_template/core/design_system/organisms/app_status_view.dart';
-import 'package:limitless_code_template/core/design_system/organisms/error_state.dart';
 import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
@@ -21,16 +21,22 @@ class OrdersCurrentTab extends StatelessWidget {
   const OrdersCurrentTab({
     required this.state,
     required this.onRefresh,
+    required this.onContactSupport,
     required this.onClearSearch,
     required this.onShowPrevious,
     required this.onOpen,
     required this.onNavigate,
     required this.onCall,
+    this.banner,
     super.key,
   });
 
   final OrdersState state;
   final Future<void> Function() onRefresh;
+  final VoidCallback onContactSupport;
+
+  /// The connection banner, shown above the list (Flow 08).
+  final Widget? banner;
   final VoidCallback onClearSearch;
   final VoidCallback onShowPrevious;
   final ValueChanged<OrderModel> onOpen;
@@ -42,12 +48,11 @@ class OrdersCurrentTab extends StatelessWidget {
     final orders = state.currentOrders;
     if (orders == null) {
       return state.status == AppStatus.failure
-          ? ErrorState(
-              message: state.isOffline
-                  ? context.localizations.noInternetConnection
-                  : context.localizations.ordersLoadError,
-              retryLabel: context.localizations.retry,
+          ? AppLoadErrorView(
+              isOffline: state.isOffline,
+              offlineMessage: context.localizations.ordersOfflineMessage,
               onRetry: onRefresh,
+              onContactSupport: onContactSupport,
             )
           : const OrdersSkeleton();
     }
@@ -82,6 +87,7 @@ class OrdersCurrentTab extends StatelessWidget {
       child: ListView(
         padding: AppInsets.only(start: 20, end: 20, top: 16, bottom: 24),
         children: [
+          ?banner,
           if (active != null) ...[
             OrdersActiveCard(
               order: active,

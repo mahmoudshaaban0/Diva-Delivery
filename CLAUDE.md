@@ -122,6 +122,16 @@ Feature-first layout: `lib/features/<feature>/{data/{datasources,models,reposito
 - `CallService` (`lib/core/services/`): opens the dialer (`tel:`); with `DirectionsService` for navigation.
 - Order details is a top-level route `/order-details/:id` (no tab bar) and takes the tapped `OrderModel` as `extra` for an instant header.
 
+**Reusable pieces from Flow 08** (use these, don't rebuild them):
+- `AppLoadErrorView` (organism): full-screen "couldn't load" with nothing cached. `isOffline` → red wifi-off + retry (also reload by yourself on `NetworkInfo.onReconnected`); otherwise the yellow server-error state with retry + "التواصل مع الدعم". `AppStatusView(size: AppStatusViewSize.compact)` is the 16-px-title layout it uses.
+- `AppConnectionBanner` (organism): dark "غير متصل · …" / green "عاد الاتصال · …" strip under the header; `AppConnectionStatus.none` collapses it, `bottomSpacing` adds the gap only while visible. Hide `restored` after ~3 s.
+- Offline data: the orders repository saves each fresh list (`OrdersCacheDataSource`, `KeyValueStorage`) and returns that copy with `cachedAt` set when offline. Follow the same pattern for other lists that should work offline.
+- `AppPushBanner` + `showAppPushBanner(...)` (organism): in-app notification from the top, closes after 4 s, on swipe up, or on tap.
+- `AppChip` (molecule, Figma `Courier/Chip`): filter chip, 38 visual / 44 touch.
+- `NotificationsCubit` is a `@lazySingleton` provided by `MainShell` (home bell dot, notifications screen, push banner listener). Never close it from a screen. Incoming notifications come from `NotificationsDataSource.watchIncoming()` (NOTE: connect FCM there).
+- Skeleton cards with an outline: put `AppSkeleton` *inside* the card around the bars (`OrderCardSkeleton`), or the shimmer fills the whole card.
+- Notifications is a sub-route of the home branch (`AppRoutes.notifications` has a relative path).
+
 **Loading skeletons**: content that's loading shows a shimmer skeleton (`shimmer` package), never a centered `CircularProgressIndicator`. Wrap a layout of `AppSkeletonBox`es (`atoms/app_skeleton_box.dart`, `.circle` for avatars) in `AppSkeleton` (`atoms/app_skeleton.dart`, theme colors, sweeps in the reading direction). Each screen gets its own `<Feature>Skeleton` widget that mirrors the real layout (e.g. `HomeSkeleton`). Spinners stay only inside buttons (`AppFilledButton(isLoading: true)`) and the swipe button's checking state.
 
 **OTP input**: use `AppOtpField` (molecule wrapping `pinput`). Keep `pinput` on **6.x**: 7.x is built on the decoupled `material_ui` package and crashes under the framework's `Scaffold`. SMS autofill works through `oneTimeCode` on iOS and `SmsCodeRetriever` (`lib/core/utility/`, `smart_auth` SMS User Consent API) on Android.

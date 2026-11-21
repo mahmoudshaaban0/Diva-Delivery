@@ -7,6 +7,7 @@ import 'package:limitless_code_template/features/auth/presentation/screens/forgo
 import 'package:limitless_code_template/features/auth/presentation/screens/login_screen.dart';
 import 'package:limitless_code_template/features/auth/presentation/screens/otp_screen.dart';
 import 'package:limitless_code_template/features/home/presentation/screens/home_screen.dart';
+import 'package:limitless_code_template/features/notifications/presentation/screens/notifications_screen.dart';
 import 'package:limitless_code_template/features/orders/data/models/order_model.dart';
 import 'package:limitless_code_template/features/orders/presentation/screens/order_details_screen.dart';
 import 'package:limitless_code_template/features/orders/presentation/screens/orders_screen.dart';
@@ -39,6 +40,13 @@ class AppRouter {
                 name: AppRoutes.home.name,
                 path: AppRoutes.home.path,
                 builder: (context, state) => const HomeScreen(),
+                routes: [
+                  GoRoute(
+                    name: AppRoutes.notifications.name,
+                    path: AppRoutes.notifications.path,
+                    builder: (context, state) => const NotificationsScreen(),
+                  ),
+                ],
               ),
             ],
           ),

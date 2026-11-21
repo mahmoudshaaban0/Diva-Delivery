@@ -1,39 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:limitless_code_template/core/design_system/atoms/app_skeleton.dart';
-import 'package:limitless_code_template/core/design_system/atoms/app_skeleton_box.dart';
 import 'package:limitless_code_template/core/design_system/responsive.dart';
 import 'package:limitless_code_template/core/design_system/tokens/app_insets.dart';
-import 'package:limitless_code_template/core/design_system/tokens/app_radius.dart';
-import 'package:limitless_code_template/core/design_system/tokens/app_spacing.dart';
+import 'package:limitless_code_template/features/orders/presentation/widgets/order_card_skeleton.dart';
 
-/// Loading placeholder that mirrors the orders list: the pinned order card,
-/// the group title and three order cards.
+/// Loading placeholder for the orders list (Figma Flow 08 "جارٍ التحميل –
+/// الطلبات"): four order-card skeletons that fade out down the list.
 class OrdersSkeleton extends StatelessWidget {
-  const OrdersSkeleton({this.showActiveCard = true, super.key});
+  const OrdersSkeleton({super.key});
 
-  /// The pinned card only exists on the "الحالية" tab.
-  final bool showActiveCard;
+  /// Figma opacities, top to bottom.
+  static const _opacities = [1.0, 0.82, 0.64, 0.46];
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
-      padding: AppInsets.symmetric(horizontal: 20, vertical: 16),
-      child: AppSkeleton(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (showActiveCard) ...[
-              AppSkeletonBox(height: 224, borderRadius: AppRadius.r24),
-              gapH20,
-            ],
-            const AppSkeletonBox(width: 220, height: 18),
-            for (var i = 0; i < 3; i++) ...[
-              10.vs,
-              AppSkeletonBox(height: 167, borderRadius: AppRadius.r20),
-            ],
-          ],
-        ),
+      padding: AppInsets.only(start: 20, end: 20, top: 16, bottom: 24),
+      child: Column(
+        spacing: 16.h,
+        children: [
+          for (final opacity in _opacities)
+            Opacity(opacity: opacity, child: const OrderCardSkeleton()),
+        ],
       ),
     );
   }

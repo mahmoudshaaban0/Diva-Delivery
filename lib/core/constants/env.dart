@@ -41,4 +41,15 @@ final class Env {
   static const String orderDetailsEndpoint = String.fromEnvironment(
     'ORDER_DETAILS_ENDPOINT',
   );
+
+  // Notifications. The read path holds an `{id}` placeholder.
+  static const String notificationsEndpoint = String.fromEnvironment(
+    'NOTIFICATIONS_ENDPOINT',
+  );
+  static const String notificationReadEndpoint = String.fromEnvironment(
+    'NOTIFICATION_READ_ENDPOINT',
+  );
+  static const String notificationsReadAllEndpoint = String.fromEnvironment(
+    'NOTIFICATIONS_READ_ALL_ENDPOINT',
+  );
 }

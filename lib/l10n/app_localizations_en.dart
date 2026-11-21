@@ -933,4 +933,81 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get goToCustomer => 'Go to customer';
+
+  @override
+  String get offlineMessage =>
+      'Check your mobile data or Wi-Fi, then try again';
+
+  @override
+  String get ordersOfflineMessage =>
+      'Check your mobile data or Wi-Fi. We\'ll load your orders as soon as you\'re back online.';
+
+  @override
+  String get serverErrorTitle => 'Couldn\'t load data';
+
+  @override
+  String get serverErrorMessage =>
+      'The system isn\'t responding right now, and it\'s not your device. Try again in a moment, or contact your supervisor if it keeps happening.';
+
+  @override
+  String get ordersLoadingSubtitle => 'Loading today\'s orders…';
+
+  @override
+  String ordersOfflineBanner(String time) {
+    return 'Offline · showing data saved at $time';
+  }
+
+  @override
+  String get connectionRestored => 'Back online · data synced';
+
+  @override
+  String notificationsUnread(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count unread',
+      one: '1 unread',
+      zero: 'All caught up',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get markAllRead => 'Mark all as read';
+
+  @override
+  String get markAllReadError => 'Couldn\'t update notifications';
+
+  @override
+  String get notificationsFilterAll => 'All';
+
+  @override
+  String get notificationsFilterOrders => 'Orders';
+
+  @override
+  String get notificationsFilterCollection => 'Collection';
+
+  @override
+  String get notificationsFilterAlerts => 'Alerts';
+
+  @override
+  String get notificationsToday => 'Today';
+
+  @override
+  String get notificationsYesterday => 'Yesterday';
+
+  @override
+  String get notificationsEmptyTitle => 'No notifications';
+
+  @override
+  String get notificationsEmptyMessage =>
+      'New orders, schedule changes and collection updates will show up here as they arrive.';
+
+  @override
+  String get timeNow => 'Now';
+
+  @override
+  String minutesAgo(int count) {
+    return '$count min ago';
+  }
 }

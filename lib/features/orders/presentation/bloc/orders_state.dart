@@ -1,4 +1,5 @@
 import 'package:limitless_code_template/core/cubit/base_state.dart';
+import 'package:limitless_code_template/core/design_system/organisms/app_connection_banner.dart';
 import 'package:limitless_code_template/features/orders/data/models/order_model.dart';
 import 'package:limitless_code_template/features/orders/data/models/orders_response_model.dart';
 
@@ -33,6 +34,8 @@ class OrdersState extends BaseState<OrdersState> {
     this.query = '',
     this.sort = OrdersSort.nearest,
     this.isOffline = false,
+    this.connection = AppConnectionStatus.none,
+    this.cachedAt,
   });
 
   final OrdersScope tab;
@@ -46,6 +49,13 @@ class OrdersState extends BaseState<OrdersState> {
 
   /// The last failure was a missing connection.
   final bool isOffline;
+
+  /// The banner above the list: offline (showing the saved copy), back
+  /// online (for ~3 s), or none.
+  final AppConnectionStatus connection;
+
+  /// When the shown current list was saved, while [connection] is offline.
+  final DateTime? cachedAt;
 
   bool get isSearching => query.trim().isNotEmpty;
 
@@ -132,6 +142,8 @@ class OrdersState extends BaseState<OrdersState> {
     String? query,
     OrdersSort? sort,
     bool? isOffline,
+    AppConnectionStatus? connection,
+    DateTime? cachedAt,
   }) {
     return OrdersState(
       status: status ?? this.status,
@@ -143,6 +155,8 @@ class OrdersState extends BaseState<OrdersState> {
       query: query ?? this.query,
       sort: sort ?? this.sort,
       isOffline: isOffline ?? this.isOffline,
+      connection: connection ?? this.connection,
+      cachedAt: cachedAt ?? this.cachedAt,
     );
   }
 
@@ -156,5 +170,7 @@ class OrdersState extends BaseState<OrdersState> {
     query,
     sort,
     isOffline,
+    connection,
+    cachedAt,
   ];
 }

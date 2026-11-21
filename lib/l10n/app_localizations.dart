@@ -1621,6 +1621,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go to customer'**
   String get goToCustomer;
+
+  /// No description provided for @offlineMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your mobile data or Wi-Fi, then try again'**
+  String get offlineMessage;
+
+  /// No description provided for @ordersOfflineMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your mobile data or Wi-Fi. We\'ll load your orders as soon as you\'re back online.'**
+  String get ordersOfflineMessage;
+
+  /// No description provided for @serverErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load data'**
+  String get serverErrorTitle;
+
+  /// No description provided for @serverErrorMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'The system isn\'t responding right now, and it\'s not your device. Try again in a moment, or contact your supervisor if it keeps happening.'**
+  String get serverErrorMessage;
+
+  /// No description provided for @ordersLoadingSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading today\'s orders…'**
+  String get ordersLoadingSubtitle;
+
+  /// No description provided for @ordersOfflineBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline · showing data saved at {time}'**
+  String ordersOfflineBanner(String time);
+
+  /// No description provided for @connectionRestored.
+  ///
+  /// In en, this message translates to:
+  /// **'Back online · data synced'**
+  String get connectionRestored;
+
+  /// No description provided for @notificationsUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{All caught up} =1{1 unread} other{{count} unread}}'**
+  String notificationsUnread(int count);
+
+  /// No description provided for @markAllRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all as read'**
+  String get markAllRead;
+
+  /// No description provided for @markAllReadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t update notifications'**
+  String get markAllReadError;
+
+  /// No description provided for @notificationsFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get notificationsFilterAll;
+
+  /// No description provided for @notificationsFilterOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get notificationsFilterOrders;
+
+  /// No description provided for @notificationsFilterCollection.
+  ///
+  /// In en, this message translates to:
+  /// **'Collection'**
+  String get notificationsFilterCollection;
+
+  /// No description provided for @notificationsFilterAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts'**
+  String get notificationsFilterAlerts;
+
+  /// No description provided for @notificationsToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get notificationsToday;
+
+  /// No description provided for @notificationsYesterday.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get notificationsYesterday;
+
+  /// No description provided for @notificationsEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No notifications'**
+  String get notificationsEmptyTitle;
+
+  /// No description provided for @notificationsEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'New orders, schedule changes and collection updates will show up here as they arrive.'**
+  String get notificationsEmptyMessage;
+
+  /// No description provided for @timeNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Now'**
+  String get timeNow;
+
+  /// No description provided for @minutesAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} min ago'**
+  String minutesAgo(int count);
 }
 
 class _AppLocalizationsDelegate
